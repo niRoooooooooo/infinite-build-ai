@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "inverse-surface": "#303031",
+                        "secondary-fixed": "#e4e2e1",
+                        "surface-dim": "#dbdad9",
+                        "on-surface": "#1b1c1c",
+                        "surface-variant": "#e4e2e2",
+                        "tertiary": "#545757",
+                        "primary-container": "#d70f64",
+                        "inverse-on-surface": "#f2f0f0",
+                        "text-secondary": "#707070",
+                        "secondary-container": "#e4e2e1",
+                        "surface-container-high": "#e9e8e7",
+                        "secondary-fixed-dim": "#c8c6c6",
+                        "on-primary-fixed": "#3f0018",
+                        "surface-container-low": "#f5f3f3",
+                        "surface-bright": "#fbf9f9",
+                        "on-tertiary-fixed-variant": "#454747",
+                        "error-container": "#ffdad6",
+                        "outline": "#8e6f75",
+                        "on-secondary-container": "#656464",
+                        "primary-fixed-dim": "#ffb1c2",
+                        "tertiary-container": "#6d6f6f",
+                        "surface-container-highest": "#e4e2e2",
+                        "tertiary-fixed": "#e1e3e3",
+                        "on-error-container": "#93000a",
+                        "on-error": "#ffffff",
+                        "outline-variant": "#e3bdc4",
+                        "on-secondary-fixed-variant": "#474747",
+                        "on-primary": "#ffffff",
+                        "surface-muted": "#F7F8F8",
+                        "primary-fixed": "#ffd9df",
+                        "on-secondary-fixed": "#1b1c1c",
+                        "inverse-primary": "#ffb1c2",
+                        "on-tertiary-container": "#f2f3f3",
+                        "secondary": "#5f5e5e",
+                        "on-secondary": "#ffffff",
+                        "brand-pink-light": "#FFECF3",
+                        "surface-tint": "#bb0055",
+                        "surface-container-lowest": "#ffffff",
+                        "error": "#ba1a1a",
+                        "on-tertiary": "#ffffff",
+                        "primary": "#ac004d",
+                        "surface": "#fbf9f9",
+                        "on-primary-fixed-variant": "#8f003f",
+                        "background": "#fbf9f9",
+                        "tertiary-fixed-dim": "#c5c7c7",
+                        "on-background": "#1b1c1c",
+                        "on-tertiary-fixed": "#191c1c",
+                        "text-primary": "#333333",
+                        "on-surface-variant": "#5a3f45",
+                        "on-primary-container": "#ffeff0",
+                        "surface-container": "#efeded"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "gutter": "24px",
+                        "margin-desktop": "48px",
+                        "base": "8px",
+                        "margin-mobile": "16px",
+                        "container-max": "1200px"
+                    },
+                    "fontFamily": {
+                        "label-sm": ["Inter"],
+                        "body-lg": ["Inter"],
+                        "headline-lg-mobile": ["Inter"],
+                        "headline-lg": ["Inter"],
+                        "body-md": ["Inter"],
+                        "label-md": ["Inter"],
+                        "headline-md": ["Inter"],
+                        "display-lg": ["Inter"],
+                        "body-sm": ["Inter"]
+                    },
+                    "fontSize": {
+                        "label-sm": ["12px", {"lineHeight": "16px", "fontWeight": "500"}],
+                        "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}],
+                        "headline-lg-mobile": ["24px", {"lineHeight": "32px", "fontWeight": "700"}],
+                        "headline-lg": ["32px", {"lineHeight": "40px", "letterSpacing": "-0.01em", "fontWeight": "700"}],
+                        "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                        "label-md": ["14px", {"lineHeight": "16px", "fontWeight": "600"}],
+                        "headline-md": ["24px", {"lineHeight": "32px", "fontWeight": "600"}],
+                        "display-lg": ["48px", {"lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                        "body-sm": ["14px", {"lineHeight": "20px", "fontWeight": "400"}]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+            display: inline-block;
+            vertical-align: middle;
+        }
+        .claimed-animation {
+            animation: popIn 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
+        }
+        @keyframes popIn {
+            0% { transform: scale(0.9); opacity: 0; }
+            100% { transform: scale(1); opacity: 1; }
+        }
+        .glass-header {
+            backdrop-filter: blur(8px);
+            background-color: rgba(215, 15, 100, 0.95);
+        }
+    </style>
+</head>
+<body class="bg-background text-on-background min-h-screen font-body-md">
+<!-- TopNavBar -->
+<header class="sticky top-0 z-50 flex justify-between items-center w-full px-margin-desktop h-20 max-w-container-max mx-auto bg-primary-container shadow-md">
+<div class="flex items-center gap-gutter">
+<span class="text-headline-md font-headline-md font-black text-on-primary-container">foodpanda</span>
+<nav class="hidden md:flex items-center gap-6">
+<a class="text-on-primary-container font-bold border-b-2 border-on-primary-container pb-1 text-label-md font-label-md" href="#">Switch to Brand View</a>
+</nav>
+</div>
+<div class="flex items-center gap-4">
+<button class="p-2 rounded-full hover:bg-on-primary-container/10 transition-colors duration-200 text-on-primary-container">
+<span class="material-symbols-outlined" data-icon="shopping_cart">shopping_cart</span>
+</button>
+<button class="p-2 rounded-full hover:bg-on-primary-container/10 transition-colors duration-200 text-on-primary-container">
+<span class="material-symbols-outlined" data-icon="person">person</span>
+</button>
+<button class="hidden md:block bg-on-primary-container text-primary-container px-6 py-2 rounded-lg font-bold text-label-md hover:opacity-90 transition-all">Login</button>
+</div>
+</header>
+<main class="max-w-container-max mx-auto px-margin-desktop py-12">
+<!-- Hero Search Section (Context) -->
+<div class="mb-12">
+<h1 class="text-display-lg font-display-lg mb-8">It's the food you love, delivered</h1>
+<div class="bg-white p-4 rounded-xl shadow-md flex items-center gap-4 max-w-3xl">
+<div class="flex-1 flex items-center gap-3 px-4 py-3 bg-surface-muted rounded-lg border border-outline-variant">
+<span class="material-symbols-outlined text-primary" data-icon="location_on">location_on</span>
+<span class="text-text-primary font-label-md">Dhaka, Bangladesh</span>
+</div>
+<button class="bg-primary-container text-on-primary-container px-8 py-3 rounded-lg font-bold hover:scale-[1.02] active:scale-95 transition-all">Search</button>
+</div>
+</div>
+<!-- Content Grid -->
+<div class="grid grid-cols-1 md:grid-cols-3 gap-gutter">
+<!-- Feed Card 1: Regular -->
+<div class="bg-white rounded-xl shadow-sm border border-secondary-container overflow-hidden group cursor-pointer">
+<div class="relative aspect-[16/9]">
+<img alt="Pizza" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="A gourmet pepperoni pizza with bubbling mozzarella cheese and fresh basil leaves, resting on a rustic wooden table. Warm, golden hour sunlight illuminates the texture of the crust and the steam rising from the pizza. Professional food photography with a shallow depth of field, highlighting the appetizing details of the Dhaka culinary scene." src="https://lh3.googleusercontent.com/aida-public/AB6AXuD2-DwpoYessix784CeIWS6vI5r-xI7BJA7iWk7kjq1MSMGqMQJu5Fb7AR6vtka3tTp9sw7Yx7RzRZU8vLb_eZ26RSxEGJ98WHb7L3YJdh6y_pntvULWcq0IUEEVpt_dfWUbUrWBdwrkBWB6MhAkO9UjClHyeRoXWE8AN5YKdSeBuxgNJpEg8aVN-VqjdW5tlw1PpvD_X6umbMn5xUoZszm4jMlktJOO0OXMXikvi6uZ2iFgoGaU-7S-gr9m8JHH6sQJAyCPGENR6CA"/>
+<div class="absolute top-3 left-3 bg-primary-container text-on-primary-container text-label-sm font-label-sm px-2 py-1 rounded">20% OFF</div>
+</div>
+<div class="p-4">
+<h3 class="text-headline-md font-headline-md text-text-primary mb-1">Pizza Hut</h3>
+<p class="text-text-secondary text-body-sm mb-2">$$ • Pizza, Italian</p>
+<div class="flex items-center gap-2 text-body-sm font-label-md">
+<span class="material-symbols-outlined text-yellow-500 text-[18px]" data-icon="star" style="font-variation-settings: 'FILL' 1;">star</span>
+<span>4.5 (500+)</span>
+<span class="text-text-secondary">• 20-30 min</span>
+</div>
+</div>
+</div>
+<!-- SPONSORED CARD: CLAIMED STATE -->
+<div class="bg-white rounded-xl shadow-md border-2 border-primary-container/20 overflow-hidden relative">
+<div class="absolute top-3 right-3 z-10 bg-white/90 backdrop-blur-sm text-text-primary text-[10px] font-bold px-2 py-0.5 rounded shadow-sm">SPONSORED</div>
+<div class="aspect-[16/9] relative">
+<img alt="Gourmet Platter" class="w-full h-full object-cover opacity-80 transition-opacity" data-alt="A lush, colorful gourmet Mediterranean platter with hummus, pita bread, olives, and grilled vegetables arranged artistically on a dark ceramic plate. The lighting is sophisticated and moody with high contrast, emphasizing the vibrant colors of the fresh ingredients. The overall aesthetic is premium and healthy, reflecting a high-end food delivery experience in a modern Dhaka apartment." src="https://lh3.googleusercontent.com/aida-public/AB6AXuA4uy4FvoCxniqDBCHA8Svqaycmy9iD5Dq0PkKVdspgDzRU3tQtUix2-dvIHaRegaC-lMpe0hXKxSYcDpO_PpnF-66GaTamcJtGZGXWDlUqWCLi1oyCWbYAfJB90iOLvRmW3gQxwIfu0v7Eg3AbmBFyh0nfkOJkArvrMMMBH6DlZG86nGdYRyAk8NaM_gODOv9xy2sb82qp5I7SKFKw2y3_knuEAA-NphE1P8uJJeYzBIGkncC4XpeUo1Ew2ux-bBh9Lj_kAqCbRg1f"/>
+<!-- Overlay for Claimed State -->
+<div class="absolute inset-0 bg-white/40 backdrop-blur-[2px] flex items-center justify-center">
+<div class="claimed-animation flex flex-col items-center text-center p-6">
+<div class="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mb-4 border-2 border-green-500 shadow-lg">
+<span class="material-symbols-outlined text-green-600 text-4xl" data-icon="check_circle" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+</div>
+<h3 class="text-headline-md font-headline-md text-text-primary">Offer claimed!</h3>
+<p class="text-body-md font-medium text-text-secondary">Check your email.</p>
+</div>
+</div>
+</div>
+<div class="p-4 bg-surface-container-low">
+<h3 class="text-headline-md font-headline-md text-text-primary mb-1">The Daily Platter</h3>
+<p class="text-text-secondary text-body-sm mb-3">Healthy • Salads • Middle Eastern</p>
+<div class="flex items-center justify-between opacity-50">
+<div class="flex items-center gap-2 text-body-sm">
+<span class="material-symbols-outlined text-[18px]" data-icon="schedule">schedule</span>
+<span>Valid for 24h</span>
+</div>
+<span class="text-primary font-bold text-label-md">Claimed</span>
+</div>
+</div>
+</div>
+<!-- Feed Card 3: Regular -->
+<div class="bg-white rounded-xl shadow-sm border border-secondary-container overflow-hidden group cursor-pointer">
+<div class="relative aspect-[16/9]">
+<img alt="Burger" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="A massive, juicy double cheeseburger with melting cheddar, crisp lettuce, and artisanal pickles on a toasted brioche bun. The burger is centered against a clean, minimal background with bright, even studio lighting. The image captures the high-energy, crave-worthy nature of urban street food in Dhaka, emphasizing fresh textures and vibrant colors." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAqYsuDZtVcQ39l6U9o1gLekKPxALnGoyPuY6DeRLVCqkZlfBGHDIdmmeUqj-AWUR2k4CBobrRHRd-5x2EJGOg2l0siYSXGkjNmF7EHe0Kuqs5_jWL1YfSily_HzTGlgxIHpueOGUIZM-GVPwIxjbbhYuSPfDG1Okst049--vq3k6ZBqg4H_5ikuv9nicJQ5dN5NWNQ9FtVIb-NzGrcsjuQqN8NzeXc2Qxp9Tdom2dsd8Tlz_mUeyXR--hQZrikIcj3y0OOgfpLgKJm"/>
+</div>
+<div class="p-4">
+<h3 class="text-headline-md font-headline-md text-text-primary mb-1">Burger King</h3>
+<p class="text-text-secondary text-body-sm mb-2">$$ • Burgers, Fast Food</p>
+<div class="flex items-center gap-2 text-body-sm font-label-md">
+<span class="material-symbols-outlined text-yellow-500 text-[18px]" data-icon="star" style="font-variation-settings: 'FILL' 1;">star</span>
+<span>4.2 (1k+)</span>
+<span class="text-text-secondary">• 15-25 min</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Secondary Row for Context -->
+<div class="mt-12">
+<div class="flex justify-between items-end mb-6">
+<div>
+<h2 class="text-headline-lg font-headline-lg">Cuisines you'll love</h2>
+<p class="text-text-secondary">Discover the best flavors in Dhaka</p>
+</div>
+<button class="text-primary font-bold hover:underline flex items-center gap-1">
+                    See all <span class="material-symbols-outlined text-[18px]" data-icon="chevron_right">chevron_right</span>
+</button>
+</div>
+<div class="flex gap-4 overflow-x-auto pb-4 scrollbar-hide">
+<div class="flex-shrink-0 bg-white p-4 rounded-xl shadow-sm border border-outline-variant flex flex-col items-center gap-2 min-w-[120px] hover:border-primary transition-colors cursor-pointer">
+<div class="w-16 h-16 rounded-full bg-brand-pink-light flex items-center justify-center">
+<span class="material-symbols-outlined text-primary text-3xl" data-icon="ramen_dining">ramen_dining</span>
+</div>
+<span class="font-label-md">Noodles</span>
+</div>
+<div class="flex-shrink-0 bg-white p-4 rounded-xl shadow-sm border border-outline-variant flex flex-col items-center gap-2 min-w-[120px] hover:border-primary transition-colors cursor-pointer">
+<div class="w-16 h-16 rounded-full bg-brand-pink-light flex items-center justify-center">
+<span class="material-symbols-outlined text-primary text-3xl" data-icon="bakery_dining">bakery_dining</span>
+</div>
+<span class="font-label-md">Bakery</span>
+</div>
+<div class="flex-shrink-0 bg-white p-4 rounded-xl shadow-sm border border-outline-variant flex flex-col items-center gap-2 min-w-[120px] hover:border-primary transition-colors cursor-pointer">
+<div class="w-16 h-16 rounded-full bg-brand-pink-light flex items-center justify-center">
+<span class="material-symbols-outlined text-primary text-3xl" data-icon="icecream">icecream</span>
+</div>
+<span class="font-label-md">Desserts</span>
+</div>
+<div class="flex-shrink-0 bg-white p-4 rounded-xl shadow-sm border border-outline-variant flex flex-col items-center gap-2 min-w-[120px] hover:border-primary transition-colors cursor-pointer">
+<div class="w-16 h-16 rounded-full bg-brand-pink-light flex items-center justify-center">
+<span class="material-symbols-outlined text-primary text-3xl" data-icon="local_cafe">local_cafe</span>
+</div>
+<span class="font-label-md">Coffee</span>
+</div>
+<div class="flex-shrink-0 bg-white p-4 rounded-xl shadow-sm border border-outline-variant flex flex-col items-center gap-2 min-w-[120px] hover:border-primary transition-colors cursor-pointer">
+<div class="w-16 h-16 rounded-full bg-brand-pink-light flex items-center justify-center">
+<span class="material-symbols-outlined text-primary text-3xl" data-icon="set_meal">set_meal</span>
+</div>
+<span class="font-label-md">Bengali</span>
+</div>
+</div>
+</div>
+</main>
+<!-- Footer -->
+<footer class="w-full py-16 px-margin-desktop max-w-container-max mx-auto grid grid-cols-1 md:grid-cols-4 gap-gutter bg-surface border-t border-outline-variant">
+<div class="flex flex-col gap-6">
+<span class="text-headline-md font-headline-md font-black text-primary">foodpanda</span>
+<p class="text-body-sm font-body-sm text-secondary">© foodpanda 2024</p>
+</div>
+<div class="flex flex-col gap-3">
+<h4 class="font-bold text-label-md mb-2">Legal</h4>
+<a class="text-secondary hover:text-primary underline transition-all text-label-sm font-label-sm" href="#">Privacy policy</a>
+<a class="text-secondary hover:text-primary underline transition-all text-label-sm font-label-sm" href="#">Terms and conditions</a>
+<a class="text-secondary hover:text-primary underline transition-all text-label-sm font-label-sm" href="#">Security</a>
+</div>
+<div class="flex flex-col gap-3">
+<h4 class="font-bold text-label-md mb-2">Help</h4>
+<a class="text-secondary hover:text-primary underline transition-all text-label-sm font-label-sm" href="#">Help Center</a>
+<a class="text-secondary hover:text-primary underline transition-all text-label-sm font-label-sm" href="#">Refunds with pandapay</a>
+<a class="text-secondary hover:text-primary underline transition-all text-label-sm font-label-sm" href="#">Data preferences</a>
+</div>
+<div class="flex flex-col gap-3">
+<h4 class="font-bold text-label-md mb-2">Partner with us</h4>
+<a class="text-secondary hover:text-primary underline transition-all text-label-sm font-label-sm" href="#">Suggest a restaurant</a>
+<a class="text-secondary hover:text-primary underline transition-all text-label-sm font-label-sm" href="#">Corporate</a>
+<a class="text-secondary hover:text-primary underline transition-all text-label-sm font-label-sm" href="#">Careers</a>
+</div>
+</footer>
+<script>
+        // Simple micro-interaction for the claimed state
+        document.addEventListener('DOMContentLoaded', () => {
+            console.log('Claimed state UI initialized');
+        });
+    </script>
+</body></html>

@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&amp;family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "inverse-surface": "#293040",
+                    "secondary-container": "#dce2f3",
+                    "surface-container": "#e9edff",
+                    "surface-bright": "#f9f9ff",
+                    "on-primary": "#ffffff",
+                    "on-primary-fixed-variant": "#005049",
+                    "on-error": "#ffffff",
+                    "surface-container-low": "#f1f3ff",
+                    "surface-variant": "#dce2f7",
+                    "on-background": "#141b2b",
+                    "on-secondary-fixed-variant": "#404754",
+                    "on-surface-variant": "#3d4947",
+                    "background": "#f9f9ff",
+                    "on-tertiary-fixed-variant": "#773215",
+                    "surface": "#f9f9ff",
+                    "surface-container-highest": "#dce2f7",
+                    "on-surface": "#141b2b",
+                    "secondary-fixed-dim": "#c0c7d6",
+                    "secondary-fixed": "#dce2f3",
+                    "primary-fixed-dim": "#6bd8cb",
+                    "inverse-primary": "#6bd8cb",
+                    "tertiary-fixed": "#ffdbce",
+                    "on-primary-fixed": "#00201d",
+                    "on-tertiary-fixed": "#370e00",
+                    "primary": "#00685f",
+                    "error-container": "#ffdad6",
+                    "on-secondary": "#ffffff",
+                    "primary-fixed": "#89f5e7",
+                    "surface-container-high": "#e1e8fd",
+                    "surface-dim": "#d3daef",
+                    "surface-tint": "#006a61",
+                    "outline-variant": "#bcc9c6",
+                    "on-tertiary": "#ffffff",
+                    "on-secondary-fixed": "#151c27",
+                    "tertiary-fixed-dim": "#ffb59a",
+                    "error": "#ba1a1a",
+                    "on-secondary-container": "#5e6572",
+                    "on-error-container": "#93000a",
+                    "secondary": "#585f6c",
+                    "primary-container": "#008378",
+                    "on-tertiary-container": "#fffbff",
+                    "tertiary": "#924628",
+                    "outline": "#6d7a77",
+                    "surface-container-lowest": "#ffffff",
+                    "inverse-on-surface": "#edf0ff",
+                    "tertiary-container": "#b05e3d",
+                    "on-primary-container": "#f4fffc"
+            },
+            "borderRadius": {
+                    "DEFAULT": "1rem",
+                    "lg": "2rem",
+                    "xl": "3rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "gutter": "16px",
+                    "stack-md": "16px",
+                    "max-width-desktop": "640px",
+                    "stack-lg": "24px",
+                    "container-padding": "16px",
+                    "unit": "4px",
+                    "stack-sm": "8px"
+            },
+            "fontFamily": {
+                    "body-md": ["Inter"],
+                    "body-sm": ["Inter"],
+                    "label-sm-caps": ["Inter"],
+                    "headline-md": ["Inter"],
+                    "body-lg": ["Inter"],
+                    "label-md": ["Inter"],
+                    "headline-lg": ["Inter"],
+                    "headline-lg-mobile": ["Inter"]
+            },
+            "fontSize": {
+                    "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                    "body-sm": ["14px", {"lineHeight": "20px", "fontWeight": "400"}],
+                    "label-sm-caps": ["12px", {"lineHeight": "16px", "letterSpacing": "0.05em", "fontWeight": "700"}],
+                    "headline-md": ["20px", {"lineHeight": "28px", "fontWeight": "600"}],
+                    "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}],
+                    "label-md": ["14px", {"lineHeight": "20px", "letterSpacing": "0.01em", "fontWeight": "600"}],
+                    "headline-lg": ["32px", {"lineHeight": "40px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                    "headline-lg-mobile": ["24px", {"lineHeight": "32px", "letterSpacing": "-0.01em", "fontWeight": "700"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        body { -webkit-tap-highlight-color: transparent; }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .hide-scrollbar::-webkit-scrollbar { display: none; }
+        .hide-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background text-on-background font-body-md min-h-screen pb-24">
+<!-- TopAppBar Shell -->
+<header class="bg-surface/80 backdrop-blur-md shadow-sm docked full-width top-0 sticky z-50 transition-all duration-300" id="main-header">
+<div class="flex items-center justify-between px-gutter h-16 w-full max-w-max-width-desktop mx-auto">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-full bg-secondary-container flex items-center justify-center overflow-hidden border-2 border-primary">
+<img alt="Rafi, 22" class="w-full h-full object-cover" data-alt="A professional studio portrait of a friendly 22-year-old man with a warm smile. He has short dark hair and is wearing a clean, modern teal-colored shirt. The background is a soft, out-of-focus office setting with warm sunlight filtering through, matching a bright and professional UI aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuA_WRNHg5EuTpMsVmYNh8m6gFuR5d8tpy30qVos92PqDf0xeI0QuE_uv0QXC8S4PpvcixGDBYbMn7f9sNpoaLSgwzUJqeJ56DkqXqhi22CzsvFq4xddDqhQFGeMW7Jo7hxb5HtPdTJGJ1fltTbC0d3zuYitnj6ymSWgE-ReppiSpibGxmtfMc7QRpPjZhzuT9NXqdZPsJ3MXLG49_0RYUymNIOWP4RPhB99BE57RpJrUw1EN9k8Az3gz-7TGYrIh7RnHtvtOdFd5XKd"/>
+</div>
+<h1 class="font-headline-md text-headline-md font-bold text-primary">AdFeed</h1>
+</div>
+<button class="font-label-md text-label-md text-primary font-bold hover:opacity-80 transition-opacity active:scale-95">
+                Brand View
+            </button>
+</div>
+</header>
+<main class="max-w-max-width-desktop mx-auto px-gutter pt-stack-md space-y-stack-md">
+<!-- Persona Switcher (Partially Visible/Scrolled Context) -->
+<div class="flex justify-center transition-opacity duration-300 opacity-60 hover:opacity-100">
+<div class="flex items-center gap-2 bg-surface-container border border-outline-variant rounded-full px-4 py-2 cursor-pointer shadow-sm">
+<div class="w-6 h-6 rounded-full overflow-hidden">
+<img alt="Avatar" src="https://lh3.googleusercontent.com/aida-public/AB6AXuByfkBc35wAkXG0jT74znZ9XocKCD1NEmyzJWdlbsoVdVToiEZFpCpwSg5cbVayqK8yRTcyFj9Vezxy8YB_OFXCzct3PN89uyRu07m4wUalZVIqQzbZ8E3i_IVGmorHG0SwV_wKU7ieTnp_AxoTskMGixrhqWnDzOZC7PCZ6tu5IvC94LlgFSq3aNHlmhvOeGcrFI3MUVVALIHOfY2gHHsPQ2T2iQbOge9feVEmqd6QdK2dtqQeSTBTD0EpykGOyWkDTGgZLOpe1xVK"/>
+</div>
+<span class="text-label-md font-label-md text-on-surface">Rafi, 22</span>
+<span class="material-symbols-outlined text-[18px]">expand_more</span>
+</div>
+</div>
+<!-- Feed List -->
+<div class="flex flex-col gap-stack-md">
+<!-- Organic Card 1 -->
+<article class="bg-surface-container-lowest rounded-lg shadow-sm overflow-hidden flex flex-col group transition-transform duration-200 hover:translate-y-[-2px]">
+<div class="w-full aspect-video overflow-hidden">
+<img class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" data-alt="A breathtaking panoramic view of the lush green hills of Chittagong during a misty sunrise. The scene features rolling tea gardens and distant mountain peaks partially veiled in soft, golden fog. The lighting is ethereal and tranquil, utilizing a color palette of vibrant emerald greens and soft morning blues to create a calm and inviting atmosphere." src="https://lh3.googleusercontent.com/aida-public/AB6AXuB3xYhPIMXys5R5B5IOZvJ3sULr_M4or-RHE0F0JzN55GOfR3fAIXOP2Zm_ReFbLkV8RR71ZO0hOYKEfHVgRA6yWDx9mmbd7S3nq9vhJBdt6xVXlgg_FiOLogli48dN_j4Ol9ozCaK4xKkCLJ_W7ivTtga0rYE41aCdp22mLAMM8dVwgyHkkFtlcOVbRpZL_7jcVc3o9nttcAnxpCCrIWh_6SbWae0-qZgwrjf-W3r6l_Lcult5iMYs-m3VZcWmj7N-4jlosoLeUkPn"/>
+</div>
+<div class="p-container-padding space-y-stack-sm">
+<div class="flex items-center gap-2">
+<span class="text-label-sm-caps font-label-sm-caps text-on-surface-variant">LIFESTYLE • 2H AGO</span>
+</div>
+<h2 class="text-headline-md font-headline-md text-on-surface">5 Best Weekend Trips near Chittagong</h2>
+<p class="text-body-sm font-body-sm text-on-surface-variant line-clamp-2">Looking for a quick escape from the hustle? These hidden gems are perfect for your next 48-hour adventure...</p>
+</div>
+</article>
+<!-- Sponsored Card 1 (Bata) -->
+<article class="bg-surface-container-lowest rounded-lg shadow-sm border border-secondary-container overflow-hidden flex flex-col relative">
+<div class="p-container-padding flex items-center justify-between">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-full bg-white border border-outline-variant flex items-center justify-center overflow-hidden p-1">
+<span class="font-bold text-primary tracking-tighter text-[12px]">Bata</span>
+</div>
+<div class="flex flex-col">
+<span class="text-label-md font-label-md text-on-surface">Bata</span>
+<span class="text-label-sm-caps font-label-sm-caps text-secondary uppercase">Sponsored</span>
+</div>
+</div>
+<button class="text-on-surface-variant active:scale-90 transition-transform">
+<span class="material-symbols-outlined">more_horiz</span>
+</button>
+</div>
+<div class="w-full aspect-square bg-surface-variant overflow-hidden">
+<img class="w-full h-full object-cover" data-alt="A high-end, commercial fashion shot of sleek crimson and white sneakers presented on a minimalist geometric platform. The lighting is crisp and modern with soft shadows, highlighting the premium textures of the leather. The background is a clean, neutral gray that makes the vibrant teal and red accents of the shoes pop, perfectly aligning with a sophisticated corporate UI style." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDe7Rh4NL8He8V340wuDSJpTGgbd-DkMnpLM4L4fKrI7WsSiqk9b90Y25_2IPTwjn93yNBFcstAIqN0Junr1nEmJAQma1PT9WfIiKIyBMDanwfhLOBYmDOTPj4IDESXgX_oVXe__6-18nrF91GMkF-U0eukdd9wfxI001fmXkNfOOby51lgLnj_h8ydpWBeEJjB7AQ-0hLYE9fRVKr_lzo9glNJ-INhYEAdPNkysWuT8BjN9DeXiVrsFmePijEY_wczsSGRGC0idTGX"/>
+</div>
+<div class="p-container-padding space-y-stack-md">
+<div>
+<h2 class="text-headline-md font-headline-md text-on-surface">Walk in Style with 20% Off</h2>
+<p class="text-body-md font-body-md text-on-surface-variant mt-1">New collection available in all stores. Experience unmatched comfort today.</p>
+</div>
+<div class="flex gap-stack-sm">
+<button class="flex-1 h-12 rounded-full bg-primary text-on-primary font-label-md text-label-md hover:opacity-90 active:scale-95 transition-all">
+                            Take the offer
+                        </button>
+<button class="flex-1 h-12 rounded-full bg-surface-container text-primary font-label-md text-label-md hover:bg-surface-container-high active:scale-95 transition-all">
+                            Skip
+                        </button>
+</div>
+</div>
+</article>
+<!-- Organic Card 2 -->
+<article class="bg-surface-container-lowest rounded-lg shadow-sm p-container-padding flex flex-col gap-stack-sm border-l-4 border-primary">
+<div class="flex items-center gap-2">
+<span class="text-label-sm-caps font-label-sm-caps text-primary">BUSINESS • 45M AGO</span>
+</div>
+<h2 class="text-headline-md font-headline-md text-on-surface">Local Startup Raises $5M in Seed Round</h2>
+<p class="text-body-sm font-body-sm text-on-surface-variant">The Dhaka-based fintech firm plans to expand its digital payment infrastructure across rural Bangladesh...</p>
+<div class="flex items-center gap-4 pt-2">
+<div class="flex items-center gap-1 text-on-surface-variant">
+<span class="material-symbols-outlined text-[18px]">favorite</span>
+<span class="text-label-sm-caps font-label-sm-caps">1.2k</span>
+</div>
+<div class="flex items-center gap-1 text-on-surface-variant">
+<span class="material-symbols-outlined text-[18px]">chat_bubble</span>
+<span class="text-label-sm-caps font-label-sm-caps">84</span>
+</div>
+</div>
+</article>
+<!-- Sponsored Card 2 (Grameenphone) -->
+<article class="bg-surface-container-lowest rounded-lg shadow-sm border border-secondary-container overflow-hidden flex flex-col">
+<div class="p-container-padding flex items-center justify-between">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-full bg-[#00A9E0] flex items-center justify-center p-1">
+<img alt="GP Logo" class="w-full h-full object-cover rounded-full" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBG7UK_mGZ8hZcJt7ltm_K9KazHGLa1QACATrpE3W4-XSpALo3w9OAgz22yrAgBqOtDlpWqfZT7nZ3ljdj97BnTxzjA-ri_rySxB_mrT5OW0p4g22NC0TgbhsfAbX_bkbI3Tl_SFoQyUmIL351s3dqbBfAODdEWDdQ1NKwdT5foUTdOQ1NwAfWBTFT9MSdKB5-WmGndSheNKRmlygMVeyhcKPJXqeHTH1Pdg7Yn3Hn7SM3EKDO26jxQBE5K8RWSYwXdOIeJiCcwBW1x"/>
+</div>
+<div class="flex flex-col">
+<span class="text-label-md font-label-md text-on-surface">Grameenphone</span>
+<span class="text-label-sm-caps font-label-sm-caps text-secondary uppercase">Sponsored</span>
+</div>
+</div>
+</div>
+<div class="w-full aspect-video bg-surface-variant overflow-hidden relative">
+<img class="w-full h-full object-cover" data-alt="A heart-warming scene of a young multi-generational family sitting together on a comfortable sofa, laughing while holding a tablet for a video call. The room is filled with soft, natural daylight, creating a warm and connected ambiance. The color palette is bright and welcoming, with soft blues and neutral tones that reflect a high-speed, reliable connectivity lifestyle." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDZTKN0ASXhs6lQCByI3Vkms8NzmYuwn13GgPvVdh093LYdfU2czA9Uyx44QhmjQSZgcMq-XVAy4gl8-TkTW2OtN-pLYa0NZxyJ1x5CxfSbwCiOHcoeLpXVFdaHYXWItgUC2vM9YAZg9k43mhwDyWVTJVYLx4215h7D-rYFW1YxFpCIIdmW3pCTw7mGBwmsgTOx0qsgxB3rM09FDEGy0tYEMRzD3LcBjWjfVonHmJ4XNrHuzpNFsVCbgrycFpbgzrXLw3szB7QR8I54"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent flex items-center justify-center">
+<div class="w-16 h-16 rounded-full bg-white/20 backdrop-blur-sm border border-white/30 flex items-center justify-center cursor-pointer hover:scale-110 transition-transform">
+<span class="material-symbols-outlined text-white text-4xl" style="font-variation-settings: 'FILL' 1;">play_arrow</span>
+</div>
+</div>
+</div>
+<div class="p-container-padding space-y-stack-md">
+<div>
+<h2 class="text-headline-md font-headline-md text-on-surface">Unlimited Data for Your Favorite Apps</h2>
+<p class="text-body-md font-body-md text-on-surface-variant mt-1">Stay connected with 4G+. Stream, chat, and play without limits.</p>
+</div>
+<div class="flex gap-stack-sm">
+<button class="flex-1 h-12 rounded-full bg-primary text-on-primary font-label-md text-label-md hover:opacity-90 active:scale-95 transition-all">
+                            Take the offer
+                        </button>
+<button class="flex-1 h-12 rounded-full bg-surface-container text-primary font-label-md text-label-md hover:bg-surface-container-high active:scale-95 transition-all">
+                            Skip
+                        </button>
+</div>
+</div>
+</article>
+</div>
+</main>
+<!-- BottomNavBar Shell -->
+<nav class="fixed bottom-0 left-0 w-full z-50 flex justify-around items-center px-4 py-2 bg-surface dark:bg-surface shadow-[0_-1px_10px_rgba(0,0,0,0.05)] h-20">
+<!-- Feed Active -->
+<button class="flex flex-col items-center justify-center bg-secondary-container text-on-secondary-container rounded-2xl p-2 min-w-[72px] transition-all active:scale-90 duration-200">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">home</span>
+<span class="text-label-md font-label-md">Feed</span>
+</button>
+<button class="flex flex-col items-center justify-center text-on-secondary-fixed-variant p-2 min-w-[72px] hover:bg-surface-container-high transition-colors active:scale-90 duration-200">
+<span class="material-symbols-outlined">explore</span>
+<span class="text-label-md font-label-md">Discovery</span>
+</button>
+<button class="flex flex-col items-center justify-center text-on-secondary-fixed-variant p-2 min-w-[72px] hover:bg-surface-container-high transition-colors active:scale-90 duration-200">
+<span class="material-symbols-outlined">bookmark</span>
+<span class="text-label-md font-label-md">Saved</span>
+</button>
+<button class="flex flex-col items-center justify-center text-on-secondary-fixed-variant p-2 min-w-[72px] hover:bg-surface-container-high transition-colors active:scale-90 duration-200">
+<span class="material-symbols-outlined">person</span>
+<span class="text-label-md font-label-md">Profile</span>
+</button>
+</nav>
+<!-- Floating Action Button (Contextual for Feed) -->
+<button class="fixed right-6 bottom-24 w-14 h-14 rounded-full bg-primary-container text-on-primary-container shadow-lg flex items-center justify-center hover:scale-105 active:scale-95 transition-all">
+<span class="material-symbols-outlined text-3xl">add</span>
+</button>
+<script>
+        // Micro-interaction for header scroll effect
+        let lastScroll = 0;
+        const header = document.getElementById('main-header');
+        
+        window.addEventListener('scroll', () => {
+            const currentScroll = window.pageYOffset;
+            
+            if (currentScroll <= 0) {
+                header.classList.remove('shadow-md');
+                return;
+            }
+            
+            if (currentScroll > lastScroll) {
+                // Scrolling down
+                header.style.transform = 'translateY(-10%)';
+            } else {
+                // Scrolling up
+                header.style.transform = 'translateY(0)';
+                header.classList.add('shadow-md');
+            }
+            lastScroll = currentScroll;
+        });
+
+        // Simple button active state feedback
+        document.querySelectorAll('button').forEach(btn => {
+            btn.addEventListener('mousedown', () => {
+                btn.style.transform = 'scale(0.96)';
+            });
+            btn.addEventListener('mouseup', () => {
+                btn.style.transform = '';
+            });
+            btn.addEventListener('mouseleave', () => {
+                btn.style.transform = '';
+            });
+        });
+    </script>
+</body></html>

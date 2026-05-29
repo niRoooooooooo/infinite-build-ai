@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>AdPersona AI | Brand Grid</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "secondary-container": "#a8ece5",
+                    "secondary-fixed-dim": "#8fd3cc",
+                    "on-surface-variant": "#3d4947",
+                    "inverse-surface": "#2f3131",
+                    "surface-dim": "#dadada",
+                    "tertiary": "#545c72",
+                    "on-secondary-fixed": "#00201e",
+                    "on-secondary-fixed-variant": "#00504b",
+                    "on-background": "#1a1c1c",
+                    "tertiary-container": "#6c748b",
+                    "secondary-fixed": "#abefe8",
+                    "on-tertiary-fixed-variant": "#3f465c",
+                    "surface-bright": "#f9f9f9",
+                    "surface-container-lowest": "#ffffff",
+                    "primary-container": "#008378",
+                    "surface-container-highest": "#e2e2e2",
+                    "inverse-on-surface": "#f0f1f1",
+                    "on-secondary-container": "#266d68",
+                    "surface-container-low": "#f3f3f3",
+                    "on-error": "#ffffff",
+                    "on-surface": "#1a1c1c",
+                    "primary-fixed-dim": "#6bd8cb",
+                    "secondary": "#216963",
+                    "surface-container": "#eeeeee",
+                    "on-tertiary": "#ffffff",
+                    "error-container": "#ffdad6",
+                    "on-tertiary-container": "#fefcff",
+                    "on-primary": "#ffffff",
+                    "outline-variant": "#bcc9c6",
+                    "on-error-container": "#93000a",
+                    "on-tertiary-fixed": "#131b2e",
+                    "tertiary-fixed": "#dae2fd",
+                    "on-primary-fixed": "#00201d",
+                    "background": "#f9f9f9",
+                    "surface": "#f9f9f9",
+                    "outline": "#6d7a77",
+                    "surface-container-high": "#e8e8e8",
+                    "on-primary-container": "#f4fffc",
+                    "error": "#ba1a1a",
+                    "on-primary-fixed-variant": "#005049",
+                    "inverse-primary": "#6bd8cb",
+                    "primary": "#00685f",
+                    "surface-tint": "#006a61",
+                    "primary-fixed": "#89f5e7",
+                    "on-secondary": "#ffffff",
+                    "surface-variant": "#e2e2e2",
+                    "tertiary-fixed-dim": "#bec6e0"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "stack-xs": "4px",
+                    "margin-desktop": "32px",
+                    "stack-sm": "8px",
+                    "margin-mobile": "16px",
+                    "stack-lg": "24px",
+                    "gutter": "24px",
+                    "stack-md": "16px",
+                    "unit": "8px",
+                    "container-max": "1440px"
+            },
+            "fontFamily": {
+                    "headline-md": ["Inter"],
+                    "headline-lg-mobile": ["Inter"],
+                    "label-md": ["Inter"],
+                    "label-sm": ["Inter"],
+                    "display-lg": ["Inter"],
+                    "body-md": ["Inter"],
+                    "headline-sm": ["Inter"],
+                    "body-sm": ["Inter"],
+                    "headline-lg": ["Inter"],
+                    "display-stat": ["Inter"],
+                    "body-lg": ["Inter"]
+            },
+            "fontSize": {
+                    "headline-md": ["24px", {"lineHeight": "32px", "fontWeight": "600"}],
+                    "headline-lg-mobile": ["24px", {"lineHeight": "32px", "fontWeight": "600"}],
+                    "label-md": ["14px", {"lineHeight": "20px", "letterSpacing": "0.01em", "fontWeight": "500"}],
+                    "label-sm": ["12px", {"lineHeight": "16px", "fontWeight": "500"}],
+                    "display-lg": ["48px", {"lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                    "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                    "headline-sm": ["20px", {"lineHeight": "28px", "fontWeight": "600"}],
+                    "body-sm": ["14px", {"lineHeight": "20px", "fontWeight": "400"}],
+                    "headline-lg": ["30px", {"lineHeight": "38px", "letterSpacing": "-0.01em", "fontWeight": "600"}],
+                    "display-stat": ["36px", {"lineHeight": "44px", "letterSpacing": "-0.01em", "fontWeight": "600"}],
+                    "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        body { font-family: 'Inter', sans-serif; background-color: #FAFAFA; }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .card-shadow { box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.05), 0px 1px 2px rgba(0, 0, 0, 0.03); }
+        .hover-lift { transition: transform 0.2s ease, box-shadow 0.2s ease; }
+        .hover-lift:hover { transform: translateY(-4px); box-shadow: 0px 10px 15px -3px rgba(0, 0, 0, 0.05); }
+    </style>
+</head>
+<body class="bg-background text-on-background">
+<!-- TopNavBar -->
+<header class="fixed top-0 w-full z-50 flex justify-between items-center px-margin-desktop h-16 bg-surface shadow-sm border-b border-outline-variant">
+<div class="flex items-center gap-stack-lg">
+<span class="text-headline-md font-headline-md font-bold text-primary">AdPersona AI</span>
+</div>
+<div class="hidden md:flex items-center space-x-8">
+<a class="text-primary border-b-2 border-primary pb-1 font-label-md text-label-md" href="#">Brands</a>
+</div>
+<div class="flex items-center gap-stack-md">
+<button class="hidden lg:block font-label-md text-label-md text-on-surface-variant hover:text-primary transition-colors duration-200">Switch to Consumer View</button>
+<button class="p-2 text-on-surface-variant hover:bg-surface-container-high rounded-full transition-colors duration-150">
+<span class="material-symbols-outlined">notifications</span>
+</button>
+<div class="h-8 w-8 rounded-full overflow-hidden border border-outline-variant">
+<img alt="User profile settings" data-alt="A professional headshot of a modern creative director with a warm smile. The lighting is soft and studio-quality, creating a crisp and high-end feel. The background is a muted, professional grey, emphasizing a corporate yet approachable aesthetic consistent with a premium tech workspace." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDU9SalWdospHiZ1kb9FLY9cc4-0JYV3YeecdnXfJjUTe6nntWmjgozoTInqxjH8O0qENZIyHUCYvIxRAY6DcV3ebhMJRlDtj9pEpQNyYmnbcC4q3vxWpwtfMP5-8jDV3nSZZ7mreuGlKq-zIDTnvtJKi3Cbx_JEDXt2GLv0j4_HhXtg998rFFtz5aICyqxD3zPXFOvRpt_GZSfR0xne2npJAsTQooDvfHaUjV64fJf-bSL31PbaBNfUBvVm-q1vrJP2plDhXD4IKA"/>
+</div>
+</div>
+</header>
+<!-- SideNavBar -->
+<aside class="fixed left-0 top-16 bottom-0 w-[240px] flex flex-col p-stack-md z-40 bg-surface-container-low border-r border-outline-variant">
+<div class="flex items-center gap-stack-sm px-2 py-4 mb-4">
+<div class="w-8 h-8 rounded-lg bg-primary flex items-center justify-center text-white">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">grid_view</span>
+</div>
+<div>
+<p class="font-label-md text-label-md font-bold text-on-surface">Brand Workspace</p>
+<p class="text-[10px] text-on-surface-variant leading-none uppercase tracking-wider">Marketing Admin</p>
+</div>
+</div>
+<nav class="flex-1 space-y-1">
+<a class="flex items-center gap-3 px-3 py-2 bg-secondary-container text-on-secondary-container rounded-lg font-bold transition-transform duration-200 scale-98" href="#">
+<span class="material-symbols-outlined">grid_view</span>
+<span class="font-label-md text-label-md">Brand Grid</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2 text-on-surface-variant hover:bg-surface-container-high rounded-lg transition-all duration-200" href="#">
+<span class="material-symbols-outlined">monitoring</span>
+<span class="font-label-md text-label-md">Performance</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2 text-on-surface-variant hover:bg-surface-container-high rounded-lg transition-all duration-200" href="#">
+<span class="material-symbols-outlined">psychology</span>
+<span class="font-label-md text-label-md">Recommendations</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2 text-on-surface-variant hover:bg-surface-container-high rounded-lg transition-all duration-200" href="#">
+<span class="material-symbols-outlined">inventory_2</span>
+<span class="font-label-md text-label-md">Catalog</span>
+</a>
+</nav>
+<div class="mt-auto border-t border-outline-variant pt-4 space-y-1">
+<button class="w-full flex items-center gap-3 px-3 py-2 text-on-surface-variant hover:bg-surface-container-high rounded-lg transition-all duration-200">
+<span class="material-symbols-outlined">settings</span>
+<span class="font-label-md text-label-md">Settings</span>
+</button>
+<button class="w-full flex items-center gap-3 px-3 py-2 text-on-surface-variant hover:bg-surface-container-high rounded-lg transition-all duration-200">
+<span class="material-symbols-outlined">help_outline</span>
+<span class="font-label-md text-label-md">Support</span>
+</button>
+</div>
+</aside>
+<!-- Main Content -->
+<main class="ml-[240px] pt-16 min-h-screen">
+<div class="max-w-[1440px] mx-auto p-margin-desktop">
+<!-- Page Header -->
+<div class="flex justify-between items-end mb-stack-lg">
+<div>
+<h1 class="font-headline-lg text-headline-lg text-on-surface">Brands (5)</h1>
+<p class="font-body-md text-body-md text-on-surface-variant mt-1">Manage your brand workspaces and view performance</p>
+</div>
+<button class="flex items-center gap-2 bg-primary text-on-primary px-6 py-3 rounded-[12px] font-label-md text-label-md hover:opacity-90 transition-opacity active:scale-95 duration-150">
+<span class="material-symbols-outlined text-[20px]">add</span>
+<span>Add brand</span>
+</button>
+</div>
+<!-- Grid -->
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-gutter">
+<!-- Card 1: PRAN -->
+<div class="bg-white rounded-[12px] border border-outline-variant p-stack-lg card-shadow hover-lift flex flex-col h-full">
+<div class="flex justify-between items-start mb-4">
+<div class="flex items-center gap-3">
+<div class="w-12 h-12 rounded-lg bg-orange-50 flex items-center justify-center border border-orange-100 overflow-hidden">
+<img alt="PRAN Logo" data-alt="A clean, high-resolution product photography shot of a fresh mango juice bottle against a minimalist white studio background. The lighting is bright and crisp, highlighting the vibrant orange hues of the juice. The aesthetic is professional and corporate, mirroring a high-end FMCG brand presentation with a focus on quality and freshness." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCUeZm7q0RSCNpdM9zY5YOdI0tPsDeHUMTPFk_4gozR7d4c2R8BwVFiUivnGksR4T946ST7FOI9nFLZZPblaWbkRhF89BUW0OVdK1UnmrullOwMd_HEvnd7b28DaTTTbQH2Xf7sZm0Ty1CPFIYsl2AhgZub0Dou4kdfJatrX_pCE1l14m6HmNOMv7CwMlcOguWqARFS0gIcyFNswKWlNMdPAfNtXt7z_m2PefsjlFDZ5HmPSPYKYgJQtrIPIVkWtpcAQfqL7gkpQak"/>
+</div>
+<div>
+<h3 class="font-headline-sm text-headline-sm text-on-surface">PRAN</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Quality always</p>
+</div>
+</div>
+<span class="bg-secondary-container text-on-secondary-container px-3 py-1 rounded-full text-[12px] font-bold">47% top ad conversion</span>
+</div>
+<div class="mb-6 flex-grow">
+<p class="text-[12px] font-bold uppercase tracking-wider text-on-surface-variant mb-2">Featured Products (4)</p>
+<div class="flex items-center gap-3 p-3 bg-surface rounded-lg border border-outline-variant">
+<div class="w-10 h-10 rounded bg-white overflow-hidden flex-shrink-0">
+<img alt="Mango Juice" data-alt="Detailed macro shot of a chilled glass of mango juice with condensation on the glass. The background is a soft-focus tropical setting, using high-key lighting to emphasize purity and refreshment. The color palette is dominated by vibrant golds and oranges, aligned with a modern, intelligent marketing aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDWSgU1joZBAXXK_LjCZrv9rRTBwZRyghhmtYCT0M_OOl4fxpjWzwYSd54RpCWKc7Q0cMRGXNPWdehMMVgu1nDyyhvNhqu4ZSFQiqibhvbZvSqI6M5gQvbQ1icYp4clGcSnlmgGqbq8VzMV_MbkinuN3ZIQDLQrJ9fri_KO4x-k2O96BOQxZ-jFWy27yj8--W0iNIpvT_PECUmCoyujJv9UCFL3bJxETed6UtHO_7Wk4fOa7uwj_f4EYcXPmqIeY1_hyHGHXCHt0ns"/>
+</div>
+<div>
+<p class="font-label-md text-label-md text-on-surface">Mango Juice</p>
+<p class="text-[12px] text-on-surface-variant">Top Performer</p>
+</div>
+</div>
+</div>
+<div class="flex justify-between items-center mt-auto pt-4 border-t border-surface-variant">
+<div class="flex items-center gap-1 text-on-surface-variant">
+<span class="material-symbols-outlined text-[18px]">group</span>
+<span class="font-label-md text-label-md font-bold">89 <span class="font-normal opacity-70">customers this week</span></span>
+</div>
+<a class="text-primary font-label-md text-label-md hover:underline flex items-center gap-1" href="#">Manage <span class="material-symbols-outlined text-[16px]">arrow_forward</span></a>
+</div>
+</div>
+<!-- Card 2: DARAZ -->
+<div class="bg-white rounded-[12px] border border-outline-variant p-stack-lg card-shadow hover-lift flex flex-col h-full">
+<div class="flex justify-between items-start mb-4">
+<div class="flex items-center gap-3">
+<div class="w-12 h-12 rounded-lg bg-orange-500 flex items-center justify-center text-white font-bold text-xl">D</div>
+<div>
+<h3 class="font-headline-sm text-headline-sm text-on-surface">DARAZ</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Shop anything</p>
+</div>
+</div>
+<span class="bg-secondary-container text-on-secondary-container px-3 py-1 rounded-full text-[12px] font-bold">38% top ad conversion</span>
+</div>
+<div class="mb-6 flex-grow">
+<p class="text-[12px] font-bold uppercase tracking-wider text-on-surface-variant mb-2">Featured Products (12)</p>
+<div class="flex items-center gap-3 p-3 bg-surface rounded-lg border border-outline-variant">
+<div class="w-10 h-10 rounded bg-white overflow-hidden flex-shrink-0">
+<img alt="Electronics" data-alt="A sleek, modern smartwatch displayed on a minimalist grey surface. The image uses sharp focus and low-contrast lighting to convey a high-tech, premium electronics feel. The background is a clean, neutral gradient, perfect for an e-commerce platform's featured product listing in a corporate dashboard." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBeixY-77nOHiwc27Yjp3zJZiYSV7Y97qexCMhWf04CRVcYTPB8_ViZMIZ20nnyNkcWZhiDcfy3SMWzMOcb3QQPWs0v6sQdj1ywt2jf1UUh7l2ey4OyLhgwfni9vYyYKhKJwi7nj5VE8UCzEof78823VhDYwLLNYGUImG5CM9zDYrvjuDhvJ6aN2XFw0vZUILQv2Oid1pYLcKXswcLL6sMf5BtVznPy5KorWyhEN0d8W2Z_EB4w6eh1hLIF_THiXBjSRyTVetV4dZ0"/>
+</div>
+<div>
+<p class="font-label-md text-label-md text-on-surface">Electronics</p>
+<p class="text-[12px] text-on-surface-variant">Top Performer</p>
+</div>
+</div>
+</div>
+<div class="flex justify-between items-center mt-auto pt-4 border-t border-surface-variant">
+<div class="flex items-center gap-1 text-on-surface-variant">
+<span class="material-symbols-outlined text-[18px]">group</span>
+<span class="font-label-md text-label-md font-bold">245 <span class="font-normal opacity-70">customers this week</span></span>
+</div>
+<a class="text-primary font-label-md text-label-md hover:underline flex items-center gap-1" href="#">Manage <span class="material-symbols-outlined text-[16px]">arrow_forward</span></a>
+</div>
+</div>
+<!-- Card 3: FOODPANDA -->
+<div class="bg-white rounded-[12px] border border-outline-variant p-stack-lg card-shadow hover-lift flex flex-col h-full">
+<div class="flex justify-between items-start mb-4">
+<div class="flex items-center gap-3">
+<div class="w-12 h-12 rounded-lg bg-pink-100 flex items-center justify-center border border-pink-200 overflow-hidden">
+<img alt="Foodpanda Logo" data-alt="A stylized, modern flat-lay of a delicious gourmet burger in pink branding accents. The shot is taken from a top-down perspective with bright, even lighting on a clean white countertop. The aesthetic is energetic and commercial, emphasizing speed and high-quality food delivery services in an urban tech environment." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCvOWYWyZVYNOvlQIhrGY-3gEn1FqS-OKntLHvIXIO0a8ULkshqvmEkr2jv5dbQOmPgd6zwh63DfHfiDiTWPt0ubcrgXi7J_lFQBFHVphM2mdVPw7Ue6VrGjJ_U5317OXbrxYY_wnnDjZyVbMn1nD8TxwUn1UK0H-yapQM7TBfX3QtYn1PpqB6C7o97h7VmrtICn9V9WpgQOdLYcb71awMI73IlP1O5wgDP3EY8TfvINHmuSClZeg8vxXA5Neoturn3hKrjEsYmcWQ"/>
+</div>
+<div>
+<h3 class="font-headline-sm text-headline-sm text-on-surface">FOODPANDA</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Fastest delivery</p>
+</div>
+</div>
+<span class="bg-secondary-container text-on-secondary-container px-3 py-1 rounded-full text-[12px] font-bold">42% top ad conversion</span>
+</div>
+<div class="mb-6 flex-grow">
+<p class="text-[12px] font-bold uppercase tracking-wider text-on-surface-variant mb-2">Featured Products (8)</p>
+<div class="flex items-center gap-3 p-3 bg-surface rounded-lg border border-outline-variant">
+<div class="w-10 h-10 rounded bg-white overflow-hidden flex-shrink-0">
+<img alt="Burgers" data-alt="A high-end food photography shot of a stacked cheeseburger with melting cheese and fresh lettuce. The lighting is soft but directed, creating depth and appetite appeal. The background is a dark, moody kitchen texture that contrasts with the bright, professional foreground, suitable for an premium delivery app." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCQkYbizcspXMndHMxGnfY_RLGRAvFEe7p1CgzLu6EHYXVaXR4sdIc-k8_ZAz_v0yev3xH49lY-LIOTXSfDjdW_U6LJKPlwC_gPJnTVPPo5G6Gb1zooZy4AKrxuql73CKwkLgyUviGlnPjYfT6VZ7ZtF4R_HxLgHSgVyHO-LmBEavCzWdIyo3XMhW2_DM1Q6Fp2s2sqWnVYTLmlmvucW3VVi9bPjozvvjo1i9lnskMa6GHYOzMgO7sISLEyZYRQbRHi8_75dlO2U5w"/>
+</div>
+<div>
+<p class="font-label-md text-label-md text-on-surface">Burgers</p>
+<p class="text-[12px] text-on-surface-variant">Top Performer</p>
+</div>
+</div>
+</div>
+<div class="flex justify-between items-center mt-auto pt-4 border-t border-surface-variant">
+<div class="flex items-center gap-1 text-on-surface-variant">
+<span class="material-symbols-outlined text-[18px]">group</span>
+<span class="font-label-md text-label-md font-bold">156 <span class="font-normal opacity-70">customers this week</span></span>
+</div>
+<a class="text-primary font-label-md text-label-md hover:underline flex items-center gap-1" href="#">Manage <span class="material-symbols-outlined text-[16px]">arrow_forward</span></a>
+</div>
+</div>
+<!-- Card 4: BKASH -->
+<div class="bg-white rounded-[12px] border border-outline-variant p-stack-lg card-shadow hover-lift flex flex-col h-full">
+<div class="flex justify-between items-start mb-4">
+<div class="flex items-center gap-3">
+<div class="w-12 h-12 rounded-lg bg-pink-600 flex items-center justify-center text-white font-bold text-xl">b</div>
+<div>
+<h3 class="font-headline-sm text-headline-sm text-on-surface">BKASH</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Control your money</p>
+</div>
+</div>
+<span class="bg-secondary-container text-on-secondary-container px-3 py-1 rounded-full text-[12px] font-bold">51% top ad conversion</span>
+</div>
+<div class="mb-6 flex-grow">
+<p class="text-[12px] font-bold uppercase tracking-wider text-on-surface-variant mb-2">Featured Products (6)</p>
+<div class="flex items-center gap-3 p-3 bg-surface rounded-lg border border-outline-variant">
+<div class="w-10 h-10 rounded bg-white overflow-hidden flex-shrink-0 flex items-center justify-center">
+<span class="material-symbols-outlined text-primary text-[28px]" style="font-variation-settings: 'FILL' 1;">payments</span>
+</div>
+<div>
+<p class="font-label-md text-label-md text-on-surface">Payments</p>
+<p class="text-[12px] text-on-surface-variant">Top Performer</p>
+</div>
+</div>
+</div>
+<div class="flex justify-between items-center mt-auto pt-4 border-t border-surface-variant">
+<div class="flex items-center gap-1 text-on-surface-variant">
+<span class="material-symbols-outlined text-[18px]">group</span>
+<span class="font-label-md text-label-md font-bold">312 <span class="font-normal opacity-70">customers this week</span></span>
+</div>
+<a class="text-primary font-label-md text-label-md hover:underline flex items-center gap-1" href="#">Manage <span class="material-symbols-outlined text-[16px]">arrow_forward</span></a>
+</div>
+</div>
+<!-- Card 5: SULTAN'S DINE -->
+<div class="bg-white rounded-[12px] border border-outline-variant p-stack-lg card-shadow hover-lift flex flex-col h-full">
+<div class="flex justify-between items-start mb-4">
+<div class="flex items-center gap-3">
+<div class="w-12 h-12 rounded-lg bg-yellow-100 flex items-center justify-center border border-yellow-200 overflow-hidden">
+<img alt="Sultan's Dine Logo" data-alt="An elegant, traditional copper plate filled with aromatic kacchi biryani, featuring golden saffron-infused rice and tender meat. The scene is shot in a warm, dimly lit restaurant setting with soft golden bokeh in the background. The visual style is heritage-focused and premium, reflecting the 'Kacchi King' brand identity in a modern digital space." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAHUeu1yhnvrzIUrKwLUIefGqdoaSKSQ7bCJLjD_idZH5ArCETaEYuqDWVdrh2m5lwzwnFfpar9cwHmwslPHNOkJAy5VU96IruzG08eMLpTOU5b3Y6jpNlId-L8ccvIoge-fi4SlqzFwzn7_0W3ujGO28kdztP71Du1HlhzaBMLCNC5WDRjBK2PEKIeDNKTVL42CnrVflvnOUja7vrYSUlEx7Ts00G5uY0XKG4pg_MiRX3689yYoG-jttWTlyMhKOg3ThU2S7RUkR8"/>
+</div>
+<div>
+<h3 class="font-headline-sm text-headline-sm text-on-surface">SULTAN'S DINE</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant">The Kacchi King</p>
+</div>
+</div>
+<span class="bg-secondary-container text-on-secondary-container px-3 py-1 rounded-full text-[12px] font-bold">45% top ad conversion</span>
+</div>
+<div class="mb-6 flex-grow">
+<p class="text-[12px] font-bold uppercase tracking-wider text-on-surface-variant mb-2">Featured Products (3)</p>
+<div class="flex items-center gap-3 p-3 bg-surface rounded-lg border border-outline-variant">
+<div class="w-10 h-10 rounded bg-white overflow-hidden flex-shrink-0">
+<img alt="Kacchi" data-alt="A close-up photograph of a steaming bowl of traditional biryani with garnish of fresh herbs and fried onions. The lighting is natural and inviting, emphasizing the rich textures and colors of the dish. The overall tone is authentic and high-quality, targeted at a demographic that values traditional culinary excellence." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDvcY_QmVvzGKxNA-unW-6pPLqoDtydfr1nLcfPcpWS4hp8EOZzjMbqg90C1KUBbHocZF3DrxVPu_9NYIXiXD6pO-IDtGkp-qCGljjQTLbUZ7feKEkH9A31jKTt7lZRAgZUgBza5rEOvRkkkUGCdk859zx8cU4Uxv_tIqwFHQ3iRz9S7_K8weTdW9Eaxy5BCB2hj7QUdB06ZyLU-iTbhpGwp6hVXrs7ZX7Zo8Kk9yalp0Sakz_8F0pvAj6OD9W33HULKkKpyygrGaw"/>
+</div>
+<div>
+<p class="font-label-md text-label-md text-on-surface">Kacchi</p>
+<p class="text-[12px] text-on-surface-variant">Top Performer</p>
+</div>
+</div>
+</div>
+<div class="flex justify-between items-center mt-auto pt-4 border-t border-surface-variant">
+<div class="flex items-center gap-1 text-on-surface-variant">
+<span class="material-symbols-outlined text-[18px]">group</span>
+<span class="font-label-md text-label-md font-bold">74 <span class="font-normal opacity-70">customers this week</span></span>
+</div>
+<a class="text-primary font-label-md text-label-md hover:underline flex items-center gap-1" href="#">Manage <span class="material-symbols-outlined text-[16px]">arrow_forward</span></a>
+</div>
+</div>
+<!-- Empty State / Add Brand Placeholder -->
+<div class="border-2 border-dashed border-outline-variant rounded-[12px] p-stack-lg flex flex-col items-center justify-center text-center opacity-60 hover:opacity-100 transition-opacity cursor-pointer">
+<div class="w-12 h-12 rounded-full bg-surface-container-high flex items-center justify-center mb-4">
+<span class="material-symbols-outlined text-primary text-[32px]">add</span>
+</div>
+<p class="font-headline-sm text-headline-sm text-on-surface">New Brand</p>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Click to expand your reach</p>
+</div>
+</div>
+</div>
+</main>
+<script>
+        // Micro-interaction for active scaling
+        document.querySelectorAll('button, a').forEach(elem => {
+            elem.addEventListener('mousedown', () => {
+                elem.classList.add('scale-95');
+                elem.style.transition = 'transform 0.1s';
+            });
+            elem.addEventListener('mouseup', () => {
+                elem.classList.remove('scale-95');
+            });
+            elem.addEventListener('mouseleave', () => {
+                elem.classList.remove('scale-95');
+            });
+        });
+    </script>
+</body></html>

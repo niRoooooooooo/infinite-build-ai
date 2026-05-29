@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>AdFeed - Offer Claimed</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "inverse-surface": "#293040",
+                    "secondary-container": "#dce2f3",
+                    "surface-container": "#e9edff",
+                    "surface-bright": "#f9f9ff",
+                    "on-primary": "#ffffff",
+                    "on-primary-fixed-variant": "#005049",
+                    "on-error": "#ffffff",
+                    "surface-container-low": "#f1f3ff",
+                    "surface-variant": "#dce2f7",
+                    "on-background": "#141b2b",
+                    "on-secondary-fixed-variant": "#404754",
+                    "on-surface-variant": "#3d4947",
+                    "background": "#f9f9ff",
+                    "on-tertiary-fixed-variant": "#773215",
+                    "surface": "#f9f9ff",
+                    "surface-container-highest": "#dce2f7",
+                    "on-surface": "#141b2b",
+                    "secondary-fixed-dim": "#c0c7d6",
+                    "secondary-fixed": "#dce2f3",
+                    "primary-fixed-dim": "#6bd8cb",
+                    "inverse-primary": "#6bd8cb",
+                    "tertiary-fixed": "#ffdbce",
+                    "on-primary-fixed": "#00201d",
+                    "on-tertiary-fixed": "#370e00",
+                    "primary": "#00685f",
+                    "error-container": "#ffdad6",
+                    "on-secondary": "#ffffff",
+                    "primary-fixed": "#89f5e7",
+                    "surface-container-high": "#e1e8fd",
+                    "surface-dim": "#d3daef",
+                    "surface-tint": "#006a61",
+                    "outline-variant": "#bcc9c6",
+                    "on-tertiary": "#ffffff",
+                    "on-secondary-fixed": "#151c27",
+                    "tertiary-fixed-dim": "#ffb59a",
+                    "error": "#ba1a1a",
+                    "on-secondary-container": "#5e6572",
+                    "on-error-container": "#93000a",
+                    "secondary": "#585f6c",
+                    "primary-container": "#008378",
+                    "on-tertiary-container": "#fffbff",
+                    "tertiary": "#924628",
+                    "outline": "#6d7a77",
+                    "surface-container-lowest": "#ffffff",
+                    "inverse-on-surface": "#edf0ff",
+                    "tertiary-container": "#b05e3d",
+                    "on-primary-container": "#f4fffc"
+            },
+            "borderRadius": {
+                    "DEFAULT": "1rem",
+                    "lg": "2rem",
+                    "xl": "3rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "gutter": "16px",
+                    "stack-md": "16px",
+                    "max-width-desktop": "640px",
+                    "stack-lg": "24px",
+                    "container-padding": "16px",
+                    "unit": "4px",
+                    "stack-sm": "8px"
+            },
+            "fontFamily": {
+                    "body-md": ["Inter"],
+                    "body-sm": ["Inter"],
+                    "label-sm-caps": ["Inter"],
+                    "headline-md": ["Inter"],
+                    "body-lg": ["Inter"],
+                    "label-md": ["Inter"],
+                    "headline-lg": ["Inter"],
+                    "headline-lg-mobile": ["Inter"]
+            },
+            "fontSize": {
+                    "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                    "body-sm": ["14px", {"lineHeight": "20px", "fontWeight": "400"}],
+                    "label-sm-caps": ["12px", {"lineHeight": "16px", "letterSpacing": "0.05em", "fontWeight": "700"}],
+                    "headline-md": ["20px", {"lineHeight": "28px", "fontWeight": "600"}],
+                    "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}],
+                    "label-md": ["14px", {"lineHeight": "20px", "letterSpacing": "0.01em", "fontWeight": "600"}],
+                    "headline-lg": ["32px", {"lineHeight": "40px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                    "headline-lg-mobile": ["24px", {"lineHeight": "32px", "letterSpacing": "-0.01em", "fontWeight": "700"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+            display: inline-block;
+            line-height: 1;
+            vertical-align: middle;
+        }
+        .success-confetti {
+            pointer-events: none;
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-surface font-body-md text-on-surface min-h-screen pb-24">
+<!-- TopAppBar -->
+<header class="bg-surface/80 backdrop-blur-md shadow-sm docked full-width top-0 sticky z-50">
+<div class="flex items-center justify-between px-gutter h-16 w-full max-w-max-width-desktop mx-auto">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-full bg-secondary-container flex items-center justify-center overflow-hidden border border-outline-variant">
+<img alt="Rafi, 22" class="w-full h-full object-cover" data-alt="A clean, professional studio headshot of a friendly 22-year-old male with a warm smile, wearing a stylish minimalist outfit. The lighting is soft and even, typical of a high-end corporate lifestyle portrait. The background is a soft, out-of-focus pastel tone that complements the light-mode UI design system." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAMaLonaA2Vc2QByFkZ372I2vzXPk6D4rqGBv8Wds6Gd5a06tjynQXA8cVKgN-DQIEkKimQLc9dMiozvxYJAKzqya_NiXRpWtG6ulUaIXQKfvryIN5UR0voJ-sYGaGHwrf6cwWwco267HzeMdu4oPOZn91guP1QXkM5XocBQN2OX6ByaBWbFcG7BdtxWn8_2qtQdRaqAKz7wdH-VoSwrjqYQXTjZBiyO_Loouf9SjCHWUwWQcuC99sBW_VkrGVRPDdtfHD7O0IpWGr8"/>
+</div>
+<span class="font-headline-md text-headline-md font-bold text-primary">AdFeed</span>
+</div>
+<button class="text-primary font-bold hover:opacity-80 transition-opacity active:scale-95 transition-transform font-label-md text-label-md">
+                Brand View
+            </button>
+</div>
+</header>
+<!-- Main Content Canvas -->
+<main class="max-w-max-width-desktop mx-auto px-gutter pt-stack-md space-y-stack-md">
+<!-- Success Feed Card (Foodpanda Ad) -->
+<article class="bg-surface-container-lowest rounded-lg shadow-sm overflow-hidden relative border border-surface-variant/50">
+<!-- Content Header -->
+<div class="p-container-padding flex items-center justify-between">
+<div class="flex items-center gap-3">
+<div class="w-8 h-8 rounded-full bg-pink-500 flex items-center justify-center text-white font-bold text-xs">
+                        fp
+                    </div>
+<div>
+<h3 class="font-label-md text-label-md text-on-surface">Foodpanda</h3>
+<span class="font-label-sm-caps text-label-sm-caps text-on-surface-variant/70 uppercase">SPONSORED</span>
+</div>
+</div>
+<button class="material-symbols-outlined text-on-surface-variant">more_horiz</button>
+</div>
+<!-- Ad Media -->
+<div class="w-full aspect-video bg-surface-container overflow-hidden">
+<img class="w-full h-full object-cover" data-alt="A vibrant, delicious spread of gourmet Asian street food including steaming dumplings, crispy spring rolls, and colorful dipping sauces. The food is arranged artfully on dark ceramics, lit with warm, inviting golden light that emphasizes textures and freshness. The overall aesthetic is clean, appetizing, and premium, perfectly matching a modern food delivery app advertisement." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAQ7jdJTop5QpCiWDtdq7P_XFc2QyyQIabc-hYEOEYxzqV2mfape-vU24tFijkeMO9MDyMWgD36WY3pSFVrEmr6Ls20fuGOFfjp6fdCLU8PA8QGkSMZwZO2Pa4KxsUDs3l9RrTdG0IcKK7ksLhJdl2mOLe9vntTV7mKvBXS7XLMdnypJlaxOy7ui8GZxfzWYuPam9JFCNii51o6O-e4m6lAwoEiWx7xthB9tL5OitQt5sb_bgiI72BZVCHWe8aEFmN_R4IuqS4teKg7"/>
+</div>
+<!-- Card Body -->
+<div class="p-container-padding space-y-stack-sm">
+<h2 class="font-headline-md text-headline-md text-on-surface">50% Off Your First Order! 🍜</h2>
+<p class="font-body-md text-body-md text-on-surface-variant">
+                    Craving something delicious? Order now and get half off your first meal with Foodpanda. Fast delivery, fresh food.
+                </p>
+<!-- Post-Interaction Success State -->
+<div class="mt-stack-md animate-in fade-in slide-in-from-bottom-2 duration-500">
+<div class="w-full bg-primary-container text-on-primary-container rounded-full p-4 flex items-center justify-center gap-3 border border-primary/20 shadow-sm">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+<span class="font-label-md text-label-md">Offer claimed! Check your email for the code.</span>
+</div>
+<div class="flex justify-center pt-unit">
+<button class="text-on-surface-variant/60 font-label-sm-caps text-label-sm-caps hover:text-primary transition-colors py-2">
+                            Why this ad?
+                        </button>
+</div>
+</div>
+</div>
+</article>
+<!-- Secondary Content for Context -->
+<article class="bg-surface-container-lowest rounded-lg shadow-sm overflow-hidden border border-surface-variant/30 opacity-60">
+<div class="p-container-padding flex items-center gap-3">
+<div class="w-8 h-8 rounded-full bg-surface-container flex items-center justify-center">
+<span class="material-symbols-outlined text-on-surface-variant">person</span>
+</div>
+<div class="h-4 w-24 bg-surface-container-high rounded-full"></div>
+</div>
+<div class="px-container-padding pb-container-padding space-y-2">
+<div class="h-4 w-full bg-surface-container rounded-full"></div>
+<div class="h-4 w-3/4 bg-surface-container rounded-full"></div>
+</div>
+</article>
+</main>
+<!-- BottomNavBar -->
+<nav class="fixed bottom-0 left-0 w-full z-50 flex justify-around items-center px-4 py-2 bg-surface shadow-sm">
+<a class="flex flex-col items-center justify-center bg-secondary-container text-on-secondary-container rounded-2xl p-2 active:scale-90 duration-200" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">home</span>
+<span class="font-label-md text-label-md mt-1">Feed</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-secondary-fixed-variant p-2 hover:bg-surface-container-high transition-colors active:scale-90 duration-200" href="#">
+<span class="material-symbols-outlined">explore</span>
+<span class="font-label-md text-label-md mt-1">Discovery</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-secondary-fixed-variant p-2 hover:bg-surface-container-high transition-colors active:scale-90 duration-200" href="#">
+<span class="material-symbols-outlined">bookmark</span>
+<span class="font-label-md text-label-md mt-1">Saved</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-secondary-fixed-variant p-2 hover:bg-surface-container-high transition-colors active:scale-90 duration-200" href="#">
+<span class="material-symbols-outlined">person</span>
+<span class="font-label-md text-label-md mt-1">Profile</span>
+</a>
+</nav>
+<script>
+        // Simple success interaction logic
+        document.addEventListener('DOMContentLoaded', () => {
+            const canvas = document.createElement('canvas');
+            canvas.className = 'success-confetti';
+            document.querySelector('article').appendChild(canvas);
+            
+            // Note: In a real app, we'd add some particle animation here
+            // For now, we use the CSS entrance animation defined above
+        });
+    </script>
+</body></html>

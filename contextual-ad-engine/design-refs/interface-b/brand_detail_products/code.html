@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Brand Detail - Pran | AdPersona AI</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "secondary-container": "#a8ece5",
+                    "secondary-fixed-dim": "#8fd3cc",
+                    "on-surface-variant": "#3d4947",
+                    "inverse-surface": "#2f3131",
+                    "surface-dim": "#dadada",
+                    "tertiary": "#545c72",
+                    "on-secondary-fixed": "#00201e",
+                    "on-secondary-fixed-variant": "#00504b",
+                    "on-background": "#1a1c1c",
+                    "tertiary-container": "#6c748b",
+                    "secondary-fixed": "#abefe8",
+                    "on-tertiary-fixed-variant": "#3f465c",
+                    "surface-bright": "#f9f9f9",
+                    "surface-container-lowest": "#ffffff",
+                    "primary-container": "#008378",
+                    "surface-container-highest": "#e2e2e2",
+                    "inverse-on-surface": "#f0f1f1",
+                    "on-secondary-container": "#266d68",
+                    "surface-container-low": "#f3f3f3",
+                    "on-error": "#ffffff",
+                    "on-surface": "#1a1c1c",
+                    "primary-fixed-dim": "#6bd8cb",
+                    "secondary": "#216963",
+                    "surface-container": "#eeeeee",
+                    "on-tertiary": "#ffffff",
+                    "error-container": "#ffdad6",
+                    "on-tertiary-container": "#fefcff",
+                    "on-primary": "#ffffff",
+                    "outline-variant": "#bcc9c6",
+                    "on-error-container": "#93000a",
+                    "on-tertiary-fixed": "#131b2e",
+                    "tertiary-fixed": "#dae2fd",
+                    "on-primary-fixed": "#00201d",
+                    "background": "#f9f9f9",
+                    "surface": "#f9f9f9",
+                    "outline": "#6d7a77",
+                    "surface-container-high": "#e8e8e8",
+                    "on-primary-container": "#f4fffc",
+                    "error": "#ba1a1a",
+                    "on-primary-fixed-variant": "#005049",
+                    "inverse-primary": "#6bd8cb",
+                    "primary": "#00685f",
+                    "surface-tint": "#006a61",
+                    "primary-fixed": "#89f5e7",
+                    "on-secondary": "#ffffff",
+                    "surface-variant": "#e2e2e2",
+                    "tertiary-fixed-dim": "#bec6e0"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "12px",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "stack-xs": "4px",
+                    "margin-desktop": "32px",
+                    "stack-sm": "8px",
+                    "margin-mobile": "16px",
+                    "stack-lg": "24px",
+                    "gutter": "24px",
+                    "stack-md": "16px",
+                    "unit": "8px",
+                    "container-max": "1440px"
+            },
+            "fontFamily": {
+                    "headline-md": ["Inter"],
+                    "headline-lg-mobile": ["Inter"],
+                    "label-md": ["Inter"],
+                    "label-sm": ["Inter"],
+                    "display-lg": ["Inter"],
+                    "body-md": ["Inter"],
+                    "headline-sm": ["Inter"],
+                    "body-sm": ["Inter"],
+                    "headline-lg": ["Inter"],
+                    "display-stat": ["Inter"],
+                    "body-lg": ["Inter"]
+            },
+            "fontSize": {
+                    "headline-md": ["24px", {"lineHeight": "32px", "fontWeight": "600"}],
+                    "headline-lg-mobile": ["24px", {"lineHeight": "32px", "fontWeight": "600"}],
+                    "label-md": ["14px", {"lineHeight": "20px", "letterSpacing": "0.01em", "fontWeight": "500"}],
+                    "label-sm": ["12px", {"lineHeight": "16px", "fontWeight": "500"}],
+                    "display-lg": ["48px", {"lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                    "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                    "headline-sm": ["20px", {"lineHeight": "28px", "fontWeight": "600"}],
+                    "body-sm": ["14px", {"lineHeight": "20px", "fontWeight": "400"}],
+                    "headline-lg": ["30px", {"lineHeight": "38px", "letterSpacing": "-0.01em", "fontWeight": "600"}],
+                    "display-stat": ["36px", {"lineHeight": "44px", "letterSpacing": "-0.01em", "fontWeight": "600"}],
+                    "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        body { font-family: 'Inter', sans-serif; background-color: #f9f9f9; }
+        .material-symbols-outlined { font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24; }
+        .glass-card { background: rgba(255, 255, 255, 0.8); backdrop-filter: blur(12px); border: 1px solid #E5E5E5; }
+        .brand-swatch { width: 32px; height: 32px; border-radius: 50%; border: 2px solid white; box-shadow: 0 2px 4px rgba(0,0,0,0.1); }
+    </style>
+</head>
+<body class="text-on-surface">
+<!-- TopNavBar -->
+<header class="fixed top-0 w-full z-50 flex justify-between items-center px-margin-desktop h-16 bg-surface shadow-sm">
+<div class="flex items-center gap-stack-lg">
+<span class="text-headline-md font-headline-md font-bold text-primary">AdPersona AI</span>
+<div class="hidden md:flex gap-stack-md ml-stack-lg">
+<a class="font-label-md text-label-md text-primary border-b-2 border-primary pb-1" href="#">Switch to Consumer View</a>
+</div>
+</div>
+<div class="flex items-center gap-stack-md">
+<button class="p-stack-sm hover:text-primary transition-colors duration-200">
+<span class="material-symbols-outlined">notifications</span>
+</button>
+<div class="w-8 h-8 rounded-full overflow-hidden border border-outline-variant">
+<img alt="User profile settings" data-alt="A professional headshot of a marketing executive with a friendly expression, set against a blurred modern office background. The lighting is soft and high-key, aligning with a clean tech aesthetic. The overall color palette is neutral with subtle warm tones, maintaining a high-end corporate feel consistent with a sophisticated AI platform user interface." src="https://lh3.googleusercontent.com/aida-public/AB6AXuB8xFdRSbuuPGCTMSE0-zCQknxZgVt44s_1aJmAI5n3FKrgTp0TJyuP8t2xb-tfFz5XjWR8SEZRuAyH-mVQRELcn9RA3WtemWSlqMwZ0ygW2Tc7M7TajIyhwkiTnlamRzXT1hd0Q9fgF5AMnkR5xvaYE3lWKlAR2lNNXpa3TAqhjlbx65POAR_eue-NlsSovJGlZsFxgt4hfMMt0lXO-4jv9SnQAQEy-CJpS_Klw5UxpFEGUSWVObj92Cw_DAHB3F2jZwscEqERxZs"/>
+</div>
+</div>
+</header>
+<!-- SideNavBar -->
+<aside class="fixed left-0 top-16 bottom-0 w-[240px] flex flex-col p-stack-md z-40 bg-surface-container-low border-r border-outline-variant">
+<div class="flex items-center gap-stack-sm mb-stack-lg px-stack-sm py-stack-md">
+<div class="w-10 h-10 bg-primary-container rounded-lg flex items-center justify-center text-on-primary-container">
+<span class="material-symbols-outlined">workspace_premium</span>
+</div>
+<div>
+<p class="font-label-md text-label-md font-bold text-on-surface">Brand Workspace</p>
+<p class="text-[11px] text-on-surface-variant uppercase tracking-wider">Marketing Admin</p>
+</div>
+</div>
+<nav class="flex-1 space-y-1">
+<a class="flex items-center gap-stack-sm px-stack-md py-stack-sm bg-secondary-container text-on-secondary-container rounded-lg font-bold transition-all duration-200 scale-98" href="#">
+<span class="material-symbols-outlined">grid_view</span>
+<span class="font-label-md text-label-md">Brand Grid</span>
+</a>
+<a class="flex items-center gap-stack-sm px-stack-md py-stack-sm text-on-surface-variant hover:bg-surface-container-high rounded-lg transition-all duration-200" href="#">
+<span class="material-symbols-outlined">monitoring</span>
+<span class="font-label-md text-label-md">Performance</span>
+</a>
+<a class="flex items-center gap-stack-sm px-stack-md py-stack-sm text-on-surface-variant hover:bg-surface-container-high rounded-lg transition-all duration-200" href="#">
+<span class="material-symbols-outlined">psychology</span>
+<span class="font-label-md text-label-md">Recommendations</span>
+</a>
+<a class="flex items-center gap-stack-sm px-stack-md py-stack-sm text-on-surface-variant hover:bg-surface-container-high rounded-lg transition-all duration-200" href="#">
+<span class="material-symbols-outlined">inventory_2</span>
+<span class="font-label-md text-label-md">Catalog</span>
+</a>
+</nav>
+<div class="mt-auto space-y-1 pt-stack-lg border-t border-outline-variant">
+<button class="w-full bg-primary text-on-primary py-stack-md rounded-xl font-bold flex items-center justify-center gap-stack-sm mb-stack-md shadow-sm hover:opacity-90 transition-opacity">
+<span class="material-symbols-outlined">add</span>
+<span class="font-label-md text-label-md">Generate Ad</span>
+</button>
+<a class="flex items-center gap-stack-sm px-stack-md py-stack-sm text-on-surface-variant hover:bg-surface-container-high rounded-lg transition-all duration-200" href="#">
+<span class="material-symbols-outlined">settings</span>
+<span class="font-label-md text-label-md">Settings</span>
+</a>
+<a class="flex items-center gap-stack-sm px-stack-md py-stack-sm text-on-surface-variant hover:bg-surface-container-high rounded-lg transition-all duration-200" href="#">
+<span class="material-symbols-outlined">help_outline</span>
+<span class="font-label-md text-label-md">Support</span>
+</a>
+</div>
+</aside>
+<!-- Main Content -->
+<main class="ml-[240px] pt-16 min-h-screen">
+<div class="max-w-[1440px] mx-auto p-margin-desktop">
+<!-- Breadcrumb -->
+<nav class="flex items-center gap-stack-sm mb-stack-lg text-on-surface-variant font-label-md text-label-md">
+<a class="hover:text-primary" href="#">Brands</a>
+<span class="material-symbols-outlined text-[16px]">chevron_right</span>
+<span class="text-on-surface font-semibold">Pran</span>
+</nav>
+<div class="flex flex-col lg:flex-row gap-gutter">
+<!-- Center Column -->
+<div class="flex-1 space-y-stack-lg">
+<!-- Section 1: Brand Identity -->
+<section class="relative overflow-hidden bg-white border border-outline-variant rounded-xl p-stack-lg shadow-sm">
+<!-- Subtle Background Tint -->
+<div class="absolute top-0 right-0 w-64 h-64 bg-primary/5 rounded-full -mr-20 -mt-20 blur-3xl"></div>
+<div class="flex flex-col md:flex-row gap-stack-lg items-start relative z-10">
+<!-- Logo Placeholder -->
+<div class="w-32 h-32 md:w-48 md:h-48 rounded-xl bg-surface-container-high flex items-center justify-center border border-outline-variant shrink-0">
+<span class="text-primary font-bold text-headline-lg">PRAN</span>
+</div>
+<div class="flex-1 space-y-stack-md">
+<div class="flex justify-between items-start">
+<div>
+<h1 class="font-headline-lg text-headline-lg text-on-surface">Pran</h1>
+<p class="font-label-md text-label-md text-primary italic">"Quality always"</p>
+</div>
+<button class="flex items-center gap-stack-xs px-stack-md py-stack-sm border border-outline text-on-surface rounded-lg font-label-md text-label-md hover:bg-surface-variant transition-colors">
+<span class="material-symbols-outlined text-[18px]">edit</span>
+                                        Edit identity
+                                    </button>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant max-w-2xl">
+                                    Pran is a global leader in the food and beverage industry, dedicated to bringing authentic flavors and high-quality nutrition to families across the world. From refreshing juices to savory snacks, we prioritize freshness and trust.
+                                </p>
+<div class="flex flex-wrap gap-stack-sm">
+<span class="px-stack-md py-stack-xs bg-secondary-container/30 text-on-secondary-container rounded-full font-label-sm text-label-sm">warm</span>
+<span class="px-stack-md py-stack-xs bg-secondary-container/30 text-on-secondary-container rounded-full font-label-sm text-label-sm">casual</span>
+<span class="px-stack-md py-stack-xs bg-secondary-container/30 text-on-secondary-container rounded-full font-label-sm text-label-sm">family-friendly</span>
+<span class="px-stack-md py-stack-xs bg-secondary-container/30 text-on-secondary-container rounded-full font-label-sm text-label-sm">trustworthy</span>
+</div>
+<div class="pt-stack-sm">
+<p class="font-label-sm text-label-sm text-on-surface-variant mb-stack-xs">Brand Palette</p>
+<div class="flex gap-stack-sm">
+<div class="brand-swatch bg-[#00685f]" title="Primary Teal"></div>
+<div class="brand-swatch bg-[#FFD700]" title="Accent Yellow"></div>
+<div class="brand-swatch bg-[#E63946]" title="Secondary Red"></div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Section 2: Products -->
+<section class="space-y-stack-md">
+<div class="flex justify-between items-end">
+<h2 class="font-headline-sm text-headline-sm text-on-surface">Products (4)</h2>
+<button class="flex items-center gap-stack-xs px-stack-md py-stack-sm bg-primary text-on-primary rounded-lg font-label-md text-label-md hover:opacity-90 transition-opacity">
+<span class="material-symbols-outlined text-[18px]">add</span>
+                                Add product
+                            </button>
+</div>
+<div class="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 gap-gutter">
+<!-- Product 1 -->
+<div class="bg-white border border-outline-variant rounded-xl overflow-hidden shadow-sm flex flex-col group hover:shadow-md transition-shadow">
+<div class="h-48 bg-surface-container-low relative">
+<img class="w-full h-full object-cover" data-alt="A macro shot of a fresh mango juice bottle surrounded by vibrant, sliced mangoes on a clean white table. The lighting is natural and bright, highlighting the rich orange texture of the fruit and the liquid. The aesthetic is crisp and high-resolution, following a clean corporate marketing style with a professional, appetizing mood." src="https://lh3.googleusercontent.com/aida-public/AB6AXuA5XT_FUjXvKlaQqW1-TIfg81zTT4NaQIfNglC1EGc88rvI_mnF3nQL373-lS0Qjp1i-w9XkwOkiUXNLBqNjyrE111FoONI6j0_5prQVW6IunJihC4chwuUqdMKd4enkvUcFY-Bny6uloAViZLw5H6HsxMhVy5VnwiFdpWDyjI1DOLtFOWK7Ccbslrb7BS5uPjy0kbtkb36ya5nM30OteKMr3IKSHWeg_5eBBRIBoKKRBSi1M8NqVh0qss9h2F1-LyYpC4VkXdZnp4"/>
+<span class="absolute top-2 right-2 px-stack-sm py-1 bg-surface/90 backdrop-blur-md rounded font-label-sm text-[10px] uppercase text-on-surface-variant border border-outline-variant/30">Beverage</span>
+</div>
+<div class="p-stack-md flex-1 flex flex-col">
+<h3 class="font-body-lg font-bold text-on-surface mb-stack-xs">Mango Juice</h3>
+<button class="mt-auto w-full py-stack-sm bg-primary text-on-primary rounded-lg font-label-md text-label-md opacity-0 group-hover:opacity-100 transition-opacity">Generate ad</button>
+</div>
+</div>
+<!-- Product 2 -->
+<div class="bg-white border border-outline-variant rounded-xl overflow-hidden shadow-sm flex flex-col group hover:shadow-md transition-shadow">
+<div class="h-48 bg-surface-container-low relative">
+<img class="w-full h-full object-cover" data-alt="A stylized product shot of a juice container against a minimal studio background with soft geometric shadows. The lighting is sophisticated, using cool tones to emphasize freshness. The composition is balanced and elegant, emphasizing the premium quality of the beverage product in a modern, professional corporate photography style." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBQUxZ7-0jwOFQOBFgfsUz6WL8EYLRV3Zl2jfzNgqSRCuczvRSxIC7Y4YJKufgJOvi07AowlQybbstCfYPrRa2SlxBuWa1kfD5FP4KYIKNXqA0coSjhuLE28xMzmsInhTkM_d4b0k5pTwU7BNAerPox6i5FxxW0EWoZB0fVQ81QnN24jMjijb7fpQcLYgXWZ0m-yB_6AYgAkUdzacmz6Wk5FSAfZVsYb67L2xpzU9EMOtdfikvrQV1HK-CeyIXWptnDbRfRy-jG5V4"/>
+<span class="absolute top-2 right-2 px-stack-sm py-1 bg-surface/90 backdrop-blur-md rounded font-label-sm text-[10px] uppercase text-on-surface-variant border border-outline-variant/30">Beverage</span>
+</div>
+<div class="p-stack-md flex-1 flex flex-col">
+<h3 class="font-body-lg font-bold text-on-surface mb-stack-xs">Frooto</h3>
+<button class="mt-auto w-full py-stack-sm bg-primary text-on-primary rounded-lg font-label-md text-label-md opacity-0 group-hover:opacity-100 transition-opacity">Generate ad</button>
+</div>
+</div>
+<!-- Product 3 -->
+<div class="bg-white border border-outline-variant rounded-xl overflow-hidden shadow-sm flex flex-col group hover:shadow-md transition-shadow">
+<div class="h-48 bg-surface-container-low relative">
+<img class="w-full h-full object-cover" data-alt="A steaming bowl of instant noodles with fresh garnishes like green onions and peppers, presented on a dark, rustic table with professional food photography lighting. The depth of field is shallow, focusing on the texture of the noodles. The mood is warm and inviting, aligning with a family-friendly and trustworthy brand identity." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAex1bcljgfwGBfTp9fVlEk_eADpEtqxAEHtzP-r-vUsCrqh_132AxiwrKBNoYC9qx8qRzaXkecSMTCFdPs2RCtc3M47llH13jJBs2Szj-7luUocn-D_syguzQXecfCRqgtxflE7HW2Hsw9hU0UZKTuEz5ZeN2LCe_K6z7v0Fi2xyvJLCLxIP4ntSOWNcQmyOet7jWho8LB7dT776mB5ASMPpq14LkA8i2H_l_xQizrnh0d6OQfaK6AfB2hx2sgsqjo6wfg7Vk_fNs"/>
+<span class="absolute top-2 right-2 px-stack-sm py-1 bg-surface/90 backdrop-blur-md rounded font-label-sm text-[10px] uppercase text-on-surface-variant border border-outline-variant/30">Snack</span>
+</div>
+<div class="p-stack-md flex-1 flex flex-col">
+<h3 class="font-body-lg font-bold text-on-surface mb-stack-xs">Mr. Noodles</h3>
+<button class="mt-auto w-full py-stack-sm bg-primary text-on-primary rounded-lg font-label-md text-label-md opacity-0 group-hover:opacity-100 transition-opacity">Generate ad</button>
+</div>
+</div>
+<!-- Product 4 -->
+<div class="bg-white border border-outline-variant rounded-xl overflow-hidden shadow-sm flex flex-col group hover:shadow-md transition-shadow">
+<div class="h-48 bg-surface-container-low relative">
+<img class="w-full h-full object-cover" data-alt="Crispy potato chips spilling out of a package onto a wooden surface, captured with sharp focus and vibrant colors. The lighting is high-contrast and energetic, conveying a sense of fun and casual snacking. The overall style is modern and appetizing, perfect for a high-quality consumer goods marketing platform." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBAYauhK-16dnJFoqy6qI-7aZuimMR-ugAVJW57NzcUYylSrI_flH1T99a-0HYR4NGGIq5s1VuHEwK1sItCm7-HxXuZck8DQ_xAx_gBP98NVMSyQavmWCDKepxjFk-o8SHmcEpmhOWXoBGRcnGhEv9cu9xuK4gjlxIhI1-lPqwpIZjLnv_PnX1q1Uq9VLIJeZgT3StR2xNvy8oMwfeHcFthOxfDsAZwzkHh2RIgwF3Qv-6TH_cXEEGixDQTAER-jOIvfg2j7GFsEnM"/>
+<span class="absolute top-2 right-2 px-stack-sm py-1 bg-surface/90 backdrop-blur-md rounded font-label-sm text-[10px] uppercase text-on-surface-variant border border-outline-variant/30">Snack</span>
+</div>
+<div class="p-stack-md flex-1 flex flex-col">
+<h3 class="font-body-lg font-bold text-on-surface mb-stack-xs">Pran Chips</h3>
+<button class="mt-auto w-full py-stack-sm bg-primary text-on-primary rounded-lg font-label-md text-label-md opacity-0 group-hover:opacity-100 transition-opacity">Generate ad</button>
+</div>
+</div>
+<!-- Add Product Tile -->
+<button class="h-full min-h-[250px] border-2 border-dashed border-outline-variant rounded-xl flex flex-col items-center justify-center gap-stack-sm text-on-surface-variant hover:bg-surface-container hover:border-primary transition-all group">
+<div class="w-12 h-12 rounded-full bg-surface-container-high flex items-center justify-center group-hover:bg-primary/10 group-hover:text-primary">
+<span class="material-symbols-outlined text-[32px]">add</span>
+</div>
+<span class="font-label-md text-label-md">Add new product</span>
+</button>
+</div>
+</section>
+</div>
+<!-- Sidebar (Sticky) -->
+<aside class="w-full lg:w-[320px] shrink-0">
+<div class="sticky top-24 space-y-stack-lg">
+<div class="glass-card rounded-xl p-stack-lg shadow-sm">
+<h3 class="font-headline-sm text-headline-sm text-on-surface mb-stack-lg">Generate Ad Now</h3>
+<div class="space-y-stack-md">
+<div class="space-y-stack-xs">
+<label class="font-label-sm text-label-sm text-on-surface-variant">Select Persona</label>
+<select class="w-full h-11 px-stack-md rounded-xl border border-outline-variant bg-surface focus:ring-2 focus:ring-primary/20 focus:border-primary outline-none text-on-surface font-body-sm transition-all appearance-none cursor-pointer">
+<option>Gen Z Urbanites</option>
+<option>Value-conscious Parents</option>
+<option>Health-conscious Professionals</option>
+</select>
+</div>
+<div class="space-y-stack-xs">
+<label class="font-label-sm text-label-sm text-on-surface-variant">Select Product</label>
+<select class="w-full h-11 px-stack-md rounded-xl border border-outline-variant bg-surface focus:ring-2 focus:ring-primary/20 focus:border-primary outline-none text-on-surface font-body-sm transition-all appearance-none cursor-pointer">
+<option>Mango Juice</option>
+<option>Frooto</option>
+<option>Mr. Noodles</option>
+<option>Pran Chips</option>
+</select>
+</div>
+<button class="w-full bg-primary text-on-primary py-stack-md rounded-xl font-bold flex items-center justify-center gap-stack-sm mt-stack-lg shadow-sm hover:opacity-90 active:scale-95 transition-all">
+<span class="material-symbols-outlined">auto_awesome</span>
+<span class="font-label-md text-label-md">Generate ad</span>
+</button>
+</div>
+<!-- Empty State -->
+<div class="mt-stack-lg pt-stack-lg border-t border-outline-variant/50 text-center py-stack-lg">
+<span class="material-symbols-outlined text-[48px] text-outline-variant mb-stack-sm">movie_edit</span>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Generated ads will appear here</p>
+</div>
+</div>
+<!-- Secondary Sidebar Tip -->
+<div class="bg-primary/5 rounded-xl p-stack-md border border-primary/10">
+<div class="flex gap-stack-sm">
+<span class="material-symbols-outlined text-primary text-[20px]">lightbulb</span>
+<p class="font-label-sm text-label-sm text-primary-container">
+                                    Tip: Use "Gen Z Urbanites" for Mango Juice to leverage high current trends in snack categories.
+                                </p>
+</div>
+</div>
+</div>
+</aside>
+</div>
+</div>
+</main>
+<script>
+        // Simple micro-interaction for generating state
+        const genBtn = document.querySelector('aside button.bg-primary');
+        if(genBtn) {
+            genBtn.addEventListener('click', () => {
+                const originalContent = genBtn.innerHTML;
+                genBtn.innerHTML = '<span class="material-symbols-outlined animate-spin">sync</span> <span class="font-label-md text-label-md">Processing...</span>';
+                genBtn.disabled = true;
+                setTimeout(() => {
+                    genBtn.innerHTML = originalContent;
+                    genBtn.disabled = false;
+                }, 2000);
+            });
+        }
+    </script>
+</body></html>

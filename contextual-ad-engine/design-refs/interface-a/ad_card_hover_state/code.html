@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>foodpanda | Exclusive Offers</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "inverse-surface": "#303031",
+                    "secondary-fixed": "#e4e2e1",
+                    "surface-dim": "#dbdad9",
+                    "on-surface": "#1b1c1c",
+                    "surface-variant": "#e4e2e2",
+                    "tertiary": "#545757",
+                    "primary-container": "#d70f64",
+                    "inverse-on-surface": "#f2f0f0",
+                    "text-secondary": "#707070",
+                    "secondary-container": "#e4e2e1",
+                    "surface-container-high": "#e9e8e7",
+                    "secondary-fixed-dim": "#c8c6c6",
+                    "on-primary-fixed": "#3f0018",
+                    "surface-container-low": "#f5f3f3",
+                    "surface-bright": "#fbf9f9",
+                    "on-tertiary-fixed-variant": "#454747",
+                    "error-container": "#ffdad6",
+                    "outline": "#8e6f75",
+                    "on-error-container": "#93000a",
+                    "on-error": "#ffffff",
+                    "outline-variant": "#e3bdc4",
+                    "on-secondary-fixed-variant": "#474747",
+                    "on-primary": "#ffffff",
+                    "surface-muted": "#F7F8F8",
+                    "primary-fixed": "#ffd9df",
+                    "on-secondary-fixed": "#1b1c1c",
+                    "inverse-primary": "#ffb1c2",
+                    "on-tertiary-container": "#f2f3f3",
+                    "secondary": "#5f5e5e",
+                    "on-secondary": "#ffffff",
+                    "brand-pink-light": "#FFECF3",
+                    "surface-tint": "#bb0055",
+                    "surface-container-lowest": "#ffffff",
+                    "error": "#ba1a1a",
+                    "on-tertiary": "#ffffff",
+                    "primary": "#ac004d",
+                    "surface": "#fbf9f9",
+                    "on-primary-fixed-variant": "#8f003f",
+                    "background": "#fbf9f9",
+                    "tertiary-fixed-dim": "#c5c7c7",
+                    "on-background": "#1b1c1c",
+                    "on-tertiary-fixed": "#191c1c",
+                    "text-primary": "#333333",
+                    "on-surface-variant": "#5a3f45",
+                    "on-primary-container": "#ffeff0",
+                    "surface-container": "#efeded"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "gutter": "24px",
+                    "margin-desktop": "48px",
+                    "base": "8px",
+                    "margin-mobile": "16px",
+                    "container-max": "1200px"
+            },
+            "fontFamily": {
+                    "label-sm": ["Inter"],
+                    "body-lg": ["Inter"],
+                    "headline-lg-mobile": ["Inter"],
+                    "headline-lg": ["Inter"],
+                    "body-md": ["Inter"],
+                    "label-md": ["Inter"],
+                    "headline-md": ["Inter"],
+                    "display-lg": ["Inter"],
+                    "body-sm": ["Inter"]
+            },
+            "fontSize": {
+                    "label-sm": ["12px", {"lineHeight": "16px", "fontWeight": "500"}],
+                    "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}],
+                    "headline-lg-mobile": ["24px", {"lineHeight": "32px", "fontWeight": "700"}],
+                    "headline-lg": ["32px", {"lineHeight": "40px", "letterSpacing": "-0.01em", "fontWeight": "700"}],
+                    "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                    "label-md": ["14px", {"lineHeight": "16px", "fontWeight": "600"}],
+                    "headline-md": ["24px", {"lineHeight": "32px", "fontWeight": "600"}],
+                    "display-lg": ["48px", {"lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                    "body-sm": ["14px", {"lineHeight": "20px", "fontWeight": "400"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .offer-card-overlay {
+            background: linear-gradient(to top, rgba(0,0,0,0.8) 0%, rgba(0,0,0,0) 50%);
+            opacity: 0;
+            transition: opacity 0.3s ease-in-out;
+        }
+        .offer-card:hover .offer-card-overlay {
+            opacity: 1;
+        }
+        .glass-effect {
+            backdrop-filter: blur(8px);
+            background: rgba(255, 255, 255, 0.9);
+        }
+    </style>
+</head>
+<body class="bg-background text-on-background min-h-screen">
+<!-- TopNavBar -->
+<header class="sticky top-0 z-50 bg-primary-container text-on-primary-container shadow-md flex justify-between items-center w-full px-margin-desktop h-20 max-w-container-max mx-auto">
+<div class="flex items-center gap-base">
+<span class="text-headline-md font-headline-md font-black text-on-primary-container">foodpanda</span>
+</div>
+<nav class="hidden md:flex items-center gap-gutter">
+<a class="text-on-primary-container/80 font-medium hover:bg-on-primary-container/10 transition-colors duration-200 px-3 py-2 rounded-lg text-label-md font-label-md" href="#">Home</a>
+<a class="text-on-primary-container font-bold border-b-2 border-on-primary-container pb-1 text-label-md font-label-md" href="#">Switch to Brand View</a>
+</nav>
+<div class="flex items-center gap-4">
+<button class="material-symbols-outlined hover:bg-on-primary-container/10 p-2 rounded-full transition-all">shopping_cart</button>
+<button class="material-symbols-outlined hover:bg-on-primary-container/10 p-2 rounded-full transition-all">person</button>
+<div class="hidden md:block">
+<span class="text-label-md font-label-md">Login</span>
+</div>
+</div>
+</header>
+<!-- Main Content Canvas -->
+<main class="max-w-container-max mx-auto px-margin-desktop py-12">
+<div class="flex flex-col gap-base mb-10">
+<h1 class="text-display-lg font-display-lg text-text-primary">Recommended for you</h1>
+<p class="text-body-lg font-body-lg text-text-secondary max-w-2xl">Discover exclusive deals and sponsored favorites from the best kitchens in Dhaka, tailored to your cravings.</p>
+</div>
+<!-- Bento Grid / Layout -->
+<div class="grid grid-cols-1 md:grid-cols-3 gap-gutter">
+<!-- Side Secondary Card -->
+<div class="md:col-span-1 flex flex-col gap-gutter">
+<div class="bg-surface-container-lowest rounded-xl overflow-hidden shadow-sm border border-outline-variant group cursor-pointer transition-all hover:shadow-md">
+<div class="h-48 overflow-hidden relative">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="A close-up photograph of a classic Italian pepperoni pizza with melted mozzarella cheese and crispy crust. The lighting is warm and inviting, highlighting the steam rising from the pizza. The composition is professional food photography style with a shallow depth of field, set against a dark rustic background." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDhxePfuk0cVu1fn2ignRkCvySqFk-ZHIXkgFcLLdu6SXOSqPFnzXa3UUu4aYMXw2wKbmnlSW_ux14a27dfFW-Hb9zZ0nbUEM0YhS_ypYBMePS4KZMu8_scbrjCyRK7QC_JJuyNn-1Q7Bh8AWcq3MBNcetivb6WiftFaO6Mwg0jV7W2FFZ8ssaImIl9Y0PI_a6TZ0fe0iUPezJyaDNZhb8FR4FvUtoZiRj4QuPMVwpquKm4gHd6CkntrHlbFiIE8w77QPvNbA0D2gwX"/>
+</div>
+<div class="p-4">
+<div class="flex justify-between items-start mb-2">
+<h3 class="text-label-md font-label-md text-text-primary">Italian Crust Pizza</h3>
+<span class="flex items-center text-primary text-label-sm font-label-sm">
+<span class="material-symbols-outlined text-[16px] mr-1" data-weight="fill">star</span> 4.8
+                            </span>
+</div>
+<p class="text-body-sm font-body-sm text-text-secondary">Authentic wood-fired classics.</p>
+</div>
+</div>
+<div class="bg-brand-pink-light rounded-xl p-6 border border-primary/10 relative overflow-hidden h-full flex flex-col justify-end min-h-[240px]">
+<div class="absolute -top-4 -right-4 opacity-10 scale-150 rotate-12">
+<span class="material-symbols-outlined text-[160px] text-primary">redeem</span>
+</div>
+<h2 class="text-headline-md font-headline-md text-primary mb-2">Refer a friend</h2>
+<p class="text-body-md font-body-md text-on-surface-variant mb-4">Get ৳200 for every friend who joins.</p>
+<button class="bg-primary-container text-on-primary-container font-label-md text-label-md px-6 py-2.5 rounded-lg w-max hover:opacity-90 transition-all">Invite Now</button>
+</div>
+</div>
+<!-- Featured Sponsored Card (The Task Focus) -->
+<div class="md:col-span-1">
+<div class="offer-card relative bg-surface-container-lowest rounded-xl overflow-hidden shadow-lg border border-outline-variant h-[540px] cursor-pointer group transition-all duration-300 transform" id="sponsored-card">
+<!-- Image Layer -->
+<div class="absolute inset-0">
+<img class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" data-alt="A professional high-end food photograph of a gourmet double-stack cheeseburger with dripping melted cheddar cheese, caramelized onions, and fresh arugula. The burger is centered against a clean, light-colored background that emphasizes its vibrant colors and textures. Soft, high-key studio lighting creates a modern and appetizing aesthetic consistent with luxury food delivery brands." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBSsKMCxzAmO17t7IezoNCwr0-j3uqCYP7YwrhOsll-cdX_i_bOu3ZAe3Ena6kS1vXvflfmlXxOWbSPMpTyvCTcI_oSWn_EHgw3rl2VW7BvMGdIiB0gjpaKm56ugW9v6tu7W_Bl1sNj1gGKYu0tTbUY1WAykW78jHzs_mCAA7wotSQps1nKHAmfWCN2Kk_QXJvz8cKJegvIeSBGZV4L9qahxEEPXcr77KHJHMesHgqBNh5VHbWTrKKsuuhu22iIYd9vCh9amWip1YyB"/>
+</div>
+<!-- Sponsored Tag -->
+<div class="absolute top-4 right-4 z-20">
+<div class="glass-effect px-3 py-1 rounded-full border border-outline-variant/30 flex items-center gap-1.5 shadow-sm">
+<span class="material-symbols-outlined text-[14px] text-text-secondary" data-weight="fill">verified</span>
+<span class="text-label-sm font-label-sm text-text-primary">Sponsored</span>
+</div>
+</div>
+<!-- Brand Logo Overlay -->
+<div class="absolute top-4 left-4 z-20">
+<div class="h-10 w-10 bg-white rounded-lg shadow-md flex items-center justify-center border border-outline-variant/20 p-1.5">
+<span class="text-primary font-black text-[12px]">FP</span>
+</div>
+</div>
+<!-- Content Overlay -->
+<div class="absolute inset-0 z-10 flex flex-col justify-end p-8 text-white">
+<div class="offer-card-overlay absolute inset-0 -z-10"></div>
+<div class="transform translate-y-4 group-hover:translate-y-0 transition-transform duration-300">
+<h2 class="text-headline-lg font-headline-lg mb-2 drop-shadow-md">The Big Boss Burger</h2>
+<p class="text-body-md font-body-md text-white/90 mb-8 max-w-[280px]">Double flame-grilled beef patties with secret panda sauce. Only available this week.</p>
+<!-- Hover State Buttons -->
+<div class="flex flex-col gap-3 opacity-0 group-hover:opacity-100 transition-opacity duration-300 delay-75">
+<button class="w-full bg-primary-container text-on-primary-container font-label-md text-label-md py-4 rounded-xl hover:scale-[1.02] active:scale-95 transition-all shadow-lg flex items-center justify-center gap-2">
+                                    Take the offer
+                                    <span class="material-symbols-outlined text-[20px]">arrow_forward</span>
+</button>
+<button class="w-full bg-white/20 backdrop-blur-md text-white border border-white/40 font-label-md text-label-md py-4 rounded-xl hover:bg-white/30 transition-all">
+                                    Skip
+                                </button>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Side Cards Grid -->
+<div class="md:col-span-1 flex flex-col gap-gutter">
+<div class="bg-surface-container-lowest rounded-xl overflow-hidden shadow-sm border border-outline-variant group cursor-pointer transition-all hover:shadow-md">
+<div class="h-48 overflow-hidden relative">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="A vibrant and colorful healthy salad bowl with roasted salmon, avocado slices, quinoa, and fresh greens. The photo is taken from a top-down perspective on a bright white marble table, illuminated by natural morning sunlight. The overall feel is fresh, clean, and nutritious, using a palette of greens, oranges, and clean whites." src="https://lh3.googleusercontent.com/aida-public/AB6AXuADDzP4kDb6mQKxVUb7dm064I1c5Gfy3mBuC41lpfs8Gpxd4ULhl_JuSNiIgymk1uOsPLljPWpXUeCr6Vpu3t8p5G3Hc5nsNXGuZDgq1lzUuQjhOYWejoqHnHpefhA51seZRalVpqI4HICFZK6jprKdFdUP7pGOZxlCJyjRWtwk5nzq440uwU-3r6ULcuesXn6GCkJPGKdhMOhE4DJoaqOKXsFjjOrc4lmtH2SIugiWwDVoW78qrH8aThmcr86jJHs6qCiQVfLWJZwT"/>
+</div>
+<div class="p-4">
+<div class="flex justify-between items-start mb-2">
+<h3 class="text-label-md font-label-md text-text-primary">Healthy Panda Bowls</h3>
+<span class="flex items-center text-primary text-label-sm font-label-sm">
+<span class="material-symbols-outlined text-[16px] mr-1" data-weight="fill">star</span> 4.6
+                            </span>
+</div>
+<p class="text-body-sm font-body-sm text-text-secondary">Fresh, organic, and keto-friendly.</p>
+</div>
+</div>
+<div class="bg-surface-container-lowest rounded-xl overflow-hidden shadow-sm border border-outline-variant group cursor-pointer transition-all hover:shadow-md">
+<div class="h-48 overflow-hidden relative">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="A close-up of steaming hot traditional Bengali beef bhuna curry in a copper serving dish. The rich, dark red sauce is garnished with fresh ginger slivers and coriander. Warm side lighting emphasizes the texture of the gravy and the tenderness of the meat, evoking a cozy, authentic dining atmosphere." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBGrDBMDAxtR4uQJFLYdQwLw5PFAlDLREITdiHcIJdQrfzsVDuGQeLjyj_dNwUokU0TDg7_iuc3SuoRRZo1wnl-FwXgyVEEdYHcd6Nbx_mWYkxIw7uSXaB7Vggj2LJWpaMXWz2ymniySMgk4l5g-7d8-DaQ-EaDon7oywF3uXgKtWRXVcxQBDKuAe-1B2YJUx49lEbRs0RLFREGMhHU_jSOxcA-L7Jg0UccONnavgX7W1qkehmo-x1Ev2ybIiHejUDWo4-tmYaqBXoK"/>
+</div>
+<div class="p-4">
+<div class="flex justify-between items-start mb-2">
+<h3 class="text-label-md font-label-md text-text-primary">Dhaka Cravings</h3>
+<span class="flex items-center text-primary text-label-sm font-label-sm">
+<span class="material-symbols-outlined text-[16px] mr-1" data-weight="fill">star</span> 4.9
+                            </span>
+</div>
+<p class="text-body-sm font-body-sm text-text-secondary">The best local flavors in town.</p>
+</div>
+</div>
+</div>
+</div>
+</main>
+<!-- Footer -->
+<footer class="w-full py-16 px-margin-desktop max-w-container-max mx-auto grid grid-cols-1 md:grid-cols-4 gap-gutter border-t border-outline-variant bg-surface dark:bg-inverse-surface">
+<div class="col-span-1">
+<span class="text-headline-md font-headline-md font-black text-primary dark:text-inverse-primary">foodpanda</span>
+<p class="mt-4 text-body-sm font-body-sm text-secondary dark:text-secondary-fixed">© foodpanda 2024</p>
+</div>
+<div class="col-span-1 flex flex-col gap-3">
+<h4 class="text-label-md font-label-md text-primary dark:text-inverse-primary mb-2">Company</h4>
+<a class="text-secondary dark:text-secondary-fixed hover:text-primary dark:hover:text-primary-fixed underline transition-all text-label-sm font-label-sm" href="#">Press</a>
+<a class="text-secondary dark:text-secondary-fixed hover:text-primary dark:hover:text-primary-fixed underline transition-all text-label-sm font-label-sm" href="#">Careers</a>
+<a class="text-secondary dark:text-secondary-fixed hover:text-primary dark:hover:text-primary-fixed underline transition-all text-label-sm font-label-sm" href="#">Suggest a restaurant</a>
+</div>
+<div class="col-span-1 flex flex-col gap-3">
+<h4 class="text-label-md font-label-md text-primary dark:text-inverse-primary mb-2">Support</h4>
+<a class="text-secondary dark:text-secondary-fixed hover:text-primary dark:hover:text-primary-fixed underline transition-all text-label-sm font-label-sm" href="#">Help Center</a>
+<a class="text-secondary dark:text-secondary-fixed hover:text-primary dark:hover:text-primary-fixed underline transition-all text-label-sm font-label-sm" href="#">Refunds with pandapay</a>
+<a class="text-secondary dark:text-secondary-fixed hover:text-primary dark:hover:text-primary-fixed underline transition-all text-label-sm font-label-sm" href="#">Security</a>
+</div>
+<div class="col-span-1 flex flex-col gap-3">
+<h4 class="text-label-md font-label-md text-primary dark:text-inverse-primary mb-2">Legal</h4>
+<a class="text-secondary dark:text-secondary-fixed hover:text-primary dark:hover:text-primary-fixed underline transition-all text-label-sm font-label-sm" href="#">Privacy policy</a>
+<a class="text-secondary dark:text-secondary-fixed hover:text-primary dark:hover:text-primary-fixed underline transition-all text-label-sm font-label-sm" href="#">Terms and conditions</a>
+<a class="text-secondary dark:text-secondary-fixed hover:text-primary dark:hover:text-primary-fixed underline transition-all text-label-sm font-label-sm" href="#">Data preferences</a>
+</div>
+</footer>
+<script>
+        // Simple micro-interaction for the sponsored card
+        const sponsoredCard = document.getElementById('sponsored-card');
+        
+        sponsoredCard.addEventListener('mousemove', (e) => {
+            const rect = sponsoredCard.getBoundingClientRect();
+            const x = e.clientX - rect.left;
+            const y = e.clientY - rect.top;
+            
+            const xPercent = (x / rect.width - 0.5) * 4; // subtle 2deg tilt
+            const yPercent = (y / rect.height - 0.5) * -4;
+            
+            sponsoredCard.style.transform = `perspective(1000px) rotateX(${yPercent}deg) rotateY(${xPercent}deg) scale3d(1.02, 1.02, 1.02)`;
+        });
+        
+        sponsoredCard.addEventListener('mouseleave', () => {
+            sponsoredCard.style.transform = `perspective(1000px) rotateX(0deg) rotateY(0deg) scale3d(1, 1, 1)`;
+        });
+    </script>
+</body></html>

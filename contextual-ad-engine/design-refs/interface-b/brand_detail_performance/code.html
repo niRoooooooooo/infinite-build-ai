@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>AdPersona AI — Performance &amp; Recommendations</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "secondary-container": "#a8ece5",
+                    "secondary-fixed-dim": "#8fd3cc",
+                    "on-surface-variant": "#3d4947",
+                    "inverse-surface": "#2f3131",
+                    "surface-dim": "#dadada",
+                    "tertiary": "#545c72",
+                    "on-secondary-fixed": "#00201e",
+                    "on-secondary-fixed-variant": "#00504b",
+                    "on-background": "#1a1c1c",
+                    "tertiary-container": "#6c748b",
+                    "secondary-fixed": "#abefe8",
+                    "on-tertiary-fixed-variant": "#3f465c",
+                    "surface-bright": "#f9f9f9",
+                    "surface-container-lowest": "#ffffff",
+                    "primary-container": "#008378",
+                    "surface-container-highest": "#e2e2e2",
+                    "inverse-on-surface": "#f0f1f1",
+                    "on-secondary-container": "#266d68",
+                    "surface-container-low": "#f3f3f3",
+                    "on-error": "#ffffff",
+                    "on-surface": "#1a1c1c",
+                    "primary-fixed-dim": "#6bd8cb",
+                    "secondary": "#216963",
+                    "surface-container": "#eeeeee",
+                    "on-tertiary": "#ffffff",
+                    "error-container": "#ffdad6",
+                    "on-tertiary-container": "#fefcff",
+                    "on-primary": "#ffffff",
+                    "outline-variant": "#bcc9c6",
+                    "on-error-container": "#93000a",
+                    "on-tertiary-fixed": "#131b2e",
+                    "tertiary-fixed": "#dae2fd",
+                    "on-primary-fixed": "#00201d",
+                    "background": "#f9f9f9",
+                    "surface": "#f9f9f9",
+                    "outline": "#6d7a77",
+                    "surface-container-high": "#e8e8e8",
+                    "on-primary-container": "#f4fffc",
+                    "error": "#ba1a1a",
+                    "on-primary-fixed-variant": "#005049",
+                    "inverse-primary": "#6bd8cb",
+                    "primary": "#00685f",
+                    "surface-tint": "#006a61",
+                    "primary-fixed": "#89f5e7",
+                    "on-secondary": "#ffffff",
+                    "surface-variant": "#e2e2e2",
+                    "tertiary-fixed-dim": "#bec6e0"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "stack-xs": "4px",
+                    "margin-desktop": "32px",
+                    "stack-sm": "8px",
+                    "margin-mobile": "16px",
+                    "stack-lg": "24px",
+                    "gutter": "24px",
+                    "stack-md": "16px",
+                    "unit": "8px",
+                    "container-max": "1440px"
+            },
+            "fontFamily": {
+                    "headline-md": ["Inter"],
+                    "headline-lg-mobile": ["Inter"],
+                    "label-md": ["Inter"],
+                    "label-sm": ["Inter"],
+                    "display-lg": ["Inter"],
+                    "body-md": ["Inter"],
+                    "headline-sm": ["Inter"],
+                    "body-sm": ["Inter"],
+                    "headline-lg": ["Inter"],
+                    "display-stat": ["Inter"],
+                    "body-lg": ["Inter"]
+            },
+            "fontSize": {
+                    "headline-md": ["24px", {"lineHeight": "32px", "fontWeight": "600"}],
+                    "headline-lg-mobile": ["24px", {"lineHeight": "32px", "fontWeight": "600"}],
+                    "label-md": ["14px", {"lineHeight": "20px", "letterSpacing": "0.01em", "fontWeight": "500"}],
+                    "label-sm": ["12px", {"lineHeight": "16px", "fontWeight": "500"}],
+                    "display-lg": ["48px", {"lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                    "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                    "headline-sm": ["20px", {"lineHeight": "28px", "fontWeight": "600"}],
+                    "body-sm": ["14px", {"lineHeight": "20px", "fontWeight": "400"}],
+                    "headline-lg": ["30px", {"lineHeight": "38px", "letterSpacing": "-0.01em", "fontWeight": "600"}],
+                    "display-stat": ["36px", {"lineHeight": "44px", "letterSpacing": "-0.01em", "fontWeight": "600"}],
+                    "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        body { font-family: 'Inter', sans-serif; }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .bento-grid {
+            display: grid;
+            grid-template-columns: repeat(12, 1fr);
+            gap: 24px;
+        }
+        .chart-bar {
+            transition: width 1s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+    </style>
+</head>
+<body class="bg-background text-on-surface">
+<!-- TopNavBar -->
+<header class="fixed top-0 w-full z-50 flex justify-between items-center px-margin-desktop h-16 bg-surface shadow-sm">
+<div class="flex items-center gap-gutter">
+<h1 class="text-headline-md font-headline-md font-bold text-primary">AdPersona AI</h1>
+<div class="hidden md:flex gap-stack-md">
+<a class="font-label-md text-label-md text-primary border-b-2 border-primary pb-1" href="#">Switch to Consumer View</a>
+</div>
+</div>
+<div class="flex items-center gap-stack-md">
+<button class="material-symbols-outlined text-on-surface-variant hover:text-primary transition-colors">notifications</button>
+<img alt="User profile settings" class="w-8 h-8 rounded-full bg-surface-container-high border border-outline-variant" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDZ5x_4l2YmuFn41n_mEfa_sVr7dbt-PJyv23V4rZUE4C1VPnGN8fStgxw8xtV-KmxYgaEflw-wFeFh1-7pISPsZ3p-XIacDBbUDhBa8leqCqfwL23WWL1G6ptqgVq7Z57lSmlWlpSS-H6nf0yhhyMU7UsDjr7wrIuZ4cWG2pyyZ_tjAnGuFvjJDSVoagu6r_k4TlzhLoYONj-XQtOmYIciFhlhMlrtNf6M9siO-rm5t0dbY5ZFTVPg2iSZAe5l0ORVRfagBU12eHs"/>
+</div>
+</header>
+<!-- SideNavBar -->
+<aside class="fixed left-0 top-16 bottom-0 w-[240px] flex flex-col p-stack-md z-40 bg-surface-container-low border-r border-outline-variant">
+<div class="flex items-center gap-stack-sm mb-stack-lg p-stack-sm">
+<div class="w-10 h-10 rounded-lg bg-primary flex items-center justify-center text-on-primary font-bold">P</div>
+<div>
+<p class="font-headline-sm text-label-md font-bold text-on-surface">Brand Workspace</p>
+<p class="text-[12px] text-on-surface-variant">Marketing Admin</p>
+</div>
+</div>
+<nav class="flex-1 space-y-stack-xs">
+<a class="flex items-center gap-stack-md p-stack-md text-on-surface-variant hover:bg-surface-container-high rounded-lg transition-all" href="#">
+<span class="material-symbols-outlined">grid_view</span>
+<span class="font-label-md text-label-md">Brand Grid</span>
+</a>
+<a class="flex items-center gap-stack-md p-stack-md bg-secondary-container text-on-secondary-container rounded-lg font-bold" href="#">
+<span class="material-symbols-outlined">monitoring</span>
+<span class="font-label-md text-label-md">Performance</span>
+</a>
+<a class="flex items-center gap-stack-md p-stack-md text-on-surface-variant hover:bg-surface-container-high rounded-lg transition-all" href="#">
+<span class="material-symbols-outlined">psychology</span>
+<span class="font-label-md text-label-md">Recommendations</span>
+</a>
+<a class="flex items-center gap-stack-md p-stack-md text-on-surface-variant hover:bg-surface-container-high rounded-lg transition-all" href="#">
+<span class="material-symbols-outlined">inventory_2</span>
+<span class="font-label-md text-label-md">Catalog</span>
+</a>
+</nav>
+<div class="mt-auto pt-stack-md border-t border-outline-variant space-y-stack-xs">
+<button class="w-full bg-primary text-on-primary py-stack-sm rounded-lg font-label-md mb-stack-md active:scale-95 transition-transform">Generate Ad</button>
+<a class="flex items-center gap-stack-md p-stack-sm text-on-surface-variant hover:bg-surface-container-high rounded-lg" href="#">
+<span class="material-symbols-outlined">settings</span>
+<span class="font-label-md text-label-md">Settings</span>
+</a>
+<a class="flex items-center gap-stack-md p-stack-sm text-on-surface-variant hover:bg-surface-container-high rounded-lg" href="#">
+<span class="material-symbols-outlined">help_outline</span>
+<span class="font-label-md text-label-md">Support</span>
+</a>
+</div>
+</aside>
+<!-- Main Content -->
+<main class="ml-[240px] mt-16 p-margin-desktop min-h-screen">
+<div class="max-w-container-max mx-auto">
+<!-- Performance Header -->
+<div class="flex justify-between items-end mb-stack-lg">
+<div>
+<h2 class="font-headline-lg text-headline-lg text-on-surface mb-stack-xs">Performance</h2>
+<p class="text-on-surface-variant font-label-md">This week</p>
+</div>
+<div class="flex gap-stack-sm">
+<button class="px-stack-md py-stack-sm bg-surface border border-outline-variant rounded-lg font-label-md flex items-center gap-stack-sm">
+<span class="material-symbols-outlined text-[18px]">calendar_today</span>
+                        June 12 - June 18
+                    </button>
+<button class="px-stack-md py-stack-sm bg-primary text-on-primary rounded-lg font-label-md">Download Report</button>
+</div>
+</div>
+<div class="bento-grid">
+<!-- Big Metric Card -->
+<div class="col-span-12 lg:col-span-5 bg-white border border-outline-variant rounded-xl p-stack-lg shadow-sm flex flex-col justify-center min-h-[240px]">
+<div class="flex items-baseline gap-stack-md">
+<span class="font-display-lg text-display-lg text-primary">89</span>
+<div class="flex flex-col">
+<span class="text-green-600 font-bold flex items-center">
+<span class="material-symbols-outlined">trending_up</span> 23%
+                            </span>
+<span class="text-on-surface-variant text-label-sm">vs last week</span>
+</div>
+</div>
+<p class="font-headline-sm text-headline-sm text-on-surface mt-stack-sm">customers acquired this week</p>
+<div class="mt-stack-lg w-full bg-surface-container-low h-2 rounded-full overflow-hidden">
+<div class="bg-primary h-full chart-bar" style="width: 78%"></div>
+</div>
+</div>
+<!-- Three Stat Cards Cluster -->
+<div class="col-span-12 lg:col-span-7 grid grid-cols-1 md:grid-cols-3 gap-stack-md">
+<div class="bg-white border border-outline-variant rounded-xl p-stack-lg flex flex-col justify-between">
+<span class="material-symbols-outlined text-primary mb-stack-md">ad_units</span>
+<div>
+<p class="font-display-stat text-display-stat text-on-surface leading-none">1,247</p>
+<p class="text-on-surface-variant font-label-md mt-stack-xs">ads shown</p>
+</div>
+</div>
+<div class="bg-white border border-outline-variant rounded-xl p-stack-lg flex flex-col justify-between">
+<span class="material-symbols-outlined text-primary mb-stack-md">data_exploration</span>
+<div>
+<p class="font-display-stat text-display-stat text-on-surface leading-none">7.1%</p>
+<p class="text-on-surface-variant font-label-md mt-stack-xs">conversion rate</p>
+</div>
+</div>
+<div class="bg-secondary-container/30 border border-secondary/20 rounded-xl p-stack-lg flex flex-col justify-between">
+<span class="material-symbols-outlined text-secondary mb-stack-md">stars</span>
+<div>
+<p class="font-headline-sm text-headline-sm text-secondary leading-tight">Young Dhaka users</p>
+<p class="text-secondary font-label-md mt-stack-xs">Best segment</p>
+</div>
+</div>
+</div>
+<!-- Chart & List Section -->
+<div class="col-span-12 lg:col-span-8 bg-white border border-outline-variant rounded-xl overflow-hidden flex flex-col">
+<div class="p-stack-lg border-b border-outline-variant">
+<h3 class="font-headline-sm text-headline-sm">Where customers came from</h3>
+</div>
+<div class="p-stack-lg space-y-stack-lg flex-1">
+<!-- Bar Chart -->
+<div class="space-y-stack-md">
+<div class="space-y-stack-xs">
+<div class="flex justify-between font-label-md">
+<span>Young Dhaka users</span>
+<span class="font-bold">67%</span>
+</div>
+<div class="w-full bg-surface-container h-3 rounded-full">
+<div class="h-full bg-primary rounded-full chart-bar" style="width: 67%"></div>
+</div>
+</div>
+<div class="space-y-stack-xs">
+<div class="flex justify-between font-label-md">
+<span>Chittagong professionals</span>
+<span class="font-bold">22%</span>
+</div>
+<div class="w-full bg-surface-container h-3 rounded-full">
+<div class="h-full bg-primary/60 rounded-full chart-bar" style="width: 22%"></div>
+</div>
+</div>
+<div class="space-y-stack-xs">
+<div class="flex justify-between font-label-md">
+<span>Family segments</span>
+<span class="font-bold">11%</span>
+</div>
+<div class="w-full bg-surface-container h-3 rounded-full">
+<div class="h-full bg-primary/30 rounded-full chart-bar" style="width: 11%"></div>
+</div>
+</div>
+</div>
+<!-- Top Performing Ads List -->
+<div class="mt-stack-lg">
+<h4 class="font-label-md text-on-surface-variant uppercase tracking-wider mb-stack-md">Top performing ads</h4>
+<div class="divide-y divide-outline-variant">
+<!-- Ad Row 1 -->
+<div class="py-stack-md flex items-center gap-stack-md group hover:bg-surface-container-low transition-colors px-stack-sm -mx-stack-sm rounded-lg">
+<img class="w-16 h-16 rounded object-cover" data-alt="A vibrant and energetic close-up of a refreshing tropical fruit juice splash with bubbles, set against a bright teal background with modern minimalist aesthetics. The lighting is crisp and commercial-grade, emphasizing the texture of the liquid and the freshness of the brand's primary product. High-end product photography style with professional studio lighting." src="https://lh3.googleusercontent.com/aida-public/AB6AXuA_4SVarDcbOagh3ErK_xgiZCMAAE276UoeOBbdrUvNk5jLJ0nGkAXXZubQoxXcJo3bzBSgSuk4rHWzbfI4w9bd7eWLyI8kvMi4QaDegK4XloKHtJNqFjhijJXw3MHGcu5G5CXVhgK4lpWPbOWE5xeog7ws51v6Ot1GoMSHIykLhX-fDe_ieshqJXq72vHWz9VAfOCumjVlyQ4xlT7DUXf2JSab2bmtMeSdfi4MJ7KC99Ef0g7CHrDl4Oc64-iZFqh_cY2VKUsCxeE"/>
+<div class="flex-1">
+<p class="font-label-md text-on-surface">"Beat the heat with a chill vibe" — GIF Combo</p>
+<p class="text-on-surface-variant text-label-sm">Dhaka Gen-Z Target</p>
+</div>
+<div class="text-right">
+<p class="font-bold text-primary">8.4% Conv.</p>
+<p class="text-label-sm text-on-surface-variant">412 clicks</p>
+</div>
+</div>
+<!-- Ad Row 2 -->
+<div class="py-stack-md flex items-center gap-stack-md group hover:bg-surface-container-low transition-colors px-stack-sm -mx-stack-sm rounded-lg">
+<img class="w-16 h-16 rounded object-cover" data-alt="A cozy Bangladeshi living room during a festive evening, filled with warm golden lighting and decorated for a family celebration. The atmosphere is joyous and communal, reflecting traditional cultural values in a modern context. Professional interior photography style with soft focus on background elements and sharp focus on the central communal area, emphasizing warmth and belonging." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDtl6PKJnv0zIJ5Z0Yb8PHnz_jgiRaHgktIGDIEuZ547LA83tdWBhAXFposn4EM2aXLFm0TqrhM8cpN3QqIxBTvfQxJ9GUKd8DxapuZhdfgBYqpCmBQmNllUdcbchBeZe0U69IiICRoletwUHmdsRKHAVmCIAb5_IKAy8_OoWMml8PV6MBv7h3_fKStBc82CpCELo-AzwxcbFqolhE13e0HnvuXCOEKY2HhaGdigMjZJR2_PXKN3UxFYv3CtduKu4IGJPfu0-T16_0"/>
+<div class="flex-1">
+<p class="font-label-md text-on-surface">"Family dinner just got better" — Static Art</p>
+<p class="text-on-surface-variant text-label-sm">National Family Segment</p>
+</div>
+<div class="text-right">
+<p class="font-bold text-primary">6.2% Conv.</p>
+<p class="text-label-sm text-on-surface-variant">289 clicks</p>
+</div>
+</div>
+<!-- Ad Row 3 -->
+<div class="py-stack-md flex items-center gap-stack-md group hover:bg-surface-container-low transition-colors px-stack-sm -mx-stack-sm rounded-lg">
+<img class="w-16 h-16 rounded object-cover" data-alt="A futuristic and sleek workspace in Chittagong with a view of the harbor at sunset, showing a clean tech-driven office environment. The lighting transitions from warm orange to cool professional blue, symbolizing precision and progress. High-end corporate photography style with a focus on clean lines and a sophisticated professional atmosphere." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAt-6JCMCHZsP8X9sm4QKVGuQJraAWGCenGq8bVpcHO921BxGELijb_2RG1xd5S3WaG8_UBr1oroEqclTNH0Q0p79wq8mfe3sSnhj_36nYeB-YeYDPCsisaiemgt8ZewT38dcu-IBKe966BLu6TfvOFyDt-0FatBuFQ80v1hVoTHwvOBsJ2XHSvcq2h_vrjBn8O-TNH7XBxh3ksa6lGOk_KV0Ihh2FI-aHJKg0AlOHROIFg0fDsF65sfB6d3-Kd-5gACHE4zXGXrEY"/>
+<div class="flex-1">
+<p class="font-label-md text-on-surface">"Efficiency meets tradition" — Carousel</p>
+<p class="text-on-surface-variant text-label-sm">Professional Segment</p>
+</div>
+<div class="text-right">
+<p class="font-bold text-primary">5.9% Conv.</p>
+<p class="text-label-sm text-on-surface-variant">195 clicks</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- AI Recommendations Panel -->
+<div class="col-span-12 lg:col-span-4 flex flex-col gap-stack-md">
+<div class="bg-primary/5 border border-primary/20 rounded-xl p-stack-lg flex-1">
+<div class="flex items-center gap-stack-sm mb-stack-lg">
+<div class="w-10 h-10 rounded-full bg-primary flex items-center justify-center text-on-primary">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">lightbulb</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm text-primary">AI Recommendations</h3>
+</div>
+<div class="space-y-stack-md">
+<!-- Rec 1 -->
+<div class="bg-white p-stack-md rounded-lg border border-outline-variant shadow-sm flex gap-stack-md group hover:border-primary transition-colors cursor-pointer">
+<span class="material-symbols-outlined text-primary shrink-0">bolt</span>
+<p class="font-body-sm text-on-surface">Generate more <span class="font-bold text-primary">GIF + joke combos</span> for young Dhaka users to capitalize on recent engagement trends.</p>
+</div>
+<!-- Rec 2 -->
+<div class="bg-white p-stack-md rounded-lg border border-outline-variant shadow-sm flex gap-stack-md group hover:border-primary transition-colors cursor-pointer">
+<span class="material-symbols-outlined text-primary shrink-0">event</span>
+<p class="font-body-sm text-on-surface">Eid is in <span class="font-bold text-primary">5 days</span> — start cultural reference campaigns now to maximize festive shopping intent.</p>
+</div>
+<!-- Rec 3 -->
+<div class="bg-white p-stack-md rounded-lg border border-outline-variant shadow-sm flex gap-stack-md group hover:border-primary transition-colors cursor-pointer">
+<span class="material-symbols-outlined text-error shrink-0">trending_down</span>
+<p class="font-body-sm text-on-surface">Reduce stat-hook ads for <span class="font-bold">under-25 segment</span> (12% conversion) — they prefer visual storytelling over data.</p>
+</div>
+</div>
+<button class="w-full mt-stack-lg bg-primary text-on-primary py-stack-md rounded-lg font-bold flex items-center justify-center gap-stack-sm active:scale-95 transition-transform">
+                            Apply All Insights
+                            <span class="material-symbols-outlined">arrow_forward</span>
+</button>
+</div>
+<!-- Mini CTA Card -->
+<div class="bg-inverse-surface text-inverse-on-surface rounded-xl p-stack-lg relative overflow-hidden">
+<div class="relative z-10">
+<p class="font-headline-sm text-label-md font-bold mb-stack-sm">Need a Custom Audit?</p>
+<p class="text-label-sm opacity-80 mb-stack-md">Get a deep-dive analysis on your brand's performance metrics for Q3.</p>
+<button class="text-primary-fixed-dim font-bold flex items-center gap-stack-xs group">
+                                Talk to an Analyst
+                                <span class="material-symbols-outlined group-hover:translate-x-1 transition-transform">chevron_right</span>
+</button>
+</div>
+<div class="absolute -right-4 -bottom-4 w-24 h-24 bg-primary/20 rounded-full blur-3xl"></div>
+</div>
+</div>
+</div>
+</div>
+</main>
+<script>
+        // Simple interactivity for chart animation
+        document.addEventListener('DOMContentLoaded', () => {
+            const bars = document.querySelectorAll('.chart-bar');
+            bars.forEach(bar => {
+                const targetWidth = bar.style.width;
+                bar.style.width = '0%';
+                setTimeout(() => {
+                    bar.style.width = targetWidth;
+                }, 300);
+            });
+        });
+    </script>
+</body></html>

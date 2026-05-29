@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>AdFeed - Personalized Content</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "inverse-surface": "#293040",
+                        "secondary-container": "#dce2f3",
+                        "surface-container": "#e9edff",
+                        "surface-bright": "#f9f9ff",
+                        "on-primary": "#ffffff",
+                        "on-primary-fixed-variant": "#005049",
+                        "on-error": "#ffffff",
+                        "surface-container-low": "#f1f3ff",
+                        "surface-variant": "#dce2f7",
+                        "on-background": "#141b2b",
+                        "on-secondary-fixed-variant": "#404754",
+                        "on-surface-variant": "#3d4947",
+                        "background": "#f9f9ff",
+                        "on-tertiary-fixed-variant": "#773215",
+                        "surface": "#f9f9ff",
+                        "surface-container-highest": "#dce2f7",
+                        "on-surface": "#141b2b",
+                        "secondary-fixed-dim": "#c0c7d6",
+                        "secondary-fixed": "#dce2f3",
+                        "primary-fixed-dim": "#6bd8cb",
+                        "inverse-primary": "#6bd8cb",
+                        "tertiary-fixed": "#ffdbce",
+                        "on-primary-fixed": "#00201d",
+                        "on-tertiary-fixed": "#370e00",
+                        "primary": "#00685f",
+                        "error-container": "#ffdad6",
+                        "on-secondary": "#ffffff",
+                        "primary-fixed": "#89f5e7",
+                        "surface-container-high": "#e1e8fd",
+                        "surface-dim": "#d3daef",
+                        "surface-tint": "#006a61",
+                        "outline-variant": "#bcc9c6",
+                        "on-tertiary": "#ffffff",
+                        "on-secondary-fixed": "#151c27",
+                        "tertiary-fixed-dim": "#ffb59a",
+                        "error": "#ba1a1a",
+                        "on-secondary-container": "#5e6572",
+                        "on-error-container": "#93000a",
+                        "secondary": "#585f6c",
+                        "primary-container": "#008378",
+                        "on-tertiary-container": "#fffbff",
+                        "tertiary": "#924628",
+                        "outline": "#6d7a77",
+                        "surface-container-lowest": "#ffffff",
+                        "inverse-on-surface": "#edf0ff",
+                        "tertiary-container": "#b05e3d",
+                        "on-primary-container": "#f4fffc"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "1rem",
+                        "lg": "2rem",
+                        "xl": "3rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "gutter": "16px",
+                        "stack-md": "16px",
+                        "max-width-desktop": "640px",
+                        "stack-lg": "24px",
+                        "container-padding": "16px",
+                        "unit": "4px",
+                        "stack-sm": "8px"
+                    },
+                    "fontFamily": {
+                        "body-md": ["Inter"],
+                        "body-sm": ["Inter"],
+                        "label-sm-caps": ["Inter"],
+                        "headline-md": ["Inter"],
+                        "body-lg": ["Inter"],
+                        "label-md": ["Inter"],
+                        "headline-lg": ["Inter"],
+                        "headline-lg-mobile": ["Inter"]
+                    },
+                    "fontSize": {
+                        "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                        "body-sm": ["14px", {"lineHeight": "20px", "fontWeight": "400"}],
+                        "label-sm-caps": ["12px", {"lineHeight": "16px", "letterSpacing": "0.05em", "fontWeight": "700"}],
+                        "headline-md": ["20px", {"lineHeight": "28px", "fontWeight": "600"}],
+                        "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}],
+                        "label-md": ["14px", {"lineHeight": "20px", "letterSpacing": "0.01em", "fontWeight": "600"}],
+                        "headline-lg": ["32px", {"lineHeight": "40px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                        "headline-lg-mobile": ["24px", {"lineHeight": "32px", "letterSpacing": "-0.01em", "fontWeight": "700"}]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        body {
+            background-color: #f9f9ff;
+            font-family: 'Inter', sans-serif;
+            -webkit-tap-highlight-color: transparent;
+        }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .custom-shadow {
+            box-shadow: 0px 1px 3px rgba(0,0,0,0.05), 0px 1px 2px rgba(0,0,0,0.03);
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="text-on-surface">
+<!-- TopAppBar -->
+<header class="bg-surface/80 backdrop-blur-md shadow-sm docked full-width top-0 sticky z-50">
+<div class="flex items-center justify-between px-gutter h-16 w-full max-w-max-width-desktop mx-auto">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-full overflow-hidden border border-outline-variant bg-surface-container">
+<img alt="Rafi, 22" class="w-full h-full object-cover" data-alt="A close-up portrait of a young man named Rafi, aged 22, with a friendly and approachable expression. He has short dark hair and is wearing a simple casual shirt. The background is soft and out of focus, maintaining a clean, modern aesthetic with bright, natural lighting. The overall mood is authentic and personal, fitting for a social persona switcher." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBgyHEHHeod1ZkQOhIshgfAIbL9Bk-71gaq71V92tjHjPuLiFurne_p_hXxT9TBY_Tfrswm8o2gz8tIhgZjf60WOcF73xOHPROdd32XjMFIJXDwDYvydrfcPvHT4Q-Jps5LFDdY-XNEHtEW8E4J6Cvudf98bS3UOaL_c9f4IQea3bZDNObiiJ0y6-hzCEuVsy4R3mjIPqw8FJ5hCAduwcHabuL9boY34i8uet5RMAMjrOFhQkki_LUM_N7mdk13nLj99Lo_u7gF2elm"/>
+</div>
+<div class="font-headline-md text-headline-md font-bold text-primary">AdFeed</div>
+</div>
+<div class="flex items-center gap-4">
+<button class="text-primary font-bold hover:opacity-80 transition-opacity text-label-md font-label-md">
+                    Brand View
+                </button>
+</div>
+</div>
+</header>
+<main class="max-w-max-width-desktop mx-auto px-gutter pt-stack-md pb-32">
+<!-- Persona Summary Card -->
+<section class="mb-stack-lg animate-in fade-in slide-in-from-bottom-4 duration-700">
+<div class="bg-surface-container-low p-container-padding rounded-lg custom-shadow border border-surface-variant flex items-start gap-4">
+<div class="flex-shrink-0 bg-primary-container/20 p-2 rounded-full">
+<span class="material-symbols-outlined text-primary" data-icon="account_circle">account_circle</span>
+</div>
+<div>
+<h2 class="font-headline-md text-headline-md text-on-surface mb-1">Rafi, 22, Dhaka • Student</h2>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Showing personalized ads for this user based on interests in technology, food delivery, and urban infrastructure.</p>
+</div>
+</div>
+</section>
+<!-- First Organic Card -->
+<article class="mb-stack-lg bg-surface-container-lowest rounded-lg custom-shadow overflow-hidden transition-transform active:scale-[0.98]">
+<div class="p-container-padding flex items-center gap-3">
+<div class="w-8 h-8 rounded-full bg-secondary-container flex items-center justify-center">
+<span class="material-symbols-outlined text-on-secondary-container" data-icon="newspaper">newspaper</span>
+</div>
+<div>
+<p class="font-label-md text-label-md">Dhaka Daily</p>
+<p class="text-[10px] text-on-surface-variant uppercase tracking-wider">2 HOURS AGO</p>
+</div>
+</div>
+<div class="aspect-video w-full overflow-hidden">
+<img alt="Metro Rail Station" class="w-full h-full object-cover" data-alt="A wide-angle professional photograph of a futuristic, clean metro rail station in Dhaka during the day. The architecture is modern with sleek concrete pillars and vibrant green train accents. The lighting is bright and airy, capturing a sense of progress and urban efficiency. The scene is populated with a few blurred commuters to suggest a busy but organized atmosphere." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDCr6eXvkW_O0vxZMG1pPOV9tJbjzxj8feihOXd06RCGom6gv5GAdBm624vDgQvnHVpsBdhTFWWwhzhkE9G_3n3j-scKsJSsNUxcJt8wcuWiLeJs7hidjauH7Kai4I2jmFp7PsuzAFD7sLWu6IKafTAkP7PB1g3-OYN7A2SHmP19H9x7KNs3ksTMG0NK46rtXrSmTlb3_EVbeyqDy-IPC1-Y8vIJedAma3YXuEN9zjJOcr0VVa2FZXegt3kYaj6gTxiopjmyMBa_SEk"/>
+</div>
+<div class="p-container-padding">
+<h3 class="font-headline-md text-headline-md text-on-surface mb-2">New Metro Rail Station Opens in Dhaka</h3>
+<p class="font-body-md text-body-md text-on-surface-variant">The latest addition to the city's growing infrastructure network aims to reduce travel time for thousands of daily commuters between Mirpur and Motijheel.</p>
+<div class="mt-4 flex gap-4 text-on-surface-variant border-t border-surface-variant pt-4">
+<button class="flex items-center gap-1 hover:text-primary transition-colors">
+<span class="material-symbols-outlined text-[20px]" data-icon="thumb_up">thumb_up</span>
+<span class="text-label-md">2.4k</span>
+</button>
+<button class="flex items-center gap-1 hover:text-primary transition-colors">
+<span class="material-symbols-outlined text-[20px]" data-icon="chat_bubble">chat_bubble</span>
+<span class="text-label-md">158</span>
+</button>
+<button class="ml-auto">
+<span class="material-symbols-outlined text-[20px]" data-icon="share">share</span>
+</button>
+</div>
+</div>
+</article>
+<!-- First Sponsored Ad (Foodpanda) -->
+<article class="mb-stack-lg bg-surface-container-lowest rounded-lg custom-shadow overflow-hidden border border-primary-container/10">
+<div class="p-container-padding flex items-center justify-between">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-full bg-pink-500 flex items-center justify-center text-white overflow-hidden">
+<span class="font-bold text-xl">fp</span>
+</div>
+<div>
+<p class="font-label-md text-label-md">Foodpanda</p>
+<span class="font-label-sm-caps text-label-sm-caps text-on-surface-variant/70 uppercase">SPONSORED</span>
+</div>
+</div>
+<button class="text-on-surface-variant">
+<span class="material-symbols-outlined" data-icon="more_horiz">more_horiz</span>
+</button>
+</div>
+<div class="relative aspect-[16/9] w-full overflow-hidden">
+<img alt="Delicious Burger" class="w-full h-full object-cover" data-alt="A gourmet, mouth-watering cheeseburger captured in a high-end commercial food photography style. The burger is stacked with fresh lettuce, molten cheese, and a juicy patty on a toasted brioche bun. The lighting is warm and inviting, highlighting the textures of the ingredients. The background is a soft, blurred kitchen setting, evoking a sense of fast and fresh delivery." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDj9A5LbMv1GIizKT2WyxmSl_i2fioLECd-JiF_8XTH-g83DHfM6fAbhh9aB__FYYB4t4Uxml_dsEZAJgaFI_Wk7Aw71JIpFfNAL4SsGDOuSA9EaDJCADV1oeP0kcJJ-Db2p0drgUutMcGQ8N9n25I3UcTy9z5GpCXknnrG0o3NbadKjjFez8XDVfpmKXOyTyNAFdTdWR121M4e9b1-5uWBjr2NVPmnn-whQu0OnefiRi70TIhXaKxFfMz8Ju7lb7siczz0NlgPki_k"/>
+<div class="absolute top-4 left-4 bg-primary px-3 py-1 rounded-full text-white font-label-md text-sm shadow-md">
+                    40% OFF
+                </div>
+</div>
+<div class="p-container-padding">
+<h3 class="font-headline-md text-headline-md text-on-surface mb-1">Get 40% off your first 3 orders!</h3>
+<p class="font-body-md text-body-md text-on-surface-variant mb-6">Enjoy the fastest delivery in Dhaka. Fresh meals from your favorite restaurants delivered straight to your door.</p>
+<div class="flex flex-col sm:flex-row gap-3">
+<button class="flex-1 bg-primary text-on-primary font-label-md text-label-md py-3 rounded-full hover:opacity-90 transition-all active:scale-95 shadow-md flex items-center justify-center gap-2">
+                        Take the offer
+                        <span class="material-symbols-outlined text-[18px]" data-icon="arrow_forward">arrow_forward</span>
+</button>
+<button class="flex-1 border border-outline text-on-surface font-label-md text-label-md py-3 rounded-full hover:bg-surface-variant/30 transition-all active:scale-95 flex items-center justify-center">
+                        Skip
+                    </button>
+</div>
+</div>
+</article>
+<!-- Second Organic Card (Generic/Placeholder) -->
+<article class="mb-stack-lg bg-surface-container-lowest rounded-lg custom-shadow overflow-hidden opacity-80">
+<div class="p-container-padding flex items-center gap-3">
+<div class="w-8 h-8 rounded-full bg-secondary-container"></div>
+<div class="h-4 w-32 bg-surface-variant rounded"></div>
+</div>
+<div class="h-48 w-full bg-surface-variant/50"></div>
+<div class="p-container-padding space-y-3">
+<div class="h-6 w-3/4 bg-surface-variant rounded"></div>
+<div class="h-4 w-full bg-surface-variant/50 rounded"></div>
+<div class="h-4 w-2/3 bg-surface-variant/50 rounded"></div>
+</div>
+</article>
+</main>
+<!-- BottomNavBar -->
+<nav class="fixed bottom-0 left-0 w-full z-50 flex justify-around items-center px-4 py-2 bg-surface shadow-sm">
+<!-- Feed (Active) -->
+<a class="flex flex-col items-center justify-center bg-secondary-container dark:bg-on-secondary-fixed-variant text-on-secondary-container dark:text-secondary-fixed rounded-2xl p-2 min-w-[72px] transition-transform active:scale-90 duration-200" href="#">
+<span class="material-symbols-outlined" data-icon="home" style="font-variation-settings: 'FILL' 1;">home</span>
+<span class="font-label-md text-label-md mt-1">Feed</span>
+</a>
+<!-- Discovery -->
+<a class="flex flex-col items-center justify-center text-on-secondary-fixed-variant dark:text-secondary-fixed-dim p-2 min-w-[72px] hover:bg-surface-container-high transition-colors" href="#">
+<span class="material-symbols-outlined" data-icon="explore">explore</span>
+<span class="font-label-md text-label-md mt-1">Discovery</span>
+</a>
+<!-- Saved -->
+<a class="flex flex-col items-center justify-center text-on-secondary-fixed-variant dark:text-secondary-fixed-dim p-2 min-w-[72px] hover:bg-surface-container-high transition-colors" href="#">
+<span class="material-symbols-outlined" data-icon="bookmark">bookmark</span>
+<span class="font-label-md text-label-md mt-1">Saved</span>
+</a>
+<!-- Profile -->
+<a class="flex flex-col items-center justify-center text-on-secondary-fixed-variant dark:text-secondary-fixed-dim p-2 min-w-[72px] hover:bg-surface-container-high transition-colors" href="#">
+<span class="material-symbols-outlined" data-icon="person">person</span>
+<span class="font-label-md text-label-md mt-1">Profile</span>
+</a>
+</nav>
+<script>
+        // Simple micro-interaction for cards
+        document.querySelectorAll('article').forEach(card => {
+            card.addEventListener('mousedown', () => {
+                card.style.transform = 'scale(0.99)';
+            });
+            card.addEventListener('mouseup', () => {
+                card.style.transform = 'scale(1)';
+            });
+            card.addEventListener('mouseleave', () => {
+                card.style.transform = 'scale(1)';
+            });
+        });
+
+        // Brand view toggle simulation
+        const brandViewBtn = document.querySelector('button:contains("Brand View")');
+        if(brandViewBtn) {
+            brandViewBtn.addEventListener('click', (e) => {
+                e.preventDefault();
+                alert('Switching to Brand Manager view...');
+            });
+        }
+    </script>
+</body></html>

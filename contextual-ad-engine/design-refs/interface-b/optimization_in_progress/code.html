@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>AI Optimization | AdPersona AI</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .progress-pulse {
+            animation: pulse-ring 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+        }
+        @keyframes pulse-ring {
+            0%, 100% { opacity: 1; }
+            50% { opacity: .5; }
+        }
+        .glass-card {
+            background: rgba(255, 255, 255, 0.8);
+            backdrop-filter: blur(8px);
+        }
+    </style>
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              "colors": {
+                      "secondary-container": "#a8ece5",
+                      "secondary-fixed-dim": "#8fd3cc",
+                      "on-surface-variant": "#3d4947",
+                      "inverse-surface": "#2f3131",
+                      "surface-dim": "#dadada",
+                      "tertiary": "#545c72",
+                      "on-secondary-fixed": "#00201e",
+                      "on-secondary-fixed-variant": "#00504b",
+                      "on-background": "#1a1c1c",
+                      "tertiary-container": "#6c748b",
+                      "secondary-fixed": "#abefe8",
+                      "on-tertiary-fixed-variant": "#3f465c",
+                      "surface-bright": "#f9f9f9",
+                      "surface-container-lowest": "#ffffff",
+                      "primary-container": "#008378",
+                      "surface-container-highest": "#e2e2e2",
+                      "inverse-on-surface": "#f0f1f1",
+                      "on-secondary-container": "#266d68",
+                      "surface-container-low": "#f3f3f3",
+                      "on-error": "#ffffff",
+                      "on-surface": "#1a1c1c",
+                      "primary-fixed-dim": "#6bd8cb",
+                      "secondary": "#216963",
+                      "surface-container": "#eeeeee",
+                      "on-tertiary": "#ffffff",
+                      "error-container": "#ffdad6",
+                      "on-tertiary-container": "#fefcff",
+                      "on-primary": "#ffffff",
+                      "outline-variant": "#bcc9c6",
+                      "on-error-container": "#93000a",
+                      "on-tertiary-fixed": "#131b2e",
+                      "tertiary-fixed": "#dae2fd",
+                      "on-primary-fixed": "#00201d",
+                      "background": "#f9f9f9",
+                      "surface": "#f9f9f9",
+                      "outline": "#6d7a77",
+                      "surface-container-high": "#e8e8e8",
+                      "on-primary-container": "#f4fffc",
+                      "error": "#ba1a1a",
+                      "on-primary-fixed-variant": "#005049",
+                      "inverse-primary": "#6bd8cb",
+                      "primary": "#00685f",
+                      "surface-tint": "#006a61",
+                      "primary-fixed": "#89f5e7",
+                      "on-secondary": "#ffffff",
+                      "surface-variant": "#e2e2e2",
+                      "tertiary-fixed-dim": "#bec6e0"
+              },
+              "borderRadius": {
+                      "DEFAULT": "0.25rem",
+                      "lg": "0.5rem",
+                      "xl": "0.75rem",
+                      "full": "9999px"
+              },
+              "spacing": {
+                      "stack-xs": "4px",
+                      "margin-desktop": "32px",
+                      "stack-sm": "8px",
+                      "margin-mobile": "16px",
+                      "stack-lg": "24px",
+                      "gutter": "24px",
+                      "stack-md": "16px",
+                      "unit": "8px",
+                      "container-max": "1440px"
+              },
+              "fontFamily": {
+                      "headline-md": ["Inter"],
+                      "headline-lg-mobile": ["Inter"],
+                      "label-md": ["Inter"],
+                      "label-sm": ["Inter"],
+                      "display-lg": ["Inter"],
+                      "body-md": ["Inter"],
+                      "headline-sm": ["Inter"],
+                      "body-sm": ["Inter"],
+                      "headline-lg": ["Inter"],
+                      "display-stat": ["Inter"],
+                      "body-lg": ["Inter"]
+              },
+              "fontSize": {
+                      "headline-md": ["24px", {"lineHeight": "32px", "fontWeight": "600"}],
+                      "headline-lg-mobile": ["24px", {"lineHeight": "32px", "fontWeight": "600"}],
+                      "label-md": ["14px", {"lineHeight": "20px", "letterSpacing": "0.01em", "fontWeight": "500"}],
+                      "label-sm": ["12px", {"lineHeight": "16px", "fontWeight": "500"}],
+                      "display-lg": ["48px", {"lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                      "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                      "headline-sm": ["20px", {"lineHeight": "28px", "fontWeight": "600"}],
+                      "body-sm": ["14px", {"lineHeight": "20px", "fontWeight": "400"}],
+                      "headline-lg": ["30px", {"lineHeight": "38px", "letterSpacing": "-0.01em", "fontWeight": "600"}],
+                      "display-stat": ["36px", {"lineHeight": "44px", "letterSpacing": "-0.01em", "fontWeight": "600"}],
+                      "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}]
+              }
+            },
+          },
+        }
+    </script>
+</head>
+<body class="bg-background text-on-surface font-body-md overflow-x-hidden">
+<!-- TopNavBar -->
+<nav class="fixed top-0 w-full z-50 flex justify-between items-center px-margin-desktop h-16 bg-surface dark:bg-inverse-surface shadow-sm">
+<div class="flex items-center gap-stack-lg">
+<span class="text-headline-md font-headline-md font-bold text-primary dark:text-primary-fixed-dim">AdPersona AI</span>
+<div class="hidden md:flex gap-stack-md">
+<a class="font-label-md text-label-md text-primary dark:text-primary-fixed-dim border-b-2 border-primary dark:border-primary-fixed-dim pb-1" href="#">Switch to Consumer View</a>
+</div>
+</div>
+<div class="flex items-center gap-stack-md">
+<button class="p-2 hover:bg-surface-container-high rounded-full transition-colors">
+<span class="material-symbols-outlined" data-icon="notifications">notifications</span>
+</button>
+<div class="w-8 h-8 rounded-full bg-secondary-container flex items-center justify-center overflow-hidden">
+<img alt="User profile settings" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAttXf8O4adB5x_cAnTsARSKKC1Zm-ayowhYjzojaDs_dZ9JiyyarQJI9z5nQS3lZTnwa7_xwCw9FzrZr0UfMbh95oqnLDsi-9062VRQBdhT37Pg7d_VrDX805OOCiZatyC-XeCgCabk00a6JFPOYehbtb9pxbmneyIC1J31o5pdH__0zomf2bjgEUQS16B1tu1MHCdlXLWRQDe8f-cf4IvWqF_-MltAlXQtzdnizR0MTYRDV64lhE_pH-hKeaxmcmbr1RB5QpPUrA"/>
+</div>
+</div>
+</nav>
+<!-- SideNavBar -->
+<aside class="fixed left-0 top-16 bottom-0 w-[240px] flex flex-col p-stack-md z-40 bg-surface-container-low dark:bg-inverse-surface border-r border-outline-variant dark:border-on-surface-variant">
+<div class="flex items-center gap-stack-sm mb-stack-lg px-2">
+<div class="w-10 h-10 rounded-lg bg-primary flex items-center justify-center text-on-primary">
+<span class="material-symbols-outlined" data-icon="grid_view">grid_view</span>
+</div>
+<div>
+<p class="font-headline-sm text-label-md font-bold text-on-surface dark:text-inverse-on-surface">Brand Workspace</p>
+<p class="text-[10px] uppercase tracking-wider text-on-surface-variant">Marketing Admin</p>
+</div>
+</div>
+<nav class="flex-1 space-y-1">
+<a class="flex items-center gap-stack-sm p-stack-md text-on-surface-variant hover:bg-surface-container-high transition-all duration-200 rounded-lg" href="#">
+<span class="material-symbols-outlined" data-icon="grid_view">grid_view</span>
+<span class="font-label-md text-label-md">Brand Grid</span>
+</a>
+<a class="flex items-center gap-stack-sm p-stack-md text-on-surface-variant hover:bg-surface-container-high transition-all duration-200 rounded-lg" href="#">
+<span class="material-symbols-outlined" data-icon="monitoring">monitoring</span>
+<span class="font-label-md text-label-md">Performance</span>
+</a>
+<a class="flex items-center gap-stack-sm p-stack-md bg-secondary-container dark:bg-secondary text-on-secondary-container dark:text-on-secondary rounded-lg font-bold shadow-sm" href="#">
+<span class="material-symbols-outlined" data-icon="psychology">psychology</span>
+<span class="font-label-md text-label-md">Recommendations</span>
+</a>
+<a class="flex items-center gap-stack-sm p-stack-md text-on-surface-variant hover:bg-surface-container-high transition-all duration-200 rounded-lg" href="#">
+<span class="material-symbols-outlined" data-icon="inventory_2">inventory_2</span>
+<span class="font-label-md text-label-md">Catalog</span>
+</a>
+</nav>
+<div class="mt-auto pt-stack-lg border-t border-outline-variant space-y-1">
+<a class="flex items-center gap-stack-sm p-stack-md text-on-surface-variant hover:bg-surface-container-high transition-all duration-200 rounded-lg" href="#">
+<span class="material-symbols-outlined" data-icon="settings">settings</span>
+<span class="font-label-md text-label-md">Settings</span>
+</a>
+<a class="flex items-center gap-stack-sm p-stack-md text-on-surface-variant hover:bg-surface-container-high transition-all duration-200 rounded-lg" href="#">
+<span class="material-symbols-outlined" data-icon="help_outline">help_outline</span>
+<span class="font-label-md text-label-md">Support</span>
+</a>
+</div>
+</aside>
+<!-- Main Content Canvas -->
+<main class="ml-[240px] mt-16 p-stack-lg min-h-screen">
+<div class="max-w-[1440px] mx-auto">
+<!-- Breadcrumbs / Top Context -->
+<div class="mb-stack-lg flex items-center justify-between">
+<div>
+<h1 class="font-headline-lg text-headline-lg text-on-surface">Optimization Engine</h1>
+<p class="text-on-surface-variant font-body-md">Refining your brand persona based on real-time market data.</p>
+</div>
+<div class="flex items-center gap-stack-sm bg-surface-container-high px-stack-md py-stack-sm rounded-full">
+<span class="w-2 h-2 bg-primary rounded-full animate-pulse"></span>
+<span class="text-label-sm font-label-sm text-primary uppercase">Engine Live</span>
+</div>
+</div>
+<!-- Bento Grid Section -->
+<div class="grid grid-cols-12 gap-gutter">
+<!-- AI Optimization Core Section (Target Focus) -->
+<div class="col-span-12 lg:col-span-8 space-y-gutter">
+<!-- Section Header -->
+<div class="flex items-center gap-stack-sm">
+<span class="material-symbols-outlined text-primary" data-icon="auto_awesome">auto_awesome</span>
+<h2 class="font-headline-sm text-headline-sm text-on-surface">AI Optimization</h2>
+</div>
+<!-- Progress Visualization Card -->
+<div class="bg-surface-container-lowest border border-outline-variant rounded-xl p-stack-lg shadow-sm">
+<div class="flex justify-between items-start mb-stack-lg">
+<div>
+<h3 class="font-headline-sm text-headline-sm mb-stack-xs">Continuous Calibration</h3>
+<p class="text-on-surface-variant text-label-md">Last cycle: 2 days ago</p>
+</div>
+<div class="text-right">
+<span class="text-display-stat font-display-stat text-primary">74%</span>
+<p class="text-label-sm font-label-sm text-on-surface-variant">System Capacity</p>
+</div>
+</div>
+<!-- Animated Progress States -->
+<div class="space-y-stack-md mb-stack-lg">
+<!-- Completed State -->
+<div class="flex items-center gap-stack-md p-stack-md bg-secondary-container/10 border border-secondary-container/30 rounded-lg">
+<div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center text-on-primary">
+<span class="material-symbols-outlined text-[18px]" data-icon="check">check</span>
+</div>
+<div class="flex-1">
+<p class="font-label-md text-label-md text-on-surface">Extracting user patterns...</p>
+<p class="text-[11px] text-on-surface-variant">Identified 12,400+ interaction nodes</p>
+</div>
+<span class="text-label-sm font-label-sm text-primary">Completed</span>
+</div>
+<!-- Completed State -->
+<div class="flex items-center gap-stack-md p-stack-md bg-secondary-container/10 border border-secondary-container/30 rounded-lg">
+<div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center text-on-primary">
+<span class="material-symbols-outlined text-[18px]" data-icon="check">check</span>
+</div>
+<div class="flex-1">
+<p class="font-label-md text-label-md text-on-surface">Aggregating insights...</p>
+<p class="text-[11px] text-on-surface-variant">Synthesizing cross-channel performance</p>
+</div>
+<span class="text-label-sm font-label-sm text-primary">Completed</span>
+</div>
+<!-- Active State -->
+<div class="flex items-center gap-stack-md p-stack-md bg-surface-container border border-primary rounded-lg ring-1 ring-primary/20">
+<div class="w-8 h-8 rounded-full bg-primary-container flex items-center justify-center text-on-primary-container">
+<span class="material-symbols-outlined text-[18px] animate-spin" data-icon="refresh">refresh</span>
+</div>
+<div class="flex-1">
+<p class="font-label-md text-label-md text-on-surface font-bold">Reshaping libraries...</p>
+<div class="w-full bg-surface-container-high h-1.5 rounded-full mt-stack-xs overflow-hidden">
+<div class="bg-primary h-full rounded-full w-2/3 relative">
+<div class="absolute inset-0 bg-white/20 animate-pulse"></div>
+</div>
+</div>
+</div>
+<span class="text-label-sm font-label-sm text-primary font-bold">Processing</span>
+</div>
+<!-- Pending State -->
+<div class="flex items-center gap-stack-md p-stack-md opacity-50 grayscale">
+<div class="w-8 h-8 rounded-full border-2 border-outline-variant flex items-center justify-center text-on-surface-variant">
+<!-- Empty -->
+</div>
+<div class="flex-1">
+<p class="font-label-md text-label-md text-on-surface-variant">Generating recommendations...</p>
+<p class="text-[11px]">Awaiting library restructuring</p>
+</div>
+<span class="text-label-sm font-label-sm">Pending</span>
+</div>
+</div>
+<!-- Call to Action -->
+<div class="flex flex-col gap-stack-md">
+<button class="w-full py-stack-md bg-surface-container-high text-on-surface-variant font-label-md text-label-md rounded-xl flex items-center justify-center gap-stack-sm cursor-not-allowed border border-outline-variant" disabled="">
+<span class="material-symbols-outlined animate-spin" data-icon="sync">sync</span>
+                                Run optimization cycle
+                            </button>
+<p class="text-center text-[12px] text-on-surface-variant">System busy. Optimization scheduled for automatic completion in 14m.</p>
+</div>
+</div>
+</div>
+<!-- Sidebar Analytics Column -->
+<div class="col-span-12 lg:col-span-4 space-y-gutter">
+<!-- Stats Card -->
+<div class="bg-surface-container-low border border-outline-variant rounded-xl p-stack-lg overflow-hidden relative group">
+<div class="absolute -right-8 -top-8 w-32 h-32 bg-primary/5 rounded-full blur-3xl group-hover:bg-primary/10 transition-colors"></div>
+<h4 class="text-label-sm font-label-sm text-on-surface-variant uppercase mb-stack-md">Efficiency Gain</h4>
+<div class="flex items-end gap-stack-sm">
+<span class="text-display-lg font-display-lg text-on-surface">+24%</span>
+<span class="text-primary font-label-md text-label-md mb-2 flex items-center">
+<span class="material-symbols-outlined text-[14px]" data-icon="trending_up">trending_up</span>
+                                v. Last Month
+                            </span>
+</div>
+<div class="mt-stack-lg h-24 flex items-end gap-1">
+<div class="flex-1 bg-surface-container-highest rounded-t-sm h-[40%]"></div>
+<div class="flex-1 bg-surface-container-highest rounded-t-sm h-[55%]"></div>
+<div class="flex-1 bg-surface-container-highest rounded-t-sm h-[45%]"></div>
+<div class="flex-1 bg-primary rounded-t-sm h-[75%]"></div>
+<div class="flex-1 bg-primary-container rounded-t-sm h-[100%]"></div>
+</div>
+</div>
+<!-- AI Insights Card -->
+<div class="bg-inverse-surface text-inverse-on-surface rounded-xl p-stack-lg shadow-lg">
+<div class="flex items-center gap-stack-sm mb-stack-md">
+<span class="material-symbols-outlined text-secondary-fixed" data-icon="tips_and_updates">tips_and_updates</span>
+<h4 class="font-headline-sm text-label-md font-bold">AI Suggestion</h4>
+</div>
+<p class="body-sm text-on-surface-variant/80 mb-stack-lg leading-relaxed">
+                            "Current brand sentiment analysis indicates a 12% rise in 'trust' keywords. We recommend increasing the **Calm Authority** weight in visual assets."
+                        </p>
+<button class="w-full py-stack-sm border border-secondary-fixed/30 text-secondary-fixed rounded-lg text-label-sm font-label-sm hover:bg-white/5 transition-colors">
+                            Apply Tuning
+                        </button>
+</div>
+<!-- Visual Context Card -->
+<div class="rounded-xl overflow-hidden border border-outline-variant aspect-video relative">
+<img alt="AI data visualization" class="w-full h-full object-cover" data-alt="A macro close-up of a high-tech digital surface showing complex data patterns in vibrant teal and dark slate colors. Soft, blurred light particles hover over shifting geometric grids, representing an active AI neural network. The lighting is low-key and professional, echoing a modern corporate research laboratory environment with a focus on precision and intelligent design." src="https://lh3.googleusercontent.com/aida-public/AB6AXuB12e0ree6sD3wF1hExZsPc9mLI-RX7SGF-8NQI3l-ixiqVmYQoarl1B-CwW6dSNHfxZpOVC2B9nIIn46Z0s-NZ4S3NXSrP1vJvkwvQCWeeHi1rY0oWyA401YMWpH47INHxx6hh3zg0F3gH7fcNMAQwi0mhfqwbiI_udIOrRmfrLbVEdTkWew5qHxc7Bq8Ukn_Bho1R6HgILmDeCq7DR4F_FrjPEtkv6lNRoTtuy5pslFwLrsY5UW05DTwg9uK-9-ipivXzZUGntBk"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent flex flex-col justify-end p-stack-md">
+<p class="text-white font-label-md text-label-md">Library Visual Mapping</p>
+<p class="text-white/60 text-[10px]">Real-time generation active</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</main>
+<!-- Floating UI Decoration -->
+<div class="fixed bottom-8 right-8 z-50">
+<button class="bg-primary text-on-primary w-14 h-14 rounded-full flex items-center justify-center shadow-lg hover:scale-110 transition-transform duration-300">
+<span class="material-symbols-outlined" data-icon="chat_bubble">chat_bubble</span>
+</button>
+</div>
+<!-- Micro-interaction Script -->
+<script>
+        // Simple logic for simulating "active" navigation if needed, 
+        // though strictly using the JSON's directive for the active tab.
+        console.log("AI Optimization Module Initialized");
+        
+        // Example of a small atmospheric effect: pulse the progress ring
+        const activeItem = document.querySelector('.animate-spin');
+        if (activeItem) {
+            activeItem.parentElement.classList.add('progress-pulse');
+        }
+    </script>
+</body></html>

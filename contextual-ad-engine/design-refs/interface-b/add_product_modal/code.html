@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Add Product | AdPersona AI</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<style>
+        body { font-family: 'Inter', sans-serif; }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .glass-overlay {
+            background: rgba(250, 250, 250, 0.7);
+            backdrop-filter: blur(8px);
+        }
+    </style>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "secondary-container": "#a8ece5",
+                        "secondary-fixed-dim": "#8fd3cc",
+                        "on-surface-variant": "#3d4947",
+                        "inverse-surface": "#2f3131",
+                        "surface-dim": "#dadada",
+                        "tertiary": "#545c72",
+                        "on-secondary-fixed": "#00201e",
+                        "on-secondary-fixed-variant": "#00504b",
+                        "on-background": "#1a1c1c",
+                        "tertiary-container": "#6c748b",
+                        "secondary-fixed": "#abefe8",
+                        "on-tertiary-fixed-variant": "#3f465c",
+                        "surface-bright": "#f9f9f9",
+                        "surface-container-lowest": "#ffffff",
+                        "primary-container": "#008378",
+                        "surface-container-highest": "#e2e2e2",
+                        "inverse-on-surface": "#f0f1f1",
+                        "on-secondary-container": "#266d68",
+                        "surface-container-low": "#f3f3f3",
+                        "on-error": "#ffffff",
+                        "on-surface": "#1a1c1c",
+                        "primary-fixed-dim": "#6bd8cb",
+                        "secondary": "#216963",
+                        "surface-container": "#eeeeee",
+                        "on-tertiary": "#ffffff",
+                        "error-container": "#ffdad6",
+                        "on-tertiary-container": "#fefcff",
+                        "on-primary": "#ffffff",
+                        "outline-variant": "#bcc9c6",
+                        "on-error-container": "#93000a",
+                        "on-tertiary-fixed": "#131b2e",
+                        "tertiary-fixed": "#dae2fd",
+                        "on-primary-fixed": "#00201d",
+                        "background": "#f9f9f9",
+                        "surface": "#f9f9f9",
+                        "outline": "#6d7a77",
+                        "surface-container-high": "#e8e8e8",
+                        "on-primary-container": "#f4fffc",
+                        "error": "#ba1a1a",
+                        "on-primary-fixed-variant": "#005049",
+                        "inverse-primary": "#6bd8cb",
+                        "primary": "#00685f",
+                        "surface-tint": "#006a61",
+                        "primary-fixed": "#89f5e7",
+                        "on-secondary": "#ffffff",
+                        "surface-variant": "#e2e2e2",
+                        "tertiary-fixed-dim": "#bec6e0"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "stack-xs": "4px",
+                        "margin-desktop": "32px",
+                        "stack-sm": "8px",
+                        "margin-mobile": "16px",
+                        "stack-lg": "24px",
+                        "gutter": "24px",
+                        "stack-md": "16px",
+                        "unit": "8px",
+                        "container-max": "1440px"
+                    },
+                    "fontFamily": {
+                        "headline-md": ["Inter"],
+                        "label-md": ["Inter"],
+                        "headline-sm": ["Inter"],
+                        "body-md": ["Inter"]
+                    },
+                    "fontSize": {
+                        "headline-md": ["24px", {"lineHeight": "32px", "fontWeight": "600"}],
+                        "label-md": ["14px", {"lineHeight": "20px", "letterSpacing": "0.01em", "fontWeight": "500"}],
+                        "headline-sm": ["20px", {"lineHeight": "28px", "fontWeight": "600"}],
+                        "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}]
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-surface text-on-surface">
+<!-- Background Content (Blurred Shell) -->
+<header class="fixed top-0 w-full z-50 flex justify-between items-center px-margin-desktop h-16 bg-surface shadow-sm blur-[4px]">
+<div class="flex items-center gap-stack-md">
+<span class="text-headline-md font-headline-md font-bold text-primary">AdPersona AI</span>
+<nav class="hidden md:flex items-center gap-stack-lg ml-margin-desktop">
+<span class="text-on-surface-variant font-label-md text-label-md">Switch to Consumer View</span>
+</nav>
+</div>
+<div class="flex items-center gap-stack-md">
+<span class="material-symbols-outlined text-on-surface-variant" data-icon="notifications">notifications</span>
+<div class="w-8 h-8 rounded-full bg-surface-container-high border border-outline-variant overflow-hidden">
+<img alt="User profile settings" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC-NjuLeogbFC47hzXVuB3hvxv1Dj-lMaINEFBCYluEjLKb_aIotf8Ti3KOr68E7XECKW2gjlQX4XjZR3bNc4dUXggKmxtVAOUE3lzeC6-HIzWP9gCYBItTiQqtOCZEysh36Eh5kQnPS1ne9xgauYyiKxfRqg9J01ie_R89PW9YD63N4AO7c3KU6z19FZVF2-Kzz0p3E_sUq8Z_F_q-UqCTGlI5Aja0gcxDH6IjAMxHDChXf-syYdAcDPZ-QpP-NF-AEMH5pb3nMvs"/>
+</div>
+</div>
+</header>
+<aside class="fixed left-0 top-16 bottom-0 w-[240px] flex flex-col p-stack-md z-40 bg-surface-container-low border-r border-outline-variant blur-[4px]">
+<div class="flex items-center gap-stack-sm mb-stack-lg px-2">
+<div class="w-8 h-8 rounded-lg bg-primary-container flex items-center justify-center text-on-primary-container">
+<span class="material-symbols-outlined" data-icon="grid_view">grid_view</span>
+</div>
+<div>
+<p class="font-headline-sm text-headline-sm font-bold text-on-surface leading-tight">Brand Workspace</p>
+<p class="font-label-md text-label-md text-on-surface-variant">Marketing Admin</p>
+</div>
+</div>
+<nav class="flex flex-col gap-1">
+<div class="flex items-center gap-3 px-3 py-2 bg-secondary-container text-on-secondary-container rounded-lg font-bold">
+<span class="material-symbols-outlined" data-icon="grid_view">grid_view</span>
+<span class="font-label-md text-label-md">Brand Grid</span>
+</div>
+<div class="flex items-center gap-3 px-3 py-2 text-on-surface-variant hover:bg-surface-container-high rounded-lg transition-all duration-200">
+<span class="material-symbols-outlined" data-icon="monitoring">monitoring</span>
+<span class="font-label-md text-label-md">Performance</span>
+</div>
+<div class="flex items-center gap-3 px-3 py-2 text-on-surface-variant hover:bg-surface-container-high rounded-lg transition-all duration-200">
+<span class="material-symbols-outlined" data-icon="psychology">psychology</span>
+<span class="font-label-md text-label-md">Recommendations</span>
+</div>
+<div class="flex items-center gap-3 px-3 py-2 text-on-surface-variant hover:bg-surface-container-high rounded-lg transition-all duration-200">
+<span class="material-symbols-outlined" data-icon="inventory_2">inventory_2</span>
+<span class="font-label-md text-label-md">Catalog</span>
+</div>
+</nav>
+</aside>
+<!-- Main Dashboard Background (Blurred) -->
+<main class="ml-[240px] pt-24 px-margin-desktop min-h-screen blur-[6px]">
+<div class="max-w-container-max mx-auto">
+<div class="flex justify-between items-end mb-stack-lg">
+<div>
+<h1 class="font-headline-lg text-headline-lg text-on-surface">Product Catalog</h1>
+<p class="text-on-surface-variant mt-2 font-body-md text-body-md">Manage your active product line-up and AI personas.</p>
+</div>
+<button class="bg-primary text-on-primary px-6 py-2.5 rounded-[12px] font-label-md text-label-md flex items-center gap-2">
+<span class="material-symbols-outlined" data-icon="add">add</span> Generate Ad
+                </button>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-gutter">
+<div class="bg-surface-container-lowest border border-outline-variant p-stack-lg rounded-xl shadow-sm">
+<div class="w-full aspect-square bg-surface-container rounded-lg mb-4"></div>
+<div class="h-4 w-2/3 bg-surface-container rounded-full mb-2"></div>
+<div class="h-4 w-1/2 bg-surface-container rounded-full"></div>
+</div>
+<div class="bg-surface-container-lowest border border-outline-variant p-stack-lg rounded-xl shadow-sm">
+<div class="w-full aspect-square bg-surface-container rounded-lg mb-4"></div>
+<div class="h-4 w-2/3 bg-surface-container rounded-full mb-2"></div>
+<div class="h-4 w-1/2 bg-surface-container rounded-full"></div>
+</div>
+<div class="bg-surface-container-lowest border border-outline-variant p-stack-lg rounded-xl shadow-sm">
+<div class="w-full aspect-square bg-surface-container rounded-lg mb-4"></div>
+<div class="h-4 w-2/3 bg-surface-container rounded-full mb-2"></div>
+<div class="h-4 w-1/2 bg-surface-container rounded-full"></div>
+</div>
+</div>
+</div>
+</main>
+<!-- Modal Overlay -->
+<div class="fixed inset-0 z-[100] flex items-center justify-center p-4 glass-overlay">
+<!-- Add Product Modal -->
+<div class="bg-surface-container-lowest w-full max-w-[500px] rounded-xl border border-outline-variant shadow-2xl overflow-hidden transform transition-all animate-in fade-in zoom-in duration-300" id="add-product-modal">
+<!-- Header -->
+<div class="px-stack-lg py-stack-md border-b border-outline-variant flex justify-between items-center bg-surface-container-low">
+<h2 class="font-headline-sm text-headline-sm text-on-surface">Add Product</h2>
+<button class="text-on-surface-variant hover:text-on-surface transition-colors p-1" onclick="window.history.back()">
+<span class="material-symbols-outlined" data-icon="close">close</span>
+</button>
+</div>
+<!-- Body -->
+<form class="px-stack-lg py-stack-lg space-y-stack-md">
+<!-- Name Field -->
+<div class="space-y-stack-xs">
+<label class="font-label-md text-label-md text-on-surface-variant ml-1">Product Name</label>
+<input class="w-full px-4 py-3 bg-surface-container-lowest border border-outline-variant rounded-xl focus:ring-2 focus:ring-primary focus:ring-opacity-20 focus:border-primary outline-none transition-all text-on-surface font-body-md" placeholder="Enter product name" type="text" value="Pran Spice Mix"/>
+</div>
+<!-- Category Field -->
+<div class="space-y-stack-xs">
+<label class="font-label-md text-label-md text-on-surface-variant ml-1">Category</label>
+<div class="relative">
+<select class="w-full px-4 py-3 bg-surface-container-lowest border border-outline-variant rounded-xl focus:ring-2 focus:ring-primary focus:ring-opacity-20 focus:border-primary outline-none appearance-none transition-all text-on-surface font-body-md">
+<option selected="" value="Grocery">Grocery</option>
+<option value="Electronics">Electronics</option>
+<option value="Fashion">Fashion</option>
+<option value="Personal Care">Personal Care</option>
+</select>
+<span class="material-symbols-outlined absolute right-4 top-1/2 -translate-y-1/2 pointer-events-none text-on-surface-variant" data-icon="expand_more">expand_more</span>
+</div>
+</div>
+<!-- Description Field -->
+<div class="space-y-stack-xs">
+<label class="font-label-md text-label-md text-on-surface-variant ml-1">Description</label>
+<textarea class="w-full px-4 py-3 bg-surface-container-lowest border border-outline-variant rounded-xl focus:ring-2 focus:ring-primary focus:ring-opacity-20 focus:border-primary outline-none transition-all text-on-surface font-body-md resize-none" rows="3">Authentic spice blend for traditional Bangladeshi recipes.</textarea>
+</div>
+<!-- Upload Section -->
+<div class="space-y-stack-xs">
+<label class="font-label-md text-label-md text-on-surface-variant ml-1">Product Image</label>
+<div class="grid grid-cols-2 gap-stack-md">
+<div class="aspect-square rounded-xl overflow-hidden border border-outline-variant bg-surface-container relative group">
+<img class="w-full h-full object-cover" data-alt="A macro photograph of a colorful Bangladeshi spice packet on a rustic wooden kitchen counter. The packaging is vibrant with traditional motifs and Bengali script. Soft morning sunlight streams through a window, highlighting the rich textures of ground turmeric and chili. The aesthetic is warm, high-end culinary photography with a focused depth of field." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBJAs9qtx0HIffz7zRxQqL4TsLipVkBabo3V3Mt0J41IbulJOUXbxOzpm_7oxu14o7dZM__9twkEjivtvvly5v49XXV6yUP0wZW62vm-L9PX4IfcZM83SYJGlHcudHQU64N8qSOV_D0x826EFNFPyvCuXA3101h8jWtVbwozqjbCaIAR-KKiBOJmBl4mCZAhIPm3hM0qwyVbBNdrc7TFON93yqW1ppFPQO9t999ZOSPvTMJMZgw5Du_UBElB68Ft-_XfxYizyNEbrc"/>
+<div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+<span class="material-symbols-outlined text-white" data-icon="edit">edit</span>
+</div>
+</div>
+<div class="aspect-square rounded-xl border-2 border-dashed border-outline-variant flex flex-col items-center justify-center gap-2 hover:bg-surface-container-low transition-colors cursor-pointer group">
+<span class="material-symbols-outlined text-on-surface-variant group-hover:text-primary transition-colors" data-icon="upload">upload</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Replace Image</span>
+</div>
+</div>
+</div>
+</form>
+<!-- Footer -->
+<div class="px-stack-lg py-stack-md border-t border-outline-variant flex items-center justify-end gap-stack-md bg-surface-container-low">
+<button class="px-6 py-2.5 rounded-[12px] font-label-md text-label-md text-on-surface-variant hover:bg-surface-container-high transition-colors">
+                    Cancel
+                </button>
+<button class="bg-primary text-on-primary px-8 py-2.5 rounded-[12px] font-label-md text-label-md shadow-md active:scale-95 transition-all">
+                    Add product
+                </button>
+</div>
+</div>
+</div>
+<script>
+        // Micro-interaction for modal subtle entrance
+        document.addEventListener('DOMContentLoaded', () => {
+            const modal = document.getElementById('add-product-modal');
+            modal.style.opacity = '0';
+            modal.style.transform = 'translateY(10px) scale(0.98)';
+            
+            requestAnimationFrame(() => {
+                modal.style.transition = 'all 0.4s cubic-bezier(0.16, 1, 0.3, 1)';
+                modal.style.opacity = '1';
+                modal.style.transform = 'translateY(0) scale(1)';
+            });
+        });
+    </script>
+</body></html>
