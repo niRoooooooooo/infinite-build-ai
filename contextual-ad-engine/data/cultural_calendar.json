@@ -1,0 +1,104 @@
+{
+  "events": [
+    {
+      "name": "Ramadan 2026",
+      "start": "2026-02-17",
+      "end": "2026-03-18",
+      "type": "religious_observance",
+      "notes": "Month-long fasting period. Iftar prep content peaks daily 3–5pm. Sehri window 4–5am."
+    },
+    {
+      "name": "Eid-ul-Fitr",
+      "date": "2026-03-19",
+      "type": "festival",
+      "shopping_window_days": 7,
+      "notes": "Largest shopping event of the year. Gift, fashion, and food spend surges 7 days prior."
+    },
+    {
+      "name": "Independence Day",
+      "date": "2026-03-26",
+      "type": "national",
+      "notes": "National pride theme. Green and red color palette resonates strongly."
+    },
+    {
+      "name": "Pohela Boishakh",
+      "date": "2026-04-14",
+      "type": "cultural",
+      "shopping_window_days": 5,
+      "notes": "Bengali New Year. Traditional dress, food, and gift-giving. Starts at dawn — major street events."
+    },
+    {
+      "name": "Eid-ul-Adha",
+      "date": "2026-05-27",
+      "type": "festival",
+      "shopping_window_days": 10,
+      "notes": "Qurbani festival. Meat, grocery, and household spend peaks. 10-day shopping window."
+    },
+    {
+      "name": "Durga Puja",
+      "date": "2026-09-30",
+      "type": "religious",
+      "notes": "Major Hindu festival. Fashion and food-focused. Relevant for Dhaka/Chittagong urban segments."
+    },
+    {
+      "name": "Victory Day",
+      "date": "2026-12-16",
+      "type": "national",
+      "notes": "Liberation War commemoration. National pride theme. Red and green branding resonates."
+    },
+    {
+      "name": "Christmas",
+      "date": "2026-12-25",
+      "type": "religious",
+      "notes": "Relevant for Christian communities and urban cosmopolitan segments. Gift and food-focused."
+    }
+  ],
+  "seasons": {
+    "winter": {
+      "start_month": 12,
+      "end_month": 2,
+      "label": "Shীত (Winter)",
+      "ad_angles": ["comfort_food", "warm_clothing", "holiday_gifts"]
+    },
+    "spring": {
+      "start_month": 3,
+      "end_month": 4,
+      "label": "বসন্ত (Spring)",
+      "ad_angles": ["renewal", "festivals", "outdoor_activities"]
+    },
+    "summer": {
+      "start_month": 5,
+      "end_month": 6,
+      "label": "গ্রীষ্ম (Summer)",
+      "ad_angles": ["cooling_drinks", "ice_cream", "ac_fans", "light_clothing"]
+    },
+    "monsoon": {
+      "start_month": 7,
+      "end_month": 9,
+      "label": "বর্ষা (Monsoon)",
+      "ad_angles": ["indoor_comfort", "hot_food", "rain_gear", "khichuri"]
+    },
+    "autumn": {
+      "start_month": 10,
+      "end_month": 11,
+      "label": "শরৎ (Autumn)",
+      "ad_angles": ["festivals", "travel", "fresh_produce"]
+    }
+  },
+  "exam_periods": [
+    {
+      "name": "SSC",
+      "full_name": "Secondary School Certificate",
+      "approx_start": "2026-02-01",
+      "approx_end": "2026-03-15",
+      "ad_angles": ["stationery", "study_aids", "healthy_snacks", "stress_relief"]
+    },
+    {
+      "name": "HSC",
+      "full_name": "Higher Secondary Certificate",
+      "approx_start": "2026-04-01",
+      "approx_end": "2026-05-15",
+      "ad_angles": ["stationery", "university_prep", "energy_drinks", "stress_relief"]
+    }
+  ]
+}

@@ -1,1 +1,58 @@
-{}
+{
+  "visual_formats": [
+    "static_image",
+    "gif_template",
+    "gif_ai_multiframe",
+    "animated_banner",
+    "video_mp4",
+    "voice_audio"
+  ],
+  "copy_styles": [
+    "joke_pun",
+    "cultural_reference",
+    "question_hook",
+    "stat_hook",
+    "inspirational_quote",
+    "urgency_driven",
+    "direct_offer",
+    "story_narrative",
+    "relatable_observation"
+  ],
+  "tones": [
+    "warm_casual",
+    "playful_energetic",
+    "serious_premium",
+    "urgent_action",
+    "nostalgic_emotional",
+    "informative_helpful"
+  ],
+  "descriptions": {
+    "visual_formats": {
+      "static_image": "A single still image — most compatible, loads on slow connections",
+      "gif_template": "Template-based GIF with brand element swap-ins — high engagement for young audiences",
+      "gif_ai_multiframe": "AI-generated multi-frame animated GIF — visually rich, mid-bandwidth cost",
+      "animated_banner": "CSS/JS animated banner — smooth, lightweight, no video overhead",
+      "video_mp4": "Short MP4 clip (5–15 sec) — highest engagement, requires good connectivity",
+      "voice_audio": "TTS audio-only ad — best for non-visual contexts or low-literacy audiences"
+    },
+    "copy_styles": {
+      "joke_pun": "Humorous one-liner or wordplay — disarms attention, high shareability",
+      "cultural_reference": "References a local festival, event, or cultural moment — drives relevance",
+      "question_hook": "Opens with an engaging question — creates cognitive pull",
+      "stat_hook": "Opens with a compelling number or surprising statistic — signals credibility",
+      "inspirational_quote": "Aspirational, quote-style messaging — resonates with premium-seekers",
+      "urgency_driven": "Time-limited or scarcity framing — drives immediate action",
+      "direct_offer": "Straightforward deal or discount mention — best for price-conscious segments",
+      "story_narrative": "Short story-style copy with a setup and payoff — emotionally memorable",
+      "relatable_observation": "We've all been there — mirrors a common lived experience"
+    },
+    "tones": {
+      "warm_casual": "Friendly, approachable, conversational — works across all ages",
+      "playful_energetic": "Fun, upbeat, high-energy — best for 13–25 segment",
+      "serious_premium": "Professional, aspirational, polished — works for finance, premium products",
+      "urgent_action": "High-pressure, FOMO-inducing — effective for flash sales",
+      "nostalgic_emotional": "Evocative of memories and emotion — strong for family and cultural brands",
+      "informative_helpful": "Educational, solution-focused — best for services and fintech"
+    }
+  }
+}

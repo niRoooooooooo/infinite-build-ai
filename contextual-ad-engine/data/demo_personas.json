@@ -1,1 +1,234 @@
-[]
+[
+  {
+    "id": "user_001",
+    "display_name": "Rafi",
+    "age": 22,
+    "gender": "male",
+    "city": "Dhaka",
+    "occupation_mode": "student",
+    "language_preference": "banglish",
+    "dietary": "none",
+    "spending_tier": "low_to_mid",
+    "purchase_history": [
+      { "category": "fast_food", "item": "biryani", "count": 4 },
+      { "category": "beverages", "item": "cold_coffee", "count": 2 },
+      { "category": "snacks", "item": "chanachur", "count": 6 }
+    ],
+    "browsing_history": ["laptops", "headphones", "gaming_gear"],
+    "loyalty_status": "silver",
+    "interests": ["gaming", "movies", "cricket"],
+    "format_preferences": {
+      "static_image": 0.45,
+      "gif_template": 0.75,
+      "gif_ai_multiframe": 0.70,
+      "animated_banner": 0.60,
+      "video_mp4": 0.55,
+      "voice_audio": 0.30
+    },
+    "copy_preferences": {
+      "joke_pun": 0.80,
+      "cultural_reference": 0.65,
+      "question_hook": 0.55,
+      "stat_hook": 0.35,
+      "inspirational_quote": 0.30,
+      "urgency_driven": 0.50,
+      "direct_offer": 0.45,
+      "story_narrative": 0.55,
+      "relatable_observation": 0.70
+    },
+    "tone_preferences": {
+      "warm_casual": 0.65,
+      "playful_energetic": 0.80,
+      "serious_premium": 0.25,
+      "urgent_action": 0.45,
+      "nostalgic_emotional": 0.35,
+      "informative_helpful": 0.50
+    }
+  },
+  {
+    "id": "user_002",
+    "display_name": "Nusrat",
+    "age": 28,
+    "gender": "female",
+    "city": "Chittagong",
+    "occupation_mode": "working_professional",
+    "language_preference": "banglish",
+    "dietary": "halal",
+    "spending_tier": "mid_to_high",
+    "purchase_history": [
+      { "category": "fashion", "item": "kurti", "count": 3 },
+      { "category": "skincare", "item": "face_wash", "count": 5 },
+      { "category": "food_delivery", "item": "office_lunch", "count": 8 }
+    ],
+    "browsing_history": ["professional_courses", "home_decor", "skincare"],
+    "loyalty_status": "gold",
+    "interests": ["cooking", "travel", "literature", "photography"],
+    "format_preferences": {
+      "static_image": 0.75,
+      "gif_template": 0.35,
+      "gif_ai_multiframe": 0.30,
+      "animated_banner": 0.40,
+      "video_mp4": 0.55,
+      "voice_audio": 0.45
+    },
+    "copy_preferences": {
+      "joke_pun": 0.25,
+      "cultural_reference": 0.55,
+      "question_hook": 0.60,
+      "stat_hook": 0.50,
+      "inspirational_quote": 0.80,
+      "urgency_driven": 0.30,
+      "direct_offer": 0.55,
+      "story_narrative": 0.70,
+      "relatable_observation": 0.60
+    },
+    "tone_preferences": {
+      "warm_casual": 0.60,
+      "playful_energetic": 0.30,
+      "serious_premium": 0.80,
+      "urgent_action": 0.25,
+      "nostalgic_emotional": 0.55,
+      "informative_helpful": 0.70
+    }
+  },
+  {
+    "id": "user_003",
+    "display_name": "Karim",
+    "age": 45,
+    "gender": "male",
+    "city": "Sylhet",
+    "occupation_mode": "family",
+    "language_preference": "bangla",
+    "dietary": "halal",
+    "spending_tier": "mid",
+    "purchase_history": [
+      { "category": "groceries", "item": "rice", "count": 8 },
+      { "category": "beverages", "item": "tea", "count": 10 },
+      { "category": "clothing", "item": "panjabi", "count": 2 },
+      { "category": "fast_food", "item": "halim", "count": 3 }
+    ],
+    "browsing_history": ["home_appliances", "agriculture", "religious_content"],
+    "loyalty_status": "silver",
+    "interests": ["cricket", "religion", "family_events", "gardening"],
+    "format_preferences": {
+      "static_image": 0.65,
+      "gif_template": 0.30,
+      "gif_ai_multiframe": 0.25,
+      "animated_banner": 0.35,
+      "video_mp4": 0.55,
+      "voice_audio": 0.60
+    },
+    "copy_preferences": {
+      "joke_pun": 0.25,
+      "cultural_reference": 0.80,
+      "question_hook": 0.40,
+      "stat_hook": 0.35,
+      "inspirational_quote": 0.60,
+      "urgency_driven": 0.45,
+      "direct_offer": 0.65,
+      "story_narrative": 0.75,
+      "relatable_observation": 0.60
+    },
+    "tone_preferences": {
+      "warm_casual": 0.80,
+      "playful_energetic": 0.20,
+      "serious_premium": 0.50,
+      "urgent_action": 0.35,
+      "nostalgic_emotional": 0.70,
+      "informative_helpful": 0.65
+    }
+  },
+  {
+    "id": "user_004",
+    "display_name": "Ayesha",
+    "age": 19,
+    "gender": "female",
+    "city": "Rajshahi",
+    "occupation_mode": "student",
+    "language_preference": "banglish",
+    "dietary": "none",
+    "spending_tier": "low",
+    "purchase_history": [
+      { "category": "fashion", "item": "hijab", "count": 4 },
+      { "category": "stationery", "item": "notebooks", "count": 6 },
+      { "category": "skincare", "item": "lip_balm", "count": 3 }
+    ],
+    "browsing_history": ["fashion", "social_media_tips", "study_guides"],
+    "loyalty_status": "bronze",
+    "interests": ["fashion", "music", "drama", "k-drama"],
+    "format_preferences": {
+      "static_image": 0.50,
+      "gif_template": 0.80,
+      "gif_ai_multiframe": 0.75,
+      "animated_banner": 0.65,
+      "video_mp4": 0.60,
+      "voice_audio": 0.25
+    },
+    "copy_preferences": {
+      "joke_pun": 0.65,
+      "cultural_reference": 0.60,
+      "question_hook": 0.70,
+      "stat_hook": 0.30,
+      "inspirational_quote": 0.25,
+      "urgency_driven": 0.75,
+      "direct_offer": 0.55,
+      "story_narrative": 0.45,
+      "relatable_observation": 0.85
+    },
+    "tone_preferences": {
+      "warm_casual": 0.70,
+      "playful_energetic": 0.75,
+      "serious_premium": 0.20,
+      "urgent_action": 0.70,
+      "nostalgic_emotional": 0.40,
+      "informative_helpful": 0.35
+    }
+  },
+  {
+    "id": "user_005",
+    "display_name": "Tahmid",
+    "age": 35,
+    "gender": "male",
+    "city": "Dhaka",
+    "occupation_mode": "traveler",
+    "language_preference": "english",
+    "dietary": "none",
+    "spending_tier": "high",
+    "purchase_history": [
+      { "category": "travel", "item": "hotel_booking", "count": 6 },
+      { "category": "electronics", "item": "camera_accessories", "count": 3 },
+      { "category": "food_delivery", "item": "premium_restaurant", "count": 8 },
+      { "category": "fashion", "item": "outdoor_gear", "count": 2 }
+    ],
+    "browsing_history": ["travel_guides", "gadgets", "restaurants", "flight_deals"],
+    "loyalty_status": "platinum",
+    "interests": ["travel", "photography", "technology", "food"],
+    "format_preferences": {
+      "static_image": 0.55,
+      "gif_template": 0.35,
+      "gif_ai_multiframe": 0.40,
+      "animated_banner": 0.45,
+      "video_mp4": 0.80,
+      "voice_audio": 0.40
+    },
+    "copy_preferences": {
+      "joke_pun": 0.25,
+      "cultural_reference": 0.35,
+      "question_hook": 0.55,
+      "stat_hook": 0.80,
+      "inspirational_quote": 0.45,
+      "urgency_driven": 0.50,
+      "direct_offer": 0.60,
+      "story_narrative": 0.55,
+      "relatable_observation": 0.40
+    },
+    "tone_preferences": {
+      "warm_casual": 0.50,
+      "playful_energetic": 0.35,
+      "serious_premium": 0.65,
+      "urgent_action": 0.55,
+      "nostalgic_emotional": 0.30,
+      "informative_helpful": 0.85
+    }
+  }
+]

@@ -1,1 +1,242 @@
-{}
+{
+  "age_priors": {
+    "teen_13_17": {
+      "format_bias": {
+        "gif_template": 0.75,
+        "static_image": 0.30,
+        "video_mp4": 0.60,
+        "gif_ai_multiframe": 0.70,
+        "animated_banner": 0.55,
+        "voice_audio": 0.20
+      },
+      "style_bias": {
+        "joke_pun": 0.80,
+        "urgency_driven": 0.65,
+        "inspirational_quote": 0.20,
+        "cultural_reference": 0.55,
+        "relatable_observation": 0.75,
+        "question_hook": 0.60,
+        "stat_hook": 0.25,
+        "direct_offer": 0.50,
+        "story_narrative": 0.40
+      },
+      "tone_bias": {
+        "playful_energetic": 0.85,
+        "serious_premium": 0.15,
+        "warm_casual": 0.60,
+        "urgent_action": 0.55,
+        "nostalgic_emotional": 0.25,
+        "informative_helpful": 0.35
+      }
+    },
+    "young_adult_18_25": {
+      "format_bias": {
+        "gif_template": 0.70,
+        "static_image": 0.45,
+        "video_mp4": 0.55,
+        "gif_ai_multiframe": 0.65,
+        "animated_banner": 0.50,
+        "voice_audio": 0.30
+      },
+      "style_bias": {
+        "joke_pun": 0.65,
+        "cultural_reference": 0.60,
+        "urgency_driven": 0.55,
+        "relatable_observation": 0.65,
+        "question_hook": 0.55,
+        "direct_offer": 0.50,
+        "stat_hook": 0.35,
+        "story_narrative": 0.50,
+        "inspirational_quote": 0.35
+      },
+      "tone_bias": {
+        "playful_energetic": 0.70,
+        "warm_casual": 0.65,
+        "urgent_action": 0.50,
+        "informative_helpful": 0.45,
+        "serious_premium": 0.30,
+        "nostalgic_emotional": 0.35
+      }
+    },
+    "adult_26_40": {
+      "format_bias": {
+        "gif_template": 0.50,
+        "static_image": 0.65,
+        "video_mp4": 0.55,
+        "gif_ai_multiframe": 0.40,
+        "animated_banner": 0.45,
+        "voice_audio": 0.40
+      },
+      "style_bias": {
+        "direct_offer": 0.60,
+        "story_narrative": 0.55,
+        "stat_hook": 0.50,
+        "cultural_reference": 0.55,
+        "question_hook": 0.50,
+        "relatable_observation": 0.55,
+        "urgency_driven": 0.45,
+        "joke_pun": 0.40,
+        "inspirational_quote": 0.45
+      },
+      "tone_bias": {
+        "informative_helpful": 0.65,
+        "warm_casual": 0.55,
+        "serious_premium": 0.50,
+        "playful_energetic": 0.40,
+        "nostalgic_emotional": 0.45,
+        "urgent_action": 0.40
+      }
+    },
+    "middle_age_41_55": {
+      "format_bias": {
+        "gif_template": 0.35,
+        "static_image": 0.70,
+        "video_mp4": 0.50,
+        "gif_ai_multiframe": 0.25,
+        "animated_banner": 0.35,
+        "voice_audio": 0.55
+      },
+      "style_bias": {
+        "cultural_reference": 0.65,
+        "direct_offer": 0.60,
+        "story_narrative": 0.55,
+        "inspirational_quote": 0.55,
+        "relatable_observation": 0.50,
+        "stat_hook": 0.45,
+        "question_hook": 0.40,
+        "urgency_driven": 0.35,
+        "joke_pun": 0.25
+      },
+      "tone_bias": {
+        "warm_casual": 0.65,
+        "nostalgic_emotional": 0.55,
+        "informative_helpful": 0.55,
+        "serious_premium": 0.50,
+        "urgent_action": 0.30,
+        "playful_energetic": 0.25
+      }
+    },
+    "older_55_plus": {
+      "format_bias": {
+        "gif_template": 0.20,
+        "static_image": 0.75,
+        "video_mp4": 0.40,
+        "gif_ai_multiframe": 0.15,
+        "animated_banner": 0.25,
+        "voice_audio": 0.65
+      },
+      "style_bias": {
+        "cultural_reference": 0.70,
+        "direct_offer": 0.65,
+        "joke_pun": 0.25,
+        "story_narrative": 0.60,
+        "inspirational_quote": 0.55,
+        "relatable_observation": 0.50,
+        "stat_hook": 0.40,
+        "question_hook": 0.35,
+        "urgency_driven": 0.25
+      },
+      "tone_bias": {
+        "warm_casual": 0.70,
+        "nostalgic_emotional": 0.65,
+        "informative_helpful": 0.60,
+        "serious_premium": 0.50,
+        "playful_energetic": 0.20,
+        "urgent_action": 0.20
+      }
+    }
+  },
+  "gender_priors": {
+    "_note": "Soft prior, quickly overridden by behavior. Used only for visual aesthetic defaults.",
+    "female": {
+      "aesthetic_bias": {
+        "warm_palette": 0.55,
+        "soft_typography": 0.55
+      }
+    },
+    "male": {
+      "aesthetic_bias": {
+        "neutral_palette": 0.55,
+        "bold_typography": 0.55
+      }
+    },
+    "unspecified": {
+      "aesthetic_bias": {
+        "neutral_palette": 0.50
+      }
+    }
+  },
+  "occupation_priors": {
+    "student": {
+      "angle_bias": {
+        "value_deal": 0.70,
+        "social_proof": 0.55,
+        "premium_quality": 0.30
+      }
+    },
+    "working_professional": {
+      "angle_bias": {
+        "time_saving": 0.65,
+        "premium_quality": 0.60,
+        "value_deal": 0.45
+      }
+    },
+    "family": {
+      "angle_bias": {
+        "trust_safety": 0.70,
+        "value_deal": 0.60,
+        "bulk_value": 0.65
+      }
+    },
+    "traveler": {
+      "angle_bias": {
+        "experience": 0.70,
+        "time_sensitive": 0.60
+      }
+    }
+  },
+  "city_priors": {
+    "Dhaka": {
+      "language_bias": {
+        "english": 0.45,
+        "banglish": 0.50,
+        "bangla": 0.30
+      },
+      "cultural_bias": {
+        "urban_modern": 0.65,
+        "traditional": 0.35
+      }
+    },
+    "Chittagong": {
+      "language_bias": {
+        "english": 0.30,
+        "banglish": 0.50,
+        "bangla": 0.45
+      },
+      "cultural_bias": {
+        "regional_pride": 0.65,
+        "traditional": 0.55
+      }
+    },
+    "Sylhet": {
+      "language_bias": {
+        "bangla": 0.55,
+        "banglish": 0.45
+      },
+      "cultural_bias": {
+        "family_oriented": 0.65,
+        "traditional": 0.60
+      }
+    },
+    "Rajshahi": {
+      "language_bias": {
+        "bangla": 0.55,
+        "banglish": 0.45
+      },
+      "cultural_bias": {
+        "value_conscious": 0.60,
+        "traditional": 0.55
+      }
+    }
+  }
+}

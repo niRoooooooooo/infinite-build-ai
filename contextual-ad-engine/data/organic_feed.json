@@ -1,1 +1,86 @@
-[]
+[
+  {
+    "id": "org_001",
+    "type": "news",
+    "title": "Heavy rain warning for Dhaka — roads may flood by evening",
+    "image": "/static/organic/news_rain.jpg",
+    "body": "The Bangladesh Meteorological Department has issued a heavy rainfall warning for Dhaka and Chittagong divisions. Residents are advised to avoid low-lying areas after 5pm."
+  },
+  {
+    "id": "org_002",
+    "type": "recipe",
+    "title": "5-minute khichuri hack — perfect for rainy days",
+    "image": "/static/organic/recipe_khichuri.jpg",
+    "body": "Short on time? This quick lentil khichuri takes only 5 minutes in a pressure cooker. Add a fried egg and a squeeze of lime — done."
+  },
+  {
+    "id": "org_003",
+    "type": "social",
+    "title": "Sabrina posted: 'Finally got my SSC results!'",
+    "image": "/static/organic/social_ssc.jpg",
+    "body": "Congratulations to all SSC passers this year! Share your results and tag your study group."
+  },
+  {
+    "id": "org_004",
+    "type": "event",
+    "title": "Pohela Boishakh at Ramna — free entry, starts at dawn",
+    "image": "/static/organic/event_boishakh.jpg",
+    "body": "The annual Pahela Baishakh celebration at Ramna Batamul begins April 14th at 6am. Dress in white and red — thousands expected to attend."
+  },
+  {
+    "id": "org_005",
+    "type": "news",
+    "title": "Tigers beat India in last-over thriller — Shakib takes 5 wickets",
+    "image": "/static/organic/news_cricket.jpg",
+    "body": "Bangladesh wins the T20 series against India in a nail-biting final over. Next match vs. Pakistan on Saturday — don't miss it."
+  },
+  {
+    "id": "org_006",
+    "type": "recipe",
+    "title": "How to make perfect shorshe ilish at home",
+    "image": "/static/organic/recipe_ilish.jpg",
+    "body": "The secret to great hilsa curry is freshly ground yellow mustard and Padma fish. Step-by-step guide — ready in 25 minutes."
+  },
+  {
+    "id": "org_007",
+    "type": "social",
+    "title": "Rahim vai: 'Mirpur Road traffic is absolutely insane today'",
+    "image": "/static/organic/social_traffic.jpg",
+    "body": "Dhaka traffic alert: Mirpur–Farmgate corridor reporting 45-minute delays. Try alternate routes via Mohammadpur or use Pathao."
+  },
+  {
+    "id": "org_008",
+    "type": "event",
+    "title": "Ekushey Book Fair 2026 — Bangla Academy, Feb 1–28",
+    "image": "/static/organic/event_bookfair.jpg",
+    "body": "The 50th Ekushey Book Fair opens February 1st. Over 700 stalls, live author readings, and new releases. Entry free every day."
+  },
+  {
+    "id": "org_009",
+    "type": "news",
+    "title": "Eid ul-Adha: 4-day holiday announced, offices close June 6–9",
+    "image": "/static/organic/news_eid.jpg",
+    "body": "The government has confirmed a 4-day public holiday for Eid ul-Adha. Banks, schools, and government offices will be closed June 6–9."
+  },
+  {
+    "id": "org_010",
+    "type": "recipe",
+    "title": "Ramadan special: Restaurant-style shahi halim in 3 steps",
+    "image": "/static/organic/recipe_halim.jpg",
+    "body": "Use mixed lentils, slow-cooked beef, and a handful of whole spices. This recipe feeds 6 and stores well for sehri too."
+  },
+  {
+    "id": "org_011",
+    "type": "social",
+    "title": "Nadia posted: 'First day at my new office in Gulshan!'",
+    "image": "/static/organic/social_office.jpg",
+    "body": "Starting a new chapter in the big city. Dhaka's professional scene is growing fast — what was your most memorable first-day moment?"
+  },
+  {
+    "id": "org_012",
+    "type": "event",
+    "title": "Cox's Bazar Festival: 3-day tourism event — book your hotel now",
+    "image": "/static/organic/event_coxsbazar.jpg",
+    "body": "Bangladesh Tourism Board's annual Cox's Bazar Festival runs December 20–22. Beachside concerts, local food stalls, and surfing lessons. Hotels fill fast."
+  }
+]
