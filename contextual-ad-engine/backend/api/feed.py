@@ -1,14 +1,17 @@
 import json
+from datetime import datetime, timedelta, timezone
 from pathlib import Path
 
-from fastapi import APIRouter, Depends, HTTPException
+from fastapi import APIRouter, Depends, HTTPException, Request
 
 from database import get_db
+from services import context_engine, generation_engine
 
 router = APIRouter(prefix="/api", tags=["feed"])
 
-_ORGANIC_PATH = Path(__file__).parent.parent.parent / "data" / "organic_feed.json"
+_ORGANIC_PATH  = Path(__file__).parent.parent.parent / "data" / "organic_feed.json"
 _organic_cache = None
+_MAX_SPONSORED  = 3
 
 
 def _load_organic() -> list:
@@ -19,42 +22,69 @@ def _load_organic() -> list:
     return _organic_cache
 
 
-def _placeholder_ad(brand: dict, product: dict, persona_id: str) -> dict:
-    """Minimal placeholder — real generation in Phase 4."""
-    return {
-        "ad_id": f"placeholder_{brand['brand_id']}_{product['product_id']}",
-        "brand": {
-            "brand_id":    brand["brand_id"],
-            "display_name": brand["display_name"],
-            "logo_url":    brand.get("logo_url"),
-        },
-        "creative_data": {
-            "headline":  f"Try {product['name']} — from {brand['display_name']}",
-            "body_copy": (product.get("description") or "")[:80],
-            "cta":       "Take the offer",
-        },
-        "assets_data": {
-            "image_url": product.get("image_url"),
-            "gif_url":   None,
-            "video_url": None,
-            "voice_url": None,
-        },
-        "ad_tags": {
-            "visual":      "static_image",
-            "copy_styles": ["direct_offer"],
-            "tone":        "warm_casual",
-        },
-        "optimization_metadata": {
-            "mode":                   "placeholder",
-            "directive":              "Phase 4 pending",
-            "user_profile_source":    "none",
-            "user_profile_confidence": None,
-            "sample_size":            0,
-            "rationale":              "Placeholder ad — LLM generation in Phase 4",
-        },
-        "stage":      "placeholder",
-        "persona_id": persona_id,
-    }
+def _find_cached_ad(brand_id, product_id, persona_id, db):
+    cutoff = (datetime.now(timezone.utc) - timedelta(hours=24)).isoformat()
+    row = db.execute(
+        """SELECT * FROM ads
+           WHERE brand_id=? AND product_id=? AND persona_id=? AND stage='real_time'
+             AND created_at > ?
+           ORDER BY created_at DESC LIMIT 1""",
+        (brand_id, product_id, persona_id, cutoff),
+    ).fetchone()
+    if not row:
+        return None
+    ad = dict(row)
+    for f in ("creative_data", "assets_data", "ad_tags",
+              "context_snapshot", "optimization_metadata"):
+        ad[f] = json.loads(ad.get(f) or "{}")
+    return ad
+
+
+def _save_ad(ad: dict, db):
+    db.execute(
+        """INSERT OR REPLACE INTO ads
+           (ad_id, brand_id, product_id, persona_id,
+            creative_data, assets_data, ad_tags,
+            context_snapshot, optimization_metadata,
+            stage, created_at)
+           VALUES (?,?,?,?,?,?,?,?,?,?,?)""",
+        (
+            ad["ad_id"], ad["brand_id"], ad["product_id"], ad["persona_id"],
+            json.dumps(ad["creative_data"]),
+            json.dumps(ad["assets_data"]),
+            json.dumps(ad["ad_tags"]),
+            json.dumps(ad.get("context_snapshot", {})),
+            json.dumps(ad.get("optimization_metadata", {})),
+            ad["stage"],
+            ad["created_at"],
+        ),
+    )
+    db.commit()
+
+
+def _get_sponsored_slot(brand, product, persona_id, context_obj, db) -> dict:
+    """Return a real (or cached) ad for one sponsored slot."""
+    brand_id   = brand["brand_id"]
+    product_id = product["product_id"]
+
+    cached = _find_cached_ad(brand_id, product_id, persona_id, db)
+    if cached:
+        cached["_cached"] = True
+        return {"type": "sponsored", **cached}
+
+    try:
+        ad = generation_engine.compose_ad(
+            brand_id, product_id, persona_id, context_obj, db
+        )
+        _save_ad(ad, db)
+        return {"type": "sponsored", **ad}
+    except Exception as exc:
+        # Graceful degradation — skip this slot rather than crash
+        import logging
+        logging.getLogger(__name__).error(
+            "Sponsored slot generation failed for %s: %s", brand_id, exc
+        )
+        return None
 
 
 @router.get("/organic-feed")
@@ -63,7 +93,7 @@ def organic_feed():
 
 
 @router.get("/feed/{persona_id}")
-def personalized_feed(persona_id: str, db=Depends(get_db)):
+def personalized_feed(persona_id: str, request: Request, db=Depends(get_db)):
     if not db.execute(
         "SELECT 1 FROM personas WHERE persona_id=?", (persona_id,)
     ).fetchone():
@@ -71,36 +101,50 @@ def personalized_feed(persona_id: str, db=Depends(get_db)):
 
     organic = [{"type": "organic", **card} for card in _load_organic()]
 
-    # Build one placeholder sponsored card per brand
-    brand_rows = db.execute("SELECT * FROM brands ORDER BY brand_id").fetchall()
+    # Build context once — shared across all sponsored slots
+    client_ip = request.client.host if request.client else None
+    request_info = {"ip": client_ip, "headers": dict(request.headers)}
+    context_obj = context_engine.get_full_context(persona_id, request_info, db)
+
+    # Pick up to _MAX_SPONSORED brands (one product each, different brands)
+    brand_rows = db.execute(
+        "SELECT * FROM brands ORDER BY brand_id"
+    ).fetchall()
+
     sponsored = []
     for br in brand_rows:
+        if len(sponsored) >= _MAX_SPONSORED:
+            break
+
         brand = dict(br)
         for f in ("voice_data", "visual_data", "constraints_data"):
             if brand.get(f):
                 brand[f] = json.loads(brand[f])
 
         prod_row = db.execute(
-            "SELECT * FROM products WHERE brand_id=? LIMIT 1", (brand["brand_id"],)
+            "SELECT * FROM products WHERE brand_id=? LIMIT 1",
+            (brand["brand_id"],),
         ).fetchone()
         if not prod_row:
             continue
+
         product = dict(prod_row)
-        product["target_audience"] = json.loads(product.get("target_audience") or "{}")
-        sponsored.append({
-            "type": "sponsored",
-            **_placeholder_ad(brand, product, persona_id),
-        })
+
+        slot = _get_sponsored_slot(brand, product, persona_id, context_obj, db)
+        if slot:
+            sponsored.append(slot)
 
     # Interleave: 3 organic, 1 sponsored, 2 organic, 1 sponsored, …
-    feed, oi, si, slot = [], 0, 0, 0
+    feed, oi, si, slot_num = [], 0, 0, 0
     while oi < len(organic) or si < len(sponsored):
-        count = 3 if slot % 2 == 0 else 2
+        count = 3 if slot_num % 2 == 0 else 2
         for _ in range(count):
             if oi < len(organic):
-                feed.append(organic[oi]); oi += 1
+                feed.append(organic[oi])
+                oi += 1
         if si < len(sponsored):
-            feed.append(sponsored[si]); si += 1
-        slot += 1
+            feed.append(sponsored[si])
+            si += 1
+        slot_num += 1
 
     return {"persona_id": persona_id, "feed": feed, "total": len(feed)}
